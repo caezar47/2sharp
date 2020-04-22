@@ -1,0 +1,197 @@
+{% if view == "investors_header"%}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}	
+
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "investors_info"%}
+	<section class="{{content_prefix}}panel  {{content_mod}}" {% if bg %}style="background-image: url({{bg}})"{% endif %}>
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_n_mod,
+				level:heading_n_level, 
+				heading:heading_n
+			} %}
+			<a href="{{docs}}" class="btn__item  is--lg  is--success" target="_blank">{{docs_name}}</a>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "investors_docs"%}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				{% include "../common/card/card.twig" with {
+				 	view: "docs_card", 
+				 	prefix:prefix.card, 
+				 	mod:"is--docs-card", 
+				 	list:list
+				} %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "investors_finance" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			
+			<div class="{{content_prefix}}slider  {{content_mod}}">
+				<div data-slick-finance  data-slick-dots="{{slider_dots}}">
+					{% include "../common/card/card.twig" with {
+					 	view: "finance", 
+					 	prefix:prefix.card, 
+					 	mod:"is--finance", 
+					 	list: list
+					} %}
+				</div>
+				<div class="{{content_prefix}}slider-note  {{content_mod}}">
+					<p>*Финансовые показатели по МСФО</p>
+					<p>**Аннуализированный показатель</p>
+				</div>
+			</div>
+			{#
+			{% if link %}
+			<p class="{{content_prefix}}link  is--block-slider">
+				<a class="link__item  is--next  is--success-white" href="{{link_href}}">{{link}}</a>
+			</p>
+			{% endif %} #}
+		</div>
+	</section>
+{% endif %}	
+
+{% if view == "requisites_page" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}	
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			<div>
+				{% include "../common/card/card.twig" with {
+				 	view: "docs_download", 
+				 	prefix:prefix.card, 
+				 	mod:"is--docs-download", 
+				 	list:list
+				} %}
+				
+			</div>	
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "securities_page" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}	
+			
+			<div class="page-header__panel  row  {{content_mod}}">
+				<div class="cols">
+					{% include "../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}
+				</div>			
+				<div class="cols">
+					{% include "../common/form/elem-tpl.twig" with {
+						view: "select", 
+						prefix:prefix.form, 
+						mod:"is--filter", 
+						form_id:ID,
+						id:"city", 
+						label:"Сортировать:", 
+						form_id:"filter", 
+						id:"select",  
+						attr:"data-select-inline", 
+						list: [
+							{"name": "по дате","status": "selected"},
+							{"name": "по новизне"},
+							{"name": "по&nbsp;популярности"}
+						]
+					} %}
+				</div>
+			</div>	
+			<div class="card__wrap  is--docs-download">
+				<p class="page-header__heading  fw--700  is--h2  {{content_mod}}-sm">2019 год</p>
+				{% include "../common/card/card.twig" with {
+				 	view: "docs_download", 
+				 	prefix:prefix.card, 
+				 	mod:"is--docs-download", 
+				 	list:list
+				} %}				
+			</div>	
+			<div class="card__wrap  is--docs-download">
+				<p class="page-header__heading  fw--700  is--h2  {{content_mod}}-sm">2018 год</p>
+				{% include "../common/card/card.twig" with {
+				 	view: "docs_download", 
+				 	prefix:prefix.card, 
+				 	mod:"is--docs-download", 
+				 	list:list2
+				} %}				
+			</div>	
+			{% include "../common/pagination/tpl.twig" with {
+			 	prev: "true", 
+			 	next: "true", 
+			 	view: "news", 
+			 	prefix:prefix.pagination,
+			 	group: "is--pagination", 
+			 	active: "2",
+			 	list: [
+			 		{name: "1"},
+			 		{name: "2"},
+			 		{name: "3"},
+			 		{name: "4"},
+			 		{name: "5"},
+			 		{name: "6"},
+			 		{name: "7"},
+			 		{name: "8"}
+			 	]
+			}%}
+		</div>
+	</section>
+{% endif %}

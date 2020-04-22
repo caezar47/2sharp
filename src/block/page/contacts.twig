@@ -1,0 +1,70 @@
+<section class="{{content_prefix}}panel  {{content_mod}}">
+	<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+		{% include "../common/continfo/tpl.twig" with {
+			view: "", 
+			prefix:"continfo__", 
+			mod:"is--page-contacts", 
+			list:[
+				{
+					"label":"адрес",
+					"name":contacts.address, 
+					"tag":"p", 
+				},
+				{
+					"label":"телефон", 
+					'sublist':[
+						{
+							"name":contacts.phone, 
+							"href":contacts.phone_tel, 
+							"tag":"a", 
+							"target":"tel:", 								
+						},
+						{
+							"name":contacts.phone2, 
+							"href":contacts.phone2_tel, 
+							"tag":"a", 
+							"target":"tel:", 								
+						}
+					]
+				},
+				{
+					"label":"e-mail",
+					'sublist':[
+						{
+							"name":contacts.email, 
+							"href":contacts.email, 
+							"tag":"a", 
+							"target":"tel:", 								
+						},
+						{
+							"name":contacts.email2, 
+							"href":contacts.email2, 
+							"tag":"a", 
+							"target":"tel:", 								
+						}
+					]
+				}
+		]} %}
+		{% include "../common/social/tpl.twig" with {
+			prefix:"social__",
+			mod:"is--page-contacts", 
+			list:[
+				{name:"soc-v", link:soc.v},
+				{name:"soc-fb", link:soc.fb},
+				{name:"soc-inst", link:soc.inst},
+				{name:"soc-be", link:soc.be},
+				{name:"soc-yb", link:soc.yb},
+			]} 
+		%}
+		{% include "../common/map/tpl.twig" with {
+			view:"yandex",
+			prefix:prefix.map,
+			mod:content_mod,
+			center_coord:contacts.map_center_coord,
+			zoom:contacts.map_zoom,
+			point_coord:contacts.map_point_coord,
+			point_heading:contacts.map_point_heading,
+		} %}	
+	</div>	
+		
+</section>

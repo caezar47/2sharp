@@ -1,0 +1,37 @@
+{% if view == "partners_page" %}
+<section class="{{content_prefix}}panel  {{content_mod}}">
+	<div class="{{content_prefix}}container container  {{content_mod}}">	
+		{% include "../common/breadcrumb/tpl.twig" with {
+			prefix:prefix.breadcrumb, 
+			mod:bread_mod, 
+			bread:bread
+		} %}	
+		{% include "../common/page-header/tpl.twig" with {
+			prefix:"page-header__", 
+			mod:heading_mod,
+			level:heading_level, 
+			heading:heading
+		} %}
+
+		{% include "../common/form/form.twig" with {
+			view: 			"partners", 
+			prefix:			prefix.form, 
+			mod:			"is--partners",
+			color:			"is--primary-light", 
+			ID: 			"f_search", 
+			placeholder:	"Поиск",
+			btn_mod:		"",
+			btn_name:		"Поиск"
+		} %}
+
+		<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+			{% include "../common/card/card.twig" with {
+			 	view: "partners_card", 
+			 	prefix:prefix.card, 
+			 	mod:"is--partners-card", 
+			 	list: list
+			} %}						
+		</div>
+	</div>
+</section>
+{% endif %}

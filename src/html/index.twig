@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>	
+    	{% include "../block/common/head/head.twig" with {title:"Главная страница"}  %}
+	</head>
+	{# <body class="is--index-page"> #}
+    <body>
+    	{% include "../block/common/navbar/navbar.twig" with {navbar_prefix:"navbar__"} %} 
+
+        <main class="content-block__panel">            
+            {% include "../block/page/index.twig" with {
+                view:"index_header", 
+                content_prefix:"content-block__", 
+                content_mod:"is--index-header",
+                carousel_id:"slider_index_header",  
+                carousel_count:"true",  
+                carousel_indicators:"false",  
+                list:[
+                    {
+                        status:"active",
+                        name:"Лизинг по трем документам",
+                        preview:[path.img,"/default/index-slider-item1.svg"].join(""),
+                        note:'<p>Одобрение на следующий день</p><p>Срок от 12 месяцев</p><p>Для юридических лиц и ИП</p>',
+                        link: page.leasing
+                    },   
+                    {
+                        status:"",
+                        name:"Лизинг по трем документам",
+                        preview:"http://via.placeholder.com/365x300",
+                        preview:[path.img,"/default/header-slider-item1.svg"].join(""),
+                        note:'<p>Одобрение на следующий день</p><p>Срок от 12 месяцев</p><p>Для юридических лиц и ИП</p>',
+                        link: page.leasing
+                    }                    
+                ],
+            } %}
+
+            {% include "../block/page/index.twig" with {
+                view:"index_adv", 
+                content_prefix:"content-block__", 
+                content_mod:"is--index-adv",
+                block_mod:"is--block-adv",
+                heading_mod:"is--h1  fw--700  is--index-adv", 
+                heading_level:"h2", 
+                heading:"Элемент Лизинг в цифрах",  
+                tabs:"index_a_",  
+                list:[
+                    {
+                        id:"item1",
+                        status:"active",
+                        name:"Наши достижения", 
+                        note:'
+                           <h3>15 лет успешной работы</h3>
+                           <p>Разрабатываются новые продукты: оперативный лизинг, финансирование для физических лиц. Компания «Элемент Лизинг» становится лидером по&nbsp;финансированию новых сделок в&nbsp;сегменте малого и&nbsp;среднего бизнеса и&nbsp;занимает <nobr>1-е</nobr> место по&nbsp;финансированию грузового автотранспорта среди российских лизингодателей.</p>
+                        ',
+                        preview:[
+                            {
+                                preview:[path.img,"/default/index-adv1.svg"].join(""),
+                            },
+                            {
+                                preview:[path.img,"/default/index-adv2.svg"].join(""),
+                            },
+                            {
+                                preview:[path.img,"/default/index-adv3.svg"].join(""),
+                            }
+                        ]
+                    },
+                    {
+                        id:"item2",
+                        status:"",
+                        name:"Оформленные договоры",
+                        note:'
+                            <h3>Lorem ipsum dolor sit amet.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt ipsam nisi vero quo consectetur beatae sunt, sit error quidem esse, magni, numquam facilis eos placeat suscipit voluptate eveniet? A voluptas esse neque earum veniam impedit officia vel consequatur aperiam exercitationem, dolores, temporibus nisi nemo provident repudiandae aspernatur incidunt ea non.</p>
+                        '
+                    },
+                    {
+                        id:"item3",
+                        status:"",
+                        name:"Действующие договоры",
+                        note:'
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quia.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati molestiae cupiditate adipisci nisi sint eum est aspernatur, voluptas culpa ipsam.</p>
+                        '
+                    },
+                    {
+                        id:"item4",
+                        status:"",
+                        name:"Размер капитала Элемент Лизинг",
+                        note:'
+                            <h3>Lorem ipsum.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora cupiditate incidunt nemo aut numquam blanditiis, minima possimus! Consequatur pariatur maxime inventore fugit, eaque minus iusto, asperiores autem velit atque voluptate illum sapiente numquam rem odit nostrum delectus quas? Eaque, non, molestias. Ut, rem vero quia accusamus ipsum nam velit sapiente!</p>
+                        '
+                    }
+                ],
+            } %}
+
+            {% include "../block/page/catalog.twig" with {
+                view:"catalog_adv",  
+                content_prefix:"content-block__", 
+                content_mod:"is--index-catalog",
+                heading_mod:"is--hXL  fw--700  color--blue-08  is--index-catalog", 
+                heading_level:"h2", 
+                heading:"Каталог",
+                card_mod:"is--catalog-promo-primary",
+                slider_dots:"true",
+                link:"Весь каталог",
+                link_href:page.catalog
+            } %}
+
+            {% include "../block/page/index.twig" with {
+                view:"index_order",  
+                content_prefix:"content-block__", 
+                content_mod:"is--index-order",
+                heading_mod:"is--h3  fw--700  color--white  is--index-order", 
+                heading_level:"h3", 
+                heading:"ГАЗ в лизинг<br> на выгодных условиях",
+                heading_n_mod:"is--h4  fw--100  color--white  is--index-order-note", 
+                heading_n_level:"p", 
+                heading_n:"Лизинг коммерческой техники ГАЗ за 1 рабочий день! Сегодня обращаетесь к поставщику, завтра получаете в лизинг технику",
+                heading_v_mod:"fw--700  color--white  is--index-order-value", 
+                heading_v_level:"p", 
+                heading_v:"ОТ 20%",
+                bg:[path.img,"/default/index-order.jpg"].join(""),
+            } %}
+
+            {% include "../block/page/index.twig" with {
+                view:"index_products",  
+                content_prefix:"content-block__", 
+                content_mod:"is--index-products",
+                heading_mod:"is--h1  fw--700  is--index-products", 
+                heading_level:"h3", 
+                heading:"Лизинговые продукты",
+                heading:"Наши лизинговые продукты",
+                preview:[path.img,"/default/index-products.svg"].join(""),
+                prefix:"card__", 
+                list_group: "articles",
+                list: [
+                    {
+                        "status":"active",
+                        "h_id":"heading_item1",
+                        "id":"item1",
+                        "name":"Лизинг б/у техники",
+                        "icon":"docs",
+                        "link":"#",
+                        "note":"<p>Аванс от 10%<br>От 12 до 48 месяцев<br>Скидки до 125 000 рублей</p>",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item2",
+                        "id":"item2",
+                        "name":"Лизинг за 1<br> рабочий день",
+                        "icon":"one-day",
+                        "link":"#",
+                        "note":"<p>Лизинг по трём документам позволяет вам быстро получить нужную технику для бизнеса без лишней потери времени на сбор документов. Вы прилагаете только те окументы, которые у вас есть под рукой.</p>",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item3",
+                        "id":"item3",
+                        "name":"Минимальная<br> переплата",
+                        "icon":"coin",
+                        "link":"#",
+                        "note":"<p>Лизинг по трём документам позволяет вам быстро получить нужную технику для бизнеса без лишней потери времени на сбор документов. Вы прилагаете только те окументы, которые у вас есть под рукой.</p>",
+                    },
+                    {
+                        "status":"",
+                        "h_id":"heading_item4",
+                        "id":"item4",
+                        "name":"Минимальный<br> аванс",
+                        "icon":"wallet",
+                        "link":"#",
+                        "note":"<p>Лизинг по трём документам позволяет вам быстро получить нужную технику для бизнеса без лишней потери времени на сбор документов. Вы прилагаете только те окументы, которые у вас есть под рукой.</p>",
+                    }
+                ]
+            } %}
+
+            {% include "../block/page/leasing/tpl.twig" with {
+                view:"leasing_block", 
+                content_prefix:"content-block__", 
+                content_mod:"is--index-programm"
+            } %}
+
+            {% include "../block/page/about/news.twig" with {
+                view:"news_block", 
+                content_prefix:"content-block__", 
+                content_mod:"is--block-news",             
+                heading_mod:"is--h1  fw--700  is--block-news", 
+                heading_level:"h2", 
+                heading:"Новости",
+                link:"Все новости",
+                link_href:page.news
+            } %}
+        </main>
+
+    	{% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+        {# {% include "../block/common/modals/include.twig"%} #}
+    	{% include "../block/common/script/script.twig"%}
+	</body>
+</html> 

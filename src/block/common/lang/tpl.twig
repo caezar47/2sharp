@@ -1,0 +1,9 @@
+<ul class="{{prefix}}panel  {{mod}}">
+	{% for value in list %}	
+	<li class="{{prefix}}item  {{mod}}">
+		<a href="{{value.link}}" class="{{prefix}}link  {{mod}}  {% if value.link == active %}is--active{% endif %}">
+			{{value.name}}
+		</a>
+	</li>
+	{% endfor %}
+</ul>

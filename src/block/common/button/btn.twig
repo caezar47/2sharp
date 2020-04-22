@@ -1,0 +1,11 @@
+{% if view == "modal" %}
+<button type="button" class="{{prefix}}item  {{mod}}" data-toggle="modal" data-target="#{{target}}">{{name}}</button>
+{% endif %}
+
+{% if view == "btn" %}
+<button type="{{type}}" class="{{prefix}}item  {{mod}}" {% if heading_view == "modal" %}data-btn-heading{% endif %}>{{name}}</button>
+{% endif %}
+
+{% if view == "link" %}
+<a href="{{link}}" class="{{prefix}}item  {{mod}}">{{name}}</a>  
+{% endif %}

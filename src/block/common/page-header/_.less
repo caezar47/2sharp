@@ -1,0 +1,390 @@
+.page-header__{
+	&panel{
+		&.is--page{
+			&-securities{
+				margin-bottom: 30px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 45px;
+				});
+			}
+		}
+		align-items: center;
+		& > .cols{
+			.media-breakpoint-down(@sm; {
+				flex-basis: 100%;
+			});
+			&:nth-child(2){
+				//.media-breakpoint-up(@md; {
+					margin-left: auto;
+					justify-self: flex-end;
+				//});
+			}
+			&.is--back{
+				.media-breakpoint-down(@md; {
+					display: none;
+				});
+			}
+		}
+	}
+	&heading{
+		sup{
+			font-weight: 100;
+			color: @success;    
+			font-size: 55%;
+    		top: -1.15em;
+		}
+		&.is--block{
+			&-news{				
+				margin-bottom: 20px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 45px;
+				});
+			}
+		}
+		&.is--index{
+			&-adv{
+				padding-right: 60px;
+				margin-bottom: 15px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 65px;
+					padding-right: 0;
+				});
+			}
+			&-catalog{
+				.media-breakpoint-down(@md; {
+					margin-bottom: 35px;
+				});
+			}
+			&-order{
+				&{
+					margin-bottom: 15px;
+				}
+				&-note{
+					margin-bottom: 45px;
+					.media-breakpoint-up(@md; {
+						line-height: 1.5em;
+					});
+				}
+				&-value{
+					position: relative;
+					z-index: 2;
+					font-size: 4em;
+					line-height: 1.33em;
+					.media-breakpoint-up(@xl; {						
+						font-size: 9em;
+					});
+				}
+			}
+			&-products{
+				margin-bottom: 20px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 45px;
+				});
+			}
+		}
+		&.is--page{
+			&-contacts{
+				margin-bottom: 20px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: -18px;
+				});
+			}
+			&-vacancies{
+				&-card-sm{
+					margin-bottom: 20px;
+					.media-breakpoint-up(@lg; {
+						margin-bottom: 45px;
+					});
+				}
+			}
+			&-investors{
+				&-info{
+					&{
+						margin-bottom: 15px;
+						.media-breakpoint-down(@md; {
+							font-size: 1.52em
+						});
+						.media-breakpoint-up(@md; {
+							margin-bottom: 10px;
+						});
+					}
+					&-note{
+						max-width: 610px;
+						line-height: 1.54em;
+						margin-bottom: 140px;
+						.media-breakpoint-up(@md; {
+							margin-bottom: 70px;
+						});
+					}
+				}
+				&-docs{
+					margin-bottom: 20px;
+					.media-breakpoint-up(@md; {
+						border-bottom: 2px solid @blue-light;
+						padding-bottom: 25px;
+						margin-bottom: 65px;
+					});
+				}
+				&-finance{
+					max-width: 450px;
+					margin-bottom: 30px;
+					font-size: 2em;
+					line-height: 1.34em;
+					.media-breakpoint-up(@lg; {
+						margin-bottom: 23px;
+						font-size: 3.14em;
+						line-height: 1.2em;
+					});	
+				}
+			}
+			&-catalog{
+				&-header{
+					&{    
+						font-size: 2em;
+    					line-height: 1.388em;
+						.media-breakpoint-up(@xl; {
+							font-size: 2.56em;
+						});
+					}
+					&-sm{
+						.media-breakpoint-up(@md; {
+							display: none;
+						});
+					}
+				}
+				&-card-adv{
+					margin-bottom: 35px;
+					.media-breakpoint-up(@md; {
+						margin-bottom: 15px;
+					});
+				}
+				&-card-adv{
+					margin-bottom: 35px;
+					.media-breakpoint-up(@md; {
+						margin-bottom: 15px;
+					});
+				}
+			}
+			&-securities{
+				&-sm{
+					margin-bottom: 10px;
+					.media-breakpoint-up(@lg; {
+						margin-bottom: 20px;
+					});
+				}
+			}
+			&-partners{
+				&{
+					margin-bottom: 20px;
+					.media-breakpoint-up(@lg; {
+						margin-bottom: 35px;
+					});
+				}
+			}
+			&-404{
+				&-xl{
+					color: @white-6f;
+					font-weight: 700;
+					font-size: 11.2em;
+					line-height: 0.9em;
+					text-align: center;
+					.media-breakpoint-up(@lg; {
+						font-size: 12.7em;
+						line-height: 0.95em;
+					});
+				}
+				&{
+					color: @white-6f;
+					font-weight: 700;
+					font-size: 2em;
+					line-height: 1em;
+					text-align: center;
+					.media-breakpoint-up(@lg; {
+						font-size: 1.78em;
+					});
+				}
+			}
+		}
+		&.is--leasing{
+			&-header{
+				margin-bottom: 5px;
+				//max-width: 400px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 10px;
+				});
+			}
+			&-header-sm{
+				max-width: 600px;
+				margin-bottom: 70px;
+				.media-breakpoint-down(@md; {
+					font-size: 1.25em;
+					line-height: 1.55em;
+					margin-bottom: 10px;
+				});
+			}
+			&-header-value{
+				font-size: 2.1em;
+				line-height: 1.6em;
+				align-self: flex-end;
+				span{
+					display: block;
+					font-size: 1.9em;
+					text-transform: uppercase;
+				}
+				.media-breakpoint-down(@md; {
+					display: none;
+				});
+				.media-breakpoint-up(@lg; {
+					font-size: 3.1em;
+					line-height: 2.1em;
+					span{
+						font-size: 2.9em;
+					}
+					
+				});
+			}
+			&-condition{
+				.media-breakpoint-down(@md; {
+					font-size: 1.2em;					
+				});
+			}			
+			&-condition-sm{				
+				max-width: 420px;
+				line-height: 1.5em;
+				margin-bottom: 20px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 57px;
+				});
+			}
+			&-formaliz{	
+				margin-bottom: 15px;			
+				.media-breakpoint-up(@md; {
+					margin-bottom: 20px;
+				});
+			}
+			&-adv{
+				margin-bottom: 30px;
+				font-size: 2em;
+				line-height: 1.34em;				
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 6.5vw;    
+					font-size: 3.1em;
+					line-height: 1.2em;
+				});
+			}
+			&-catalog{
+				.media-breakpoint-down(@md; {
+					margin-bottom: 35px;
+				});
+			}
+			&-conditions{				
+				margin-bottom: 15px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 40px;
+				});
+			}
+		}
+		&.is--catalog{
+			&-screen{
+				display: none;
+				.media-breakpoint-up(@md; {
+					display: block;
+				});
+			}
+			&-device{
+				display: block;
+				text-align: center;
+				.media-breakpoint-up(@md; {
+					display: none;
+				});
+			}
+			&-card-programm{
+				margin-bottom: 30px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 5.1vw;
+				});
+			}
+		}
+		&.is--form{
+			&-leasing{
+				&{
+					.media-breakpoint-down(@md; {
+						font-size: 1.72em;
+						line-height: 1.2em;
+					});
+					.media-breakpoint-up(@md; {
+						margin-bottom: 15px;
+					});
+				}
+				&-xs{
+					margin-bottom: 25px;
+					.media-breakpoint-up(@lg; {
+					    margin-bottom: 2.3vw;
+    					line-height: 1.5em;
+					});
+				}
+			}
+			&-leasing-base{
+				margin-bottom: 5px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 10px;
+				});
+			}
+			&-leasing-base-xs{
+				margin-bottom: 20px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 25px;
+				});				
+			}
+			&-leasing-base-result{
+				margin-bottom: 5px;
+				.media-breakpoint-down(@lg; {
+					font-size: 1.4em;
+				});
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 15px;
+					font-size: 2em;
+				});
+			}
+			&-leasing-order{
+				&{
+					margin-bottom: 15px;
+					.media-breakpoint-up(@lg; {
+						border-bottom: 1px solid @blue-light;
+						padding-bottom: 20px;						
+					});
+				}
+				&-result{
+					margin-bottom: 15px;
+					.media-breakpoint-up(@md; {
+						margin-bottom: 10px;
+					});
+				}
+				&-result-note{
+					max-width: 450px;
+					font-size: .88em;
+    				line-height: 1.55em;
+    				margin-bottom: 20px;
+				}
+			}
+		}
+		&.is--line{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&::before,
+			&::after{
+				content: '';
+				height: 1px;
+				background-color: @primary-l;
+				flex: 1 1 0;
+			}
+			&::before{
+				margin-right: 15px;
+			}
+			&::after{
+				margin-left: 15px;
+			}
+		}
+	}
+}

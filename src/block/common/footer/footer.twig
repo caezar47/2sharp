@@ -1,0 +1,59 @@
+<footer class="{{footer_prefix}}block">	
+	<div class="{{footer_prefix}}container container">
+		<div class="{{footer_prefix}}row">
+			<div class="{{footer_prefix}}cols  is--logotip">
+				<a href="{{page.index}}" class="{{footer_prefix}}logotip">
+					{% include "../svg-sprite/svg.twig" with {icon:"logotip"} %}
+				</a>
+			</div>
+			<div class="{{footer_prefix}}cols  is--contacts  is--address">
+				<p class="{{footer_prefix}}label">адрес</p>
+				<p class="{{footer_prefix}}value">{{contacts.address}}</p>
+				{# <p class="{{footer_prefix}}value">115184, Россия, Москва Большая Татарская</p> #}
+			</div>
+			<div class="{{footer_prefix}}cols  is--contacts  is--tel">
+				<p class="{{footer_prefix}}label">телефон</p>
+				<p class="{{footer_prefix}}value">
+					<a href="tel:{{contacts.phone_tel}}">{{contacts.phone}}</a>
+				</p>
+				<p class="{{footer_prefix}}value">
+					<a href="tel:{{contacts.phone2_tel}}">{{contacts.phone2}}</a>
+				</p>		
+			</div>
+			<div class="{{footer_prefix}}cols  is--contacts  is--email">
+				<p class="{{footer_prefix}}label">e-mail</p>
+				<a href="mailto:{{contacts.email}}" class="{{footer_prefix}}value">{{contacts.email}}</a>
+			</div>
+			<div class="{{footer_prefix}}cols  is--map">
+				<a class="{{footer_prefix}}map" href="{{page.contacts}}">на карте</a>
+			</div>
+			<div class="{{footer_prefix}}cols  is--lang">
+				{% include "../lang/tpl.twig" with {
+					prefix:"lang__",
+					mod:"is--footer",
+					active: lang_active, 
+					list:[
+						{name:"ru", link:lang_ru},
+						{name:"en", link:lang_en}
+					]} 
+				%}
+			</div>
+			<div class="{{footer_prefix}}copyright  {{footer_prefix}}cols  is--copyright">
+				2020 &copy; all rights reserved
+			</div>
+			<div class="{{footer_prefix}}cols  is--social">
+				{% include "../social/tpl.twig" with {
+					prefix:"social__",
+					mod:"is--block-footer", 
+					list:[
+						{name:"soc-v", link:soc.v},
+						{name:"soc-fb", link:soc.fb},
+						{name:"soc-inst", link:soc.inst},
+						{name:"soc-be", link:soc.be},
+						{name:"soc-yb", link:soc.yb},
+					]} 
+				%}
+			</div>
+		</div>	
+	</div>
+</footer>

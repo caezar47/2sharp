@@ -1,0 +1,31 @@
+.slider__{ 
+	&panel{
+		&.is--top{
+			background-color: @default;
+			padding: 10px 0;
+			*{visibility: hidden;}
+			&.slick-initialized *{ visibility: visible; }
+			.media-breakpoint-up(@md; {
+				padding: 20px 0;
+			});
+		}
+	}
+	&item{}
+	&heading{
+		&.is--top{ 
+			color: @default;
+			font-family: @site_ff_custom;
+			font-size: 1.33em;
+			line-height: 1.3em;
+			text-shadow: 
+				0px 1px 1px @white,
+				0px -1px 1px @white,
+				1px 0px 1px @white,
+				-1px 0px 1px @white;
+			.media-breakpoint-up(@md; {
+				font-size: 1.778em;
+				line-height: 1.25em;
+			});
+		}
+	}
+}

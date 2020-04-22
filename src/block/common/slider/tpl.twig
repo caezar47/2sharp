@@ -1,0 +1,9 @@
+{% if view == "top" %}
+<section class="{{prefix}}panel  {{mod}}" data-slick-top>
+	{% for value in list %}		
+	<div class="{{prefix}}item  {{mod}}">
+		<p class="{{prefix}}heading  {{mod}}" {% if value.color %} style="text-shadow: 0px 1px 1px {{value.color}}, 0px -1px 1px {{value.color}}, 1px 0px 1px {{value.color}}, -1px 0px 1px {{value.color}};"{% endif %}>{{value.name}}</p>
+	</div> 
+	{% endfor %}
+</section>
+{% endif %}

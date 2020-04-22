@@ -1,0 +1,42 @@
+{% if view == "404_page" %}
+<section class="{{content_prefix}}panel  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+	<div class="{{content_prefix}}container container  {{content_mod}}">	
+		<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+			<div>		
+				{% include "../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_xl_mod,
+					level:heading_xl_level, 
+					heading:heading_xl
+				} %}				
+				{% include "../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod,
+					level:heading_level, 
+					heading:heading
+				} %}	
+			</div>
+			<div>
+				<ul class="{{content_prefix}}nav  {{content_mod}}">
+					<li class="{{content_prefix}}nav-item  {{content_mod}}">Рекомендуем посмотреть:</li>
+					{% for value in list %}
+					<li class="{{content_prefix}}nav-item  {{content_mod}}">
+						<a href="{{value.link}}" class="{{content_prefix}}nav-link  {{content_mod}}">{{value.name}}</a>
+					</li>
+				{% endfor %}					
+				</ul>
+				{% include "../common/form/form.twig" with {
+					view: 			"search", 
+					prefix:			prefix.form, 
+					mod:			"is--page-404",  
+					color:			"is--success-black", 
+					ID: 			"f_search", 
+					placeholder:	"Поиск по сайту",
+					btn_mod:		"",
+					btn_name:		"Поиск техники"
+				} %}
+			</div>	
+		</div>
+	</div>
+</section>
+{% endif %}

@@ -1,0 +1,59 @@
+<section class="{{content_prefix}}panel  {{content_mod}}">
+	<div class="{{content_prefix}}container container  {{content_mod}}">	
+		{% include "../common/breadcrumb/tpl.twig" with {
+			prefix:prefix.breadcrumb, 
+			mod:bread_mod, 
+			bread:bread
+		} %}	
+		{% include "../common/page-header/tpl.twig" with {
+			prefix:"page-header__", 
+			mod:heading_mod,
+			level:heading_level, 
+			heading:heading
+		} %}
+		<div class="grid__row  is--columns-6">
+			<div>
+				{% include "../common/form/form.twig" with {
+					view: 			"leasing_order", 
+					prefix:			prefix.form, 
+					group:			"  ", 
+					mod:			"is--leasing-order", 
+					color:			"is--primary-light", 
+					ID: 			"f_leasing-order", 
+					form_data: 		"data-step-form", 
+
+					heading:		"Заявка на лизинг", 
+					heading_level:	"h3", 
+					heading_group:	"", 
+					heading_mod:	"is--h3  fw--700  is--form-leasing-order",
+					heading_sm:		"Оставьте заявку, и наш консультант перезвонит!", 
+					heading_sm_level:"p", 
+					heading_sm_mod:	"is--h6  fw--100  is--form-leasing-order-xs",
+					heading_r:		"Спасибо,<br> Заявка отправлена!", 
+					heading_r_level:"h3", 
+					heading_r_mod:	"is--h3 fw--700  is--form-leasing-order-result",
+					heading_r_sm:	"После получения вашей заявки, наш консультант перезвонит вам, расскажет подробнее об условиях приобретении нужной вам техники, а также пришлет всю информацию на почту.", 
+					heading_r_sm_level:	"p", 
+					heading_r_sm_mod:	"fw--100    is--form-leasing-order-result-note"
+				} %}
+			</div>
+			<div>
+				{% include "../common/button/btn.twig" with {
+					view:"modal",
+					prefix:"btn__", 
+					mod:"", 
+					target:"modal-leasing", 
+					name:"Форма в модальном окне"
+				}%}
+				<p>&nbsp;</p>
+				{% include "../common/button/btn.twig" with {
+					view:"modal",
+					prefix:"btn__", 
+					mod:"", 
+					target:"modal-call", 
+					name:"Обратный звонок"
+				}%}
+			</div>
+		</div>
+	</div>
+</section>

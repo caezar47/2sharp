@@ -1,0 +1,161 @@
+{% if view == "articles_page"%}
+	<main class="{{content_prefix}}panel">
+		<div class="{{content_prefix}}container container">
+			{% include "../../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}	
+			<div class="page-header__panel  row  {{heading_group}}  {{content_mod}}">
+				<div class="cols">
+					{% include "../../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}
+				</div>
+				<div class="cols">
+					{% include "../../common/form/elem-tpl.twig" with {
+						view: "select", 
+						prefix:prefix.form, 
+						mod:"is--filter", 
+						form_id:ID,
+						id:"city", 
+						label:"Сортировать:", 
+						form_id:"filter", 
+						id:"select",  
+						attr:"data-select-inline", 
+						list: [
+							{"name": "по дате","status": "selected"},
+							{"name": "по новизне"},
+							{"name": "по&nbsp;популярности"}
+						]
+					} %}
+				</div>
+			</div>	
+
+				{% include "../../common/card/card.twig" with {
+				 	view: "articles", 
+				 	prefix:prefix.card, 
+				 	mod:"is--articles", 
+				 	list: [
+				 		{
+				 			"heading":"Полуприцеп рефрижератор б/у в лизинг", 
+				 			"link":page.articles_card, 
+				 			"date":"20.11.2019 15:37:00", 
+				 			"date_iso":"2019-10-11"
+				 		},
+				 		{
+				 			"heading":"Коммерческие автомобили малой грузоподъемности в лизинг", 
+				 			"link":page.articles_card, 
+				 			"date":"20.11.2019 15:37:00", 
+				 			"date_iso":"2019-10-11"
+				 		},
+				 		{
+				 			"heading":"Грузовой автомобиль малой грузоподъемности в лизинг", 
+				 			"link":page.articles_card, 
+				 			"date":"20.11.2019 15:37:00", 
+				 			"date_iso":"2019-10-11"
+				 		},
+				 		{
+				 			"heading":"Газель рефрижератор в лизинг", 
+				 			"link":page.articles_card, 
+				 			"date":"20.11.2019 15:37:00", 
+				 			"date_iso":"2019-10-11"
+				 		},
+				 		{
+				 			"heading":"Б/У рефрижератор в лизинг", 
+				 			"link":page.articles_card, 
+				 			"date":"20.11.2019 15:37:00", 
+				 			"date_iso":"2019-10-11"
+				 		},
+				 		{
+				 			"heading":"Автомобиль малой грузоподъемности в лизинг", 
+				 			"link":page.articles_card, 
+				 			"date":"20.11.2019 15:37:00", 
+				 			"date_iso":"2019-10-11"
+				 		},
+				 		{
+				 			"heading":"Лизинг новых эксакавторов-погрузчиков", 
+				 			"link":page.articles_card, 
+				 			"date":"20.11.2019 15:37:00", 
+				 			"date_iso":"2019-10-11"
+				 		},
+				 		{
+				 			"heading":"Лизинг б/у экскаваторов-погрузчиков", 
+				 			"link":page.articles_card, 
+				 			"date":"20.11.2019 15:37:00", 
+				 			"date_iso":"2019-10-11"
+				 		},
+				 		{
+				 			"heading":"Комбайны Acros в лизинг", 
+				 			"link":page.articles_card, 
+				 			"date":"20.11.2019 15:37:00", 
+				 			"date_iso":"2019-10-11"
+				 		},
+				 		{
+				 			"heading":"Трактор в лизинг для юридических лиц", 
+				 			"link":page.articles_card, 
+				 			"date":"20.11.2019 15:37:00", 
+				 			"date_iso":"2019-10-11"
+				 		}
+				 	]} 
+				%}
+				
+				{% include "../../common/pagination/tpl.twig" with {
+				 	prev: "true", 
+				 	next: "true", 
+				 	view: "news", 
+				 	prefix:prefix.pagination,
+				 	group: "is--pagination", 
+				 	active: "2",
+				 	list: [
+				 		{name: "1"},
+				 		{name: "2"},
+				 		{name: "3"},
+				 		{name: "4"},
+				 		{name: "5"},
+				 		{name: "6"},
+				 		{name: "7"},
+				 		{name: "8"}
+				 	]
+				}%}
+		</div>
+	</main>
+{% endif %}
+
+{% if view == "articles_card"%}
+	<main class="{{content_prefix}}panel">
+		<div class="{{content_prefix}}container container">
+			{% include "../../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}	
+			<div class="page-header__panel  row  {{heading_group}}  {{content_mod}}">
+				<div class="cols">
+					{% include "../../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}
+				</div>
+				<div class="cols">
+					<a href="{{page.articles}}" class="{{prefix.link}}item  is--prev  is--md">Назад к статьям</a>				
+				</div>
+			</div>
+
+			{% include "../../common/card/card.twig" with {
+			 	view: "news_card", 
+			 	prefix:prefix.card, 
+			 	mod:"is--news-card",
+					heading:heading_sm,
+					date:"11.10.2019", 
+					date_iso:"2019-10-11", 
+					note:"<p>В&nbsp;Саратове Автопробег по&nbsp;традиции проходит осенью. Но&nbsp;холодная и&nbsp;дождливая погода ─ не&nbsp;повод для хандры, ведь у&nbsp;предпринимателей города появляется прекрасная возможность приобрести новую технику ГАЗ с&nbsp;ощутимой выгодой. </p><p>Илья Плешаков, менеджер лизинговых проектов, г. Саратов:<br> —&nbsp;С&nbsp;5&nbsp;по&nbsp;8&nbsp;ноября совместно с&nbsp;«АвтоцентрГАЗ-Лидер» мы&nbsp;ездили общаться с&nbsp;повторными и&nbsp;новыми клиентами, для которых провели презентацию ГАЗона полной массой 10&nbsp;тонн. График поездок из-за праздников был довольно плотный,<br> но&nbsp;свой план мы&nbsp;выполнили и&nbsp;встретились с&nbsp;представителями разных сфер бизнеса: грузовые перевозки, геологоразведочные работы, пассажирские перевозки, строительство и&nbsp;т.&nbsp;д. </p><p>Машину уже достаточно хорошо знают, но&nbsp;с&nbsp;удовольствием тестировали и&nbsp;ездили. Многих клиентов интересовала новинка от&nbsp;ГАЗ&nbsp;—<br> 3х-литровый Next на&nbsp;метане, т.&nbsp;к. именно небольшие коммерческие автомобили категории «В» являются приоритетным выбором большинства предприятий. Мы&nbsp;вручили сертификаты со&nbsp;скидкой участникам Автопробега и&nbsp;уже оформляем сделки.</p>"			 		
+		 	} %}
+		</div>
+	</main>
+{% endif %}

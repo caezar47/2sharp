@@ -1,0 +1,362 @@
+{% if view == "leasing_header" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}" {% if bg %}style="background-image: url({{bg}});"{% endif %}>
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../../common/breadcrumb/tpl.twig" with {
+				prefix:prefix.breadcrumb, 
+				mod:bread_mod, 
+				bread:bread
+			} %}			
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}			
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_sm_mod,
+				level:heading_sm_level, 
+				heading:heading_sm
+			} %}		
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_val_mod,
+				level:heading_val_level, 
+				heading:heading_val
+			} %}
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_condition" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">	
+			<div class="{{content_prefix}}row  grid__row   {{content_mod}}">
+				<div>
+					{% include "../../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}			
+					{% include "../../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_sm_mod,
+						level:heading_sm_level, 
+						heading:heading_sm
+					} %}	
+					<div class="{{content_prefix}}row  row  {{content_mod}}-label">
+						{% for value in list %}						
+						<p class="{{content_prefix}}label  cols  {{value.mod}}  {{content_mod}}">{{value.label}} <span>{{value.value}}</span></li>
+						{% endfor %}
+					</div>	
+				</div>	
+				<div>
+					{% include "../../common/form/form.twig" with {
+						view: 			"leasing_base", 
+						prefix:			prefix.form, 
+						open:			"true", 
+						group:			"is--md-open", 
+						mod:			"is--leasing-base", 
+						color:			"is--primary-light", 
+						ID: 			"f_leasing-base", 
+						heading:		"Запрос на лизинг", 
+						heading_level:	"h3", 
+						heading_mod:	"is--h3  fw--700  is--form-leasing-base",
+						heading_sm:		"Оставьте заявку, и наш консультант перезвонит!", 
+						heading_sm_level:"p", 
+						heading_sm_mod:	"is--h6  fw--100  is--form-leasing-base-xs",
+						heading_r:		"Спасибо!<br> Заявка отправлена", 
+						heading_r_level:"h3", 
+						heading_r_mod:	"is--h2 fw--700  is--form-leasing-base-result",
+						heading_r_sm:	"В ближайшее время наш консультант перезвонит вам и ответит на вопросы.", 
+						heading_r_sm_level:	"p", 
+						heading_r_sm_mod:	"is--h6  fw--100"
+					} %}	
+				</div>	
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_formaliz" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}		
+			<div class="{{content_prefix}}row  grid__row   {{content_mod}}">
+				<div>				
+					{% include "../../common/tabs/tpl.twig" with {
+						view:"leasing_formaliz",
+						tabs:"leasing_", 
+						prefix:prefix.tabs,
+						mod:"is--default",
+						group:content_mod,
+						list:list
+					} %}
+				</div>
+				<picture>
+					<img src="{{path.img}}/default/leasing-formaliz.svg" class="img-responsive" alt="">
+				</picture>
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_adv" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}		
+			<div class="{{content_prefix}}slider   {{content_mod}}" data-slick-leasing-adv>				
+				{% for value in list %}
+				<div class="item  {{value.status}}">
+					<div class="{{prefix.card}}item  {{content_mod}}">
+						<div class="{{prefix.card}}heading  {{content_mod}}">
+							{{value.name}}
+						</div>
+						<div class="{{prefix.card}}preview  {{content_mod}}">
+							<img src="{{value.preview}}" alt="">
+						</div>	
+						<div class="{{prefix.card}}icon  {{content_mod}}">
+							<img src="{{value.icon}}" alt="" class="img-responsive">
+						</div>							
+						<div class="{{prefix.card}}note  {{content_mod}}">{{value.note}}</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{# {% if view == "leasing_adv" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}		
+			<div class="{{content_prefix}}slider   {{content_mod}}">
+				<div id="carousel-example-generic" class="{{prefix.card}}carousel  carousel slide  {{content_mod}}" data-ride="carousel">
+					<div class="{{prefix.card}}carousel-inner  {{content_mod}}  carousel-inner" role="listbox">
+						{% for value in list %}
+						<div class="item  {{value.status}}">
+							<div class="{{prefix.card}}card  {{content_mod}}">
+								<div class="{{prefix.card}}heading  {{content_mod}}">
+									{{value.name}}
+								</div>
+								<div class="{{prefix.card}}preview  {{content_mod}}">
+									<img src="{{value.preview}}" alt="">
+								</div>	
+								<div class="{{prefix.card}}icon  {{content_mod}}">
+									<img src="{{value.icon}}" alt="" class="img-responsive">
+								</div>							
+								<div class="{{prefix.card}}note  {{content_mod}}">{{value.note}}</div>
+							</div>
+						</div>
+						{% endfor %}						
+					</div>
+					<ol class="{{prefix.card}}carousel-indicators  {{content_mod}} carousel-indicators">
+						{% set i = 0 %}
+						{% for value in list %}
+						<li data-target="#carousel-example-generic" data-slide-to="{{i}}" class="{{value.status}}"></li>
+						{% set i = i + 1 %}
+						{% endfor %}
+					</ol>
+					<a class="{{prefix.card}}carousel-control  {{content_mod}}  is--left" href="#carousel-example-generic" role="button" data-slide="prev"><span class="sr-only">Предыдущий слайд</span></a>
+					<a class="{{prefix.card}}carousel-control  {{content_mod}}  is--right" href="#carousel-example-generic" role="button" data-slide="next"><span class="sr-only">Следующий слайд</span></a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %} #}
+
+{% if view == "leasing_brand" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">	
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod,
+					level:heading_level, 
+					attr:"data-grid-heading", 
+					heading:heading
+				} %}
+				<p data-grid-link><a href="{{page.partners}}" class="link__item  is--next  is--success"  >Все бренды</a></p>				
+				<hr data-grid-hr>
+				{% include "../../common/card/card.twig" with {
+				 	view: "brand", 
+				 	prefix:prefix.card, 
+				 	mod:"is--brand", 
+				 	list: list
+				} %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_conditions" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				<div>	
+					{% include "../../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}
+					<ul class="{{prefix.tabs}}nav  is--default  is--column">
+						{% for value in list %}
+						<li class="{{prefix.tabs}}item  is--default  is--column  {{value.status}}">
+							<a class="{{prefix.tabs}}link  is--default" href="#{{tabs}}{{value.id}}" data-toggle="tab">{{value.name}}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div>
+					{% for value in list %}
+					<div class="{{prefix.tabs}}pane  {{value.status}}" id="{{tabs}}{{value.id}}">
+						<div class="text__block  {{content_mod}}">
+							{{value.note}}
+						</div>
+					</div>
+					{% endfor %}
+				</div>				
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_partners" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod,
+					level:heading_level, 
+					heading:heading,
+					attr:"data-grid-heading"
+				} %}
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_sm_mod,
+					level:heading_sm_level, 
+					heading:heading_sm,
+					attr:"data-grid-note"
+				} %}
+				<p data-grid-link><a href="{{link}}" class="link__item  is--next  is--success"  >Все партнеры</a></p>
+				<hr data-grid-hr>
+			
+				<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-partners>
+					{% include "../../common/card/card.twig" with {
+					 	view: "partners", 
+					 	prefix:prefix.card, 
+					 	mod:"is--partners", 
+					 	list: list
+					} %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_seo" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="panel-group" id="{{list_group}}" role="tablist" aria-multiselectable="true">
+				{% for value in list %}
+				<div class="{{prefix}}item  {{mod}}  panel">
+					<div class="{{prefix}}heading  {{mod}}" role="tab" id="{{value.h_id}}">
+						<a role="button" data-toggle="collapse" data-parent="#{{list_group}}" href="#{{value.id}}" {% if value.status == "active" %}aria-expanded="true"{% endif %} aria-controls="{{value.id}}">
+							{{value.name}}
+						</a>
+					</div>
+					<div id="{{value.id}}" class="panel-collapse collapse {% if value.status == "active" %}in{% endif %}" role="tabpanel" aria-labelledby="{{value.h_id}}">
+						<div class="{{prefix}}wrap {% if value.form == "true" %}	grid__row{% endif %}  {{mod}}">
+							<div class="text__block  {{mod}}">
+						        {{value.note}}
+						    </div>
+						    {% if value.form == "true" %}					    
+								{% include "../../common/form/form.twig" with {
+									view: 			"leasing_base", 
+									prefix:			"form__", 
+									mod:			"is--leasing-base", 
+									color:			"is--primary-light", 
+									ID: 			"f_leasing-base-seo", 
+									heading:		"Запрос на лизинг", 
+									heading_level:	"h3", 
+									heading_mod:	"is--h3  fw--700  is--form-leasing-base",
+									heading_sm:		"Оставьте заявку, и наш консультант перезвонит!", 
+									heading_sm_level:"p", 
+									heading_sm_mod:	"is--h6  fw--100  is--form-leasing-base-xs",
+									heading_r:		"Спасибо!<br> Заявка отправлена", 
+									heading_r_level:"h3", 
+									heading_r_mod:	"is--h2 fw--700  is--form-leasing-base-result",
+									heading_r_sm:	"В ближайшее время наш консультант перезвонит вам и ответит на вопросы.", 
+									heading_r_sm_level:	"p", 
+									heading_r_sm_mod:	"is--h6  fw--100"
+								}%}
+							{% endif %}
+					    </div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "leasing_block" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			{% if heading %}
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod,
+					level:heading_level, 
+					heading:heading
+				} %}
+			{% endif %}
+			<div class="{{content_prefix}}row  is--block-leasing" data-slick-leasing>
+				{% include "../../common/card/card.twig" with {
+					view:"programm", 
+					prefix: prefix.card, 
+					mod:"is--programm", 
+					list: [
+						{
+							"heading":"Льготный<br> лизинг",
+							"link":"#", 
+							"note":"Приобретайте новую коммерческую технику в лизинг, в обмен на старую!",
+							"value":"от 15%"
+						},
+						{
+							"heading":"Лизинг<br> с Trade-in", 
+							"link":"#",  
+							"note":"Получите спецтехнику в лизинг со скидкой на аванс до 15% от ее стоимости!",
+							"value":"от 15%"
+						},
+						{
+							"heading":"Лизинг<br> б/у техники", 
+							"link":"#", 
+							"note":"Получите спецтехнику в лизинг со скидкой на аванс до 15% от ее стоимости!",
+							"value":"от 20%"
+						}
+					]
+				} %}
+			</div> 
+		</div>
+	</section> 
+{% endif %}
