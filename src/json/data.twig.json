@@ -30,14 +30,14 @@
 
 	"page":{
 		"index":"./",
+		"index":"#",
 		"works":"./works.html",
 		"works_card":"./works-card.html",
 		"agency":"./agency.html",
+		"agency":"#",
 		"agency_en":"./agency-en.html",
-		"contacts":"./contacts.html",
-		"404":"./404.html",
-		"sitemap":"./sitemap.html",
-		"style":"./style.html"
+		"agency_en":"#",
+		"contacts":"./contacts.html"
 	},
 	"prefix":{
 		"content":"content-block__",
