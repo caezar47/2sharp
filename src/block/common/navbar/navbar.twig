@@ -32,7 +32,7 @@
 						<ul class="{{navbar_prefix}}nav">
 							{% set navbar = [
 								{"name":"Главная", "link":""},
-								{"name":"Работы", "link":""},
+								{"name":"Работы", "link":page.works},
 								{"name":"Агентство", "link":""},
 								{"name":"Шоурум", "link":""},
 								{"name":"Контакты", "link":page.contacts},
@@ -45,10 +45,64 @@
 							</li>
 						    {% endfor %}
 						</ul>
+					</div>
+					{% if filter %}
+					<div class="{{navbar_prefix}}collapse-cols  is--filter">
+						{% include "../filter/tpl.twig" with {
+							prefix:"filter__",
+							id:"filter",
+							active: true,
+		                    list:[
+		                        {
+		                        	id:"cat",
+		                        	name:"категории",
+									active: true,
+									sublist:[
+				                        {name:"авто"},
+				                        {name:"девелопмент"},
+				                        {name:"еда/напитки"},
+				                        {name:"медицина"},
+				                        {name:"образование"},
+				                        {name:"рестораны/кафе"},
+				                        {name:"ритейл"},
+				                        {name:"СМИ/ТВ/медиа"},
+				                    ],
+		                    	},
+		                        {
+		                        	id:"serv",
+		                        	name:"услуги",
+		                    	},
+		                        {
+		                        	id:"clients",
+		                        	name:"клиенты",
+		                    	}
+		                    ] 
+						} %}  
+					</div>							
+					{% endif %}	
+					<div class="{{navbar_prefix}}collapse-cols  is--lang">
+		                {% include "../lang/tpl.twig" with {
+		                    prefix:"lang__",
+		                    mod:"is--navbar",
+		                    active: active, 
+		                    list:[
+		                        {name:"ru", link:lang_ru},
+		                        {name:"en", link:lang_en}
+		                    ]} 
+		                %}				   
 					</div>	
-					<div class="{{navbar_prefix}}collapse-cols  is--lang">					   
-					</div>	
-					<div class="{{navbar_prefix}}collapse-cols  is--soc">					   
+					<div class="{{navbar_prefix}}collapse-cols  is--soc">	
+						{% include "../social/tpl.twig" with {
+							prefix:"social__",
+							mod:"is--navbar", 
+							list:[
+								{name:"soc-v", link:soc.v},
+								{name:"soc-fb", link:soc.fb},
+								{name:"soc-inst", link:soc.inst},
+								{name:"soc-be", link:soc.be},
+								{name:"soc-yb", link:soc.yb},
+							]} 
+						%}				   
 					</div>						   
 				</div>
 			</div>

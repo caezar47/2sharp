@@ -1,0 +1,26 @@
+<div class="{{prefix}}block">
+	<a href="#{{id}}_panel" data-toggle="collapse"  aria-expanded="{% if active %}true{% else %}false{% endif %}" class="{{prefix}}heading">
+		фильтр <span>{% include "../svg-sprite/svg.twig" with {icon:"marker"} %}</span>
+	</a>
+	<div id="{{id}}_panel" class="collapse  {% if active %}in{% endif %}">
+		<div class="{{prefix}}group  panel-group" id="{{id}}" role="tablist">
+			{% for value in list %}
+			<div class="{{prefix}}panel  panel">
+				<a class="{{prefix}}link" role="button" data-toggle="collapse" data-parent="#{{id}}" href="#{{id}}_{{value.id}}" aria-expanded="{% if value.active %}true{% else %}false{% endif %}">
+					<span>{% include "../svg-sprite/svg.twig" with {icon:"marker"} %}</span> {{value.name}}
+				</a>
+				<div id="{{id}}_{{value.id}}" class="collapse {% if value.active %}in{% endif %}" role="tabpanel">
+					<div class="{{prefix}}item-group">
+						{% for v in value.sublist %}
+						<label class="{{prefix}}item">
+							<input type="checkbox" class="{{prefix}}input">
+							<span class="{{prefix}}name">{{v.name}}</span>
+						</label>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

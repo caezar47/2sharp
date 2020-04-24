@@ -1,17 +1,48 @@
-{% if view == "investors_header"%}
+{% if view == "works_page" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
-		<div class="{{content_prefix}}container container  {{content_mod}}">
-			{% include "../common/breadcrumb/tpl.twig" with {
-				prefix:prefix.breadcrumb, 
-				mod:bread_mod, 
-				bread:bread
-			} %}	
+		{% include "../common/page-header/tpl.twig" with {
+			prefix:"page-header__", 
+			mod:heading_mod,
+			level:heading_level, 
+			heading:heading
+		} %}
 
-			{% include "../common/page-header/tpl.twig" with {
-				prefix:"page-header__", 
-				mod:heading_mod,
-				level:heading_level, 
-				heading:heading
+		<div class="{{content_prefix}}filter  {{content_mod}}">
+			{% include "../common/filter/tpl.twig" with {
+				prefix:"filter__",
+				id:"filter_base",
+                list:[
+                    {
+                    	id:"cat",
+                    	name:"категории",
+						sublist:[
+	                        {name:"авто"},
+	                        {name:"девелопмент"},
+	                        {name:"еда/напитки"},
+	                        {name:"медицина"},
+	                        {name:"образование"},
+	                        {name:"рестораны/кафе"},
+	                        {name:"ритейл"},
+	                        {name:"СМИ/ТВ/медиа"},
+	                    ],
+                	},
+                    {
+                    	id:"serv",
+                    	name:"услуги",
+                	},
+                    {
+                    	id:"clients",
+                    	name:"клиенты",
+                	}
+                ] 
+			} %}  
+		</div>
+		<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+			{% include "../common/card/card.twig" with {
+			 	view: "works_card", 
+			 	prefix:prefix.card, 
+			 	mod:"is--works-card", 
+			 	list:list
 			} %}
 		</div>
 	</section>

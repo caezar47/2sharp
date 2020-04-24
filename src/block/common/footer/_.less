@@ -113,12 +113,15 @@
 				margin-bottom: 75px;
 			}
 			&.is--lang{
-				visibility: hidden;
+				//visibility: hidden;
 			}
 			&.is--social{
 				grid-column: 6;
 				grid-row: 3;
 			}
+		});
+		.media-breakpoint-up(@xxl; {
+			//&.is--social{display: none;}
 		});
 	}
 	&logotip{
@@ -148,7 +151,9 @@
 		});
 	}
 	&value{
-		color: @white;
+		&,&:hover{
+			color: @white;
+		}
 		a{
 			color: @white;
 		}

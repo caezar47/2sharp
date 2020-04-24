@@ -20,6 +20,11 @@ body {
 			padding-bottom: @navbar_bottom;
 		});
 	}
+	.media-breakpoint-down(@xl; {
+		padding-top: ~"calc(@{navbar_xs_height} + @{navbar_xs})";
+	});
+	.media-breakpoint-down(@md; {
+	});
 	//padding-top: @navbar_device;
 	.media-breakpoint-up(@lg; {
 		//padding-top: @navbar_screen;

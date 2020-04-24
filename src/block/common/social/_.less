@@ -1,11 +1,29 @@
-.social__{  
+.social__{
+	@g: 0.3vw; 
 	&panel{
+		position: relative;
 		margin: 0;
 		padding: 0;
 		list-style: none;
 		display: flex;
 		margin-left: -(@soc_gutter);
-		margin-right: -(@soc_gutter);
+		margin-right: -(@soc_gutter);				
+		&::after{
+			content: '';
+			position: absolute;
+			width: 17px;
+		    height: 80px;
+		    right: -19px;
+		    bottom: -19px;
+			background: linear-gradient(to bottom, @footer_bg 0%, @footer_bg 68%, @primary 68%, @primary 100%);
+		}
+		.media-breakpoint-up(@md; {
+			&::after{
+				height: 121px;					
+				right: -17px;
+				bottom: -43px;
+			}
+		});
 		&.is--block{
 			&-footer{
 				margin-left: -(@soc_gutter) + 5;
@@ -14,6 +32,38 @@
 					margin-left: -(@soc_gutter) + 3.5;
 					margin-right: -(@soc_gutter) + 3.5;
 				});
+				.media-breakpoint-up(@xxl; {
+					&.is--fixed{
+						position: fixed;
+						bottom: 0;
+						right: 0;
+						padding-bottom: 32px;
+						padding-right: 1.5vw;
+						margin-left: -@g;
+						margin-right: -@g;		
+						&::after{
+							width: 1.2vw;
+							bottom: 0;
+							right: 0;
+						}							
+					}				
+				});
+			}
+		}
+		&.is--navbar{
+			margin-left: -(@soc_gutter) + 5;
+			margin-right: -(@soc_gutter) + 5;			
+			&::after{
+				height: 77px;
+				right: -21px;
+				bottom: -18px;
+				background: linear-gradient(to bottom, @white 0%, @white 68%, @footer_bg 68%, @footer_bg 100%);
+
+			}
+		}
+		&.is--page{
+			&-contacts{
+				&::after{display: none;}
 			}
 		}
 	}
@@ -29,7 +79,17 @@
 					padding-left: @soc_gutter - 3.5;
 					padding-right: @soc_gutter - 3.5;
 				});
+				.media-breakpoint-up(@xxl; {				
+					.social__panel.is--fixed &{
+						padding-left: @g;
+						padding-right: @g;
+					}	
+				});
 			}
+		}
+		&.is--navbar{
+			padding-left: @soc_gutter - 5;
+			padding-right: @soc_gutter - 5;
 		}
 	}
 	&link{
@@ -63,6 +123,9 @@
 				&.is--soc-yb{
 					width: 16px;
 				}
+				&:hover{
+					color: @primary-h;
+				}
 				.media-breakpoint-up(@md; {
 					width: 16px;
 					height: 16px;
@@ -70,9 +133,31 @@
 						width: 20px;
 					}
 				});
-				&:hover{
-					color: @primary;
-				}
+				.media-breakpoint-up(@xxl; {					
+					.social__panel.is--fixed &{
+						color: @default;
+						&:hover{
+							color: @primary;
+						}
+					}
+					.social__panel.is--fixed.is--footer-pos &{
+						color: @primary;
+						&:hover{
+							color: @primary-h;
+						}
+					}
+				});
+			}
+		}
+		&.is--navbar{
+			color: @white;
+			width: 14px;
+			height: 14px;
+			&.is--soc-yb{
+				width: 18px;
+			}
+			&:hover{
+				color: @default;
 			}
 		}
 	}

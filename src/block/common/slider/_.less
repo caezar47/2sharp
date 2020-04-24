@@ -3,9 +3,21 @@
 		&.is--top{
 			background-color: @default;
 			padding: 10px 0;
+			font-size: @site_fs_xs;
+			line-height: @site_lh_xs;
 			*{visibility: hidden;}
 			&.slick-initialized *{ visibility: visible; }
-			.media-breakpoint-up(@md; {
+			.media-breakpoint-down(@xl; {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 100;
+				width: 100%;
+
+			});
+			.media-breakpoint-up(@xl; {
+				font-size: @site_fs;
+				line-height: @site_lh;
 				padding: 20px 0;
 			});
 		}
@@ -22,7 +34,7 @@
 				0px -1px 1px @white,
 				1px 0px 1px @white,
 				-1px 0px 1px @white;
-			.media-breakpoint-up(@md; {
+			.media-breakpoint-up(@xl; {
 				font-size: 1.778em;
 				line-height: 1.25em;
 			});

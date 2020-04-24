@@ -9,11 +9,18 @@
 			font-size: 0.778em;
 			line-height: 1.4em;
 		});
-		&.is--base{
+		/*&.is--base{
 			position: absolute;
 			top: 93%;
 			.media-breakpoint-down(@xl; {
 				display: none;
+			});
+		}*/
+		&.is--navbar{
+			font-size: 1.25em;
+			line-height: 1.4em;
+			.media-breakpoint-up(@md; {
+				font-size: 0.778em;
 			});
 		}
 		&.is--footer{
@@ -26,6 +33,12 @@
 		.lang__panel.is--footer-pos &,
 		&.is--footer{
 			border-right-color: @white;
+		}
+		&.is--navbar{
+			.media-breakpoint-down(@xl; {
+				padding-right: 9px;
+				margin-right: 9px;
+			});
 		}
 		&:last-child{
 			border: none;
@@ -47,6 +60,16 @@
 			&.is--active{
 				color: @primary;
 			}
+		}
+		&.is--navbar{
+			.media-breakpoint-down(@xl; {
+				color: @white;
+				&:hover,
+				&.is--active{
+					color: @black;
+				}
+
+			});
 		}
 	}
 }
