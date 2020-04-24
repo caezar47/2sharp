@@ -1,5 +1,16 @@
 .page-header__{
 	&panel{
+		&.is--page{
+			&-works-card{
+				margin-bottom: 28px; 
+				.media-breakpoint-up(@xl; {
+					margin-bottom: 100px;
+				});	
+				.media-breakpoint-up(@xxl; {
+					padding-left: 102px;
+				});				
+			}
+		}
 	}
 	&heading{
 		&.is--page{
@@ -11,6 +22,11 @@
 				.media-breakpoint-up(@xl; {
 					padding-left: 95px;
 					margin-bottom: 135px;
+				});
+			}
+			&-card{
+				.media-breakpoint-down(@xl; {
+					word-break: break-all;
 				});
 			}
 		}

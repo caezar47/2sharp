@@ -16,6 +16,35 @@
 	{% endfor %}
 {% endif %}
 
+{% if view == "works_gallery" %}
+	<div class="{{prefix}}group  {{mod}}">
+		{% for value in list %}		
+		<div class="{{prefix}}item  {{mod}}">
+			<div class="{{prefix}}row  {{mod}}  {{value.type}}">
+				{% for v in value.sublist %}
+				<div class="{{prefix}}preview  {{mod}}">
+					<img src="{{v.img}}" alt="" class="img-responsive">
+				</div>
+			{% endfor %}
+			</div>
+			{% if value.note %}<div class="{{prefix}}note  {{mod}}">{{value.note}}</div>{% endif %}		
+		</div> 
+		{% endfor %}
+	</div> 
+{% endif %}
+
+{% if view == "works_card_xs" %}
+	<div class="{{prefix}}row  {{mod}}">
+		{% for value in list %}		
+		<a href="{{value.link}}" class="{{prefix}}item  {{mod}}">
+			<div class="{{prefix}}preview  {{mod}}">
+				<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
+			</div>
+		</a> 
+		{% endfor %}
+	</div>
+{% endif %}
+
 {# old #}
 {% if view == "menedzhment" %}
 	{% for value in list %}		
