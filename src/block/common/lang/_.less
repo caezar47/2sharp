@@ -1,14 +1,15 @@
 .lang__{  
 	&panel{
 		display: flex;
+		align-items: center;
 		margin: 0;
 		padding: 0;
 		list-style: none;
-		font-size: 0.917em;
+		/*font-size: 0.917em;
 		.media-breakpoint-up(@md; {
 			font-size: 0.778em;
 			line-height: 1.4em;
-		});
+		});*/
 		/*&.is--base{
 			position: absolute;
 			top: 93%;
@@ -17,37 +18,28 @@
 			});
 		}*/
 		&.is--navbar{
-			font-size: 1.25em;
-			line-height: 1.4em;
-			.media-breakpoint-up(@md; {
-				font-size: 0.778em;
-			});
 		}
 		&.is--footer{
 		}
 	}
 	&item{
-		border-right: 1px solid @black;
-		padding-right: 6px;
-		margin-right: 6px;
-		.lang__panel.is--footer-pos &,
-		&.is--footer{
-			border-right-color: @white;
+		&.is--icon{
+			width: 6px;
+			height: 16px;
+			margin: 0 3px;
+			&.is--footer{
+				color: @primary;
+			}
+			&.is--navbar{
+				color: @black;
+				.media-breakpoint-up(@xl; {
+					color: @primary;
+				});
+			}
 		}
-		&.is--navbar{
-			.media-breakpoint-down(@xl; {
-				padding-right: 9px;
-				margin-right: 9px;
-			});
-		}
-		&:last-child{
-			border: none;
-			padding-right: 0px;
-			margin-right: 0px;
-		}
-
 	}
 	&link{
+		display: block;
 		color: @black;
 		&:hover,
 		&.is--active{
@@ -62,13 +54,17 @@
 			}
 		}
 		&.is--navbar{
-			.media-breakpoint-down(@xl; {
-				color: @white;
+			color: @white;
+			&:hover,
+			&.is--active{
+				color: @black;
+			}
+			.media-breakpoint-up(@xl; {
+				color: @black;
 				&:hover,
 				&.is--active{
-					color: @black;
+					color: @primary;
 				}
-
 			});
 		}
 	}

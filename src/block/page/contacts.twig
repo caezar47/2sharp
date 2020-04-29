@@ -1,4 +1,10 @@
-<section class="{{content_prefix}}panel  {{content_mod}}">
+<section class="{{content_prefix}}panel  is--page-base">		
+	{% include "../common/page-header/tpl.twig" with {
+		prefix:"page-header__", 
+		mod:heading_mod,
+		level:heading_level, 
+		heading:heading
+	} %}
 	<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
 		{% include "../common/continfo/tpl.twig" with {
 			view: "", 
@@ -45,17 +51,15 @@
 					]
 				}
 		]} %}
-		{% include "../common/social/tpl.twig" with {
-			prefix:"social__",
-			mod:"is--page-contacts", 
-			list:[
-				{name:"soc-v", link:soc.v},
-				{name:"soc-fb", link:soc.fb},
-				{name:"soc-inst", link:soc.inst},
-				{name:"soc-be", link:soc.be},
-				{name:"soc-yb", link:soc.yb},
-			]} 
-		%}
+		<div>
+			{% include "../common/button/btn.twig" with {
+				view:"modal",
+				prefix:"btn__", 
+				mod:"", 
+				target:"modal-order", 
+				name:"заказать проект"
+			} %}
+		</div>
 		{% include "../common/map/tpl.twig" with {
 			view:"google",
 			prefix:prefix.map,

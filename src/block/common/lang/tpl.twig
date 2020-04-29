@@ -1,9 +1,11 @@
 <ul class="{{prefix}}panel  {{mod}}">
-	{% for value in list %}	
 	<li class="{{prefix}}item  {{mod}}">
-		<a href="{{value.link}}" class="{{prefix}}link  {{mod}}  {% if value.link == active %}is--active{% endif %}">
-			{{value.name}}
-		</a>
+		<a href="{{lang_ru_link}}" class="{{prefix}}link  {{mod}}  {% if lang_ru_link == active %}is--active{% endif %}">ru</a>
 	</li>
-	{% endfor %}
+	<li class="{{prefix}}item  {{mod}}  is--icon">
+		{% include "../svg-sprite/svg.twig" with {icon:icon} %}
+	</li>
+	<li class="{{prefix}}item  {{mod}}">
+		<a href="{{lang_en_link}}" class="{{prefix}}link  {{mod}}  {% if lang_en_link == active %}is--active{% endif %}">en</a>
+	</li>
 </ul>

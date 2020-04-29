@@ -1,6 +1,9 @@
 'use strict';
 $(function() { 
 	var top = $('[data-slick-top]');
+	var works = $('[data-slick-works]');
+	var prevArrow = '<button type="button" class="slick-btn  is--prev"><span class="sr-only">Предыдущий слайд</span></button>';
+	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';
 	top.slick({
 		slidesToShow: 4,
 		slidesToScroll: 1,
@@ -27,20 +30,47 @@ $(function() {
 		    }
 		]
 	});
+	works.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		dots: false,
+		infinite: false,
+		prevArrow: prevArrow,
+		nextArrow: nextArrow,
+		responsive: [
+		    {
+				breakpoint: 3000,
+					settings: "unslick"
+				
+		    },
+		    {
+				breakpoint: 767,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1, 
+				}
+		    },
+		    {
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1, 
+				}
+		    }
+		]
+	});
 
 	//old
 	var header = $('[data-slick-header]');
 	var catalog = $('[data-slick-catalog]');
 	var partners = $('[data-slick-partners]');
 	var finance = $('[data-slick-finance]');
-	var leasing = $('[data-slick-leasing]');
 	var leasing_adv = $('[data-slick-leasing-adv]');
 	var adv = $('[data-slick-adv]');
 	var dots = $('[data-slick-dots]').data('slick-dots');
 	//console.log(dots);
 
-	var prevArrow = '<button type="button" class="slick-btn  is--prev"><span class="sr-only">Предыдущий слайд</span></button>';
-	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';
 
 	var count = $('.slick-count');
     
@@ -122,34 +152,6 @@ $(function() {
 	slickCatalog();
 	//destroySlickCatalog();
 
-	leasing.slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		dots: false,
-		infinite: false,
-		responsive: [
-		    {
-				breakpoint: 3000,
-					settings: "unslick"
-				
-		    },
-		    {
-				breakpoint: 767,
-				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 1, 
-				}
-		    },
-		    {
-				breakpoint: 576,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1, 
-				}
-		    }
-		]
-	});
 	leasing_adv.slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,

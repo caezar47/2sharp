@@ -44,19 +44,24 @@
 				{% include "../block/common/navbar/navbar.twig" with {
 					navbar_prefix:"navbar__",
 					navbar_mod:"is--second",
-					active:page.works_card,
-					lang_ru:page.works_card,
-					lang_en:page.agency_en
-				} %} 
+					active:page.contacts,
+					lang_icon: 'lang-left',
+					lang_ru: page.works_card,
+					lang_en: page.agency_en,
+					lang_active: page.contacts
+				} %}
 			</div>
 			<main class="content-block__main">
 				{% include "../block/page/works.twig" with {
 					view: "works_card",
 					content_prefix:"content-block__", 
 					content_mod:"is--page-works-card",
-					heading_mod:"is--h1  fw--500  color--primary  font-family--custom  is--page-works-card", 
+					heading_mod:"is--h1  fw--500  color--primary  font-family--custom  is--page-base-sm", 
 					heading_level:"h1", 
 					heading:"Tork", 
+					heading_xs_mod:"is--h3  fw--500  color--success  font-family--custom  is--page-base-xs", 
+					heading_xs_level:"h3", 
+					heading_xs:"Смотреть другие проекты", 
 					task: "<p>Tork&nbsp;— консервативный и&nbsp;лаконичный бренд, воплощение качества, минимализма и&nbsp;перфекционизма, признанное во&nbsp;всем мире.</p><p>Задача проекта заключалась в&nbsp;разработке визуальной концепции рекламных материалов в&nbsp;честь <nobr>20-летнего</nobr> юбилея компании Tork в&nbsp;России.</p>", 
 					decision: "<p>Чтобы создания ощущения праздника для российского юбилея компании мы&nbsp;создали динамичную айдентику, нехарактерную для классической коммуникации бренда. Смелый подход к&nbsp;дизайну говорит о&nbsp;том, что Tork «держит руку на&nbsp;пульсе» настоящего и&nbsp;уверенно смотрит в&nbsp;будущее. Идею вечной молодости и&nbsp;широких перспектив подчеркивает слоган кампании: «Tork 20&nbsp;лет. Все только начинается».</p>", 
 					label: "<span>Branding</span>", 
@@ -137,28 +142,34 @@
 					],
 					works:[
 						{
-							link: "#",
-							img:"http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg",
-						}, 
+						   link:"#",
+						   name:"М.Видео",
+						   note:"Оформление магазинов М.Видео к Новому Году",
+						   img:"http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg",
+						},
 						{
-							link: "#",
-							img:"http://www.2sharp.ru/data/upload/images/59942a75c4dfc.jpg",
-						}, 
+						   link:"#",
+						   name:"Хамовники",
+						   note:"Рекламная кампания безалкогольного пива",
+						   img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+						},
 						{
-							link: "#",
-							img:"http://www.2sharp.ru/data/upload/images/5994612b71e98.jpg",
+						   link:"#",
+						   name:"CROCUS CITY MALL",
+						   note:"Рестайлинг логотипа и концепция коммуникации",
+						   img:"http://www.2sharp.ru/data/upload/images/5994612b71e98.jpg",
 						}, 
 					],                    
 				} %} 
 			</main>
 		</div>
 		{% include "../block/common/footer/footer.twig" with {
-			footer_prefix:"footer__",
-			lang_ru: page.contacts,
-			lang_en: page.agency_en,
-			lang_active: page.contacts,
-			soc_group: 'is--fixed'
-		} %}
+            footer_prefix:"footer__",
+            lang_icon: 'lang-left',
+            lang_ru: page.works_card,
+            lang_en: page.agency_en,
+            lang_active: page.works_card
+        } %}
 
 		{# {% include "../block/common/modals/include.twig"%} #}
 		

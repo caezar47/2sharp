@@ -45,29 +45,26 @@
                     navbar_prefix:"navbar__",
                     navbar_mod:"is--second",
                     active:page.contacts,
-                    lang_ru:page.contacts,
-                    lang_en:page.agency_en
-                } %} 
-                {# {% include "../block/common/lang/tpl.twig" with {
-                    prefix:"lang__",
-                    mod:"is--base",
-                    active: page.contacts, 
-                    list:[
-                        {name:"ru", link:page.contacts},
-                        {name:"en", link:page.agency_en}
-                    ]} 
-                %} #}
+                    lang_icon: 'lang-left',
+                    lang_ru: page.contacts,
+                    lang_en: page.agency_en,
+                    lang_active: page.contacts
+                } %}
             </div>
             <main class="content-block__main">
                 {% include "../block/page/contacts.twig" with {
                     content_prefix:"content-block__", 
                     content_mod:"is--page-contacts",
+                    heading_mod:"is--h1  fw--500  color--primary  font-family--custom  is--page-base", 
+                    heading_level:"h1", 
+                    heading:"контакты",  
                 } %} 
             </main>
         </div>
 
     	{% include "../block/common/footer/footer.twig" with {
             footer_prefix:"footer__",
+            lang_icon: 'lang-left',
             lang_ru: page.contacts,
             lang_en: page.agency_en,
             lang_active: page.contacts

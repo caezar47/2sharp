@@ -36,6 +36,7 @@
 @black-29 					: 	#292929;
 @black-33 					: 	#333;
 @black-41 					: 	#414141;
+@black-50 					: 	#505050;
 @black-54 					: 	#545454;
 @black-63 					: 	#636363;
 @black-87 					: 	#878787; 
@@ -63,24 +64,28 @@
 @red 						:	#FF7A7A;
 @yellow 					:	#FF8E26;
 
+
+@green-h 					: 	#A1E100;
+
 //= default
 @white 						:	#fff;
 @black 						: 	#000;
-@black-14 					: 	#141518;
+@black-14 					: 	#181417;
 @green 						: 	#AFDE0E;
-@green-h 					: 	#A1E100;
-@green-a 					: 	#9CC708;
+@green-a 					: 	#95D212;
+@black-d0 					: 	#D0D0D0;
+@red 						:	#DB5610;
 
 @primary 					:	@green;
 @primary-h 					:	@green-h;
 @primary-a 					:	fadeout(@white, 100%);
 @primary-l 					:	fadeout(@white, 100%);
 @default 					:	@black-14;
-@warning 					:	fadeout(@white, 100%);
+@warning 					:	@red;
 @success 					:	@green-a;
 @success-h 					:	fadeout(@white, 100%);
 @success-a					:	fadeout(@white, 100%);
-@info 						:	fadeout(@white, 100%);
+@info 						:	@black-d0;
 @danger 					:	fadeout(@white, 100%);
 
 //===== fonts =====//
@@ -102,8 +107,11 @@
 
 @site_fs 					:	18px; 
 @site_lh 					:	24px; 
-@site_fs_xs 				:	12px; 
-@site_lh_xs 				:	16px; 
+@site_fs_xs 				:	16px; 
+@site_lh_xs 				:	24px; 
+
+@block_pl 					: 	120px;
+@block_pl 					: 	6.2vw;
 
 @b-ff 						:	@stem;
 @b-ff-2 					:	@druk-wide;
@@ -147,6 +155,8 @@
 
 @b-container  				:	1750px;
 @b-container-default  		:	1045px;
+@container_gap  			:	16px;
+
 
 //===== navbar =====//
 @navbar_header_bg 			:	@white;
@@ -154,16 +164,18 @@
 
 @navbar_logo_widht 			: 	149px;
 @navbar_logo_height 		: 	120px;
-@navbar_logo_device_widht 	: 	85px;
+@navbar_logo_device_widht 	: 	88px;
 @navbar_logo_device_height 	: 	32px;
 
-@navbar_humb_width 			:	42px;
-@navbar_humb_height 		: 	25px;
+@navbar_humb_width 			:	32px;
+@navbar_humb_height 		: 	22px;
 @navbar_humb_color 			:	@black;
 @navbar_humb_color_hover 	:	@black;
 @navbar_humb_color_active 	:	@black;
 
-@navbar_xs_humb_color 		:	@black;
+@navbar_xs_humb_bg			:	@primary;
+@navbar_xs_humb_color 		:	@white;
+@navbar_xs_humb_color_active :	@white;
 
 
 @navbar_nav_color 			:	@black;
@@ -502,7 +514,7 @@
 @soc_color 					: 	@primary;
 @soc_color_hover 			: 	@white;
 @soc_color_contacts  		:	@site_color;
-@soc_gutter 				:	10px; 
+@soc_gutter 				:	8px; 
 //===== end's  social =====//
 
 //===== slider slick =====//

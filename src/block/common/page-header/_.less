@@ -14,15 +14,28 @@
 	}
 	&heading{
 		&.is--page{
-			&-works{
-				margin-bottom: 25px; 
+			&-base{ 
+				margin-bottom: 30px;
 				.media-breakpoint-up(@md; {
-					margin-bottom: 45px;
-				});
+					margin-bottom: 40px;
+				});	
 				.media-breakpoint-up(@xl; {
-					padding-left: 95px;
-					margin-bottom: 135px;
-				});
+					margin-bottom: 110px;
+					padding-left: @block_pl;
+				});			
+			}
+			&-base-sm{ 
+				margin-bottom: 35px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 40px;
+				});	
+				.media-breakpoint-up(@xl; {
+					margin-bottom: 70px;
+					padding-left: @block_pl;
+				});			
+			}
+			&-base-xs{ 
+				margin-bottom: 30px;		
 			}
 			&-card{
 				.media-breakpoint-down(@xl; {

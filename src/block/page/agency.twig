@@ -1,0 +1,18 @@
+{% if view == "agency_page" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		{# {% include "../common/page-header/tpl.twig" with {
+			prefix:"page-header__", 
+			mod:heading_mod,
+			level:heading_level, 
+			heading:heading
+		} %} #}
+		<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+			{% include "../common/card/card.twig" with {
+			 	view: "team_card", 
+			 	prefix:prefix.card, 
+			 	mod:"is--team", 
+			 	list:list
+			} %}
+		</div>
+	</section>
+{% endif %}

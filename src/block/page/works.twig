@@ -1,12 +1,11 @@
 {% if view == "works_page" %}
-	<section class="{{content_prefix}}panel  {{content_mod}}">
+	<section class="{{content_prefix}}panel  is--page-base">
 		{% include "../common/page-header/tpl.twig" with {
 			prefix:"page-header__", 
 			mod:heading_mod,
 			level:heading_level, 
 			heading:heading
 		} %}
-
 		<div class="{{content_prefix}}filter  {{content_mod}}">
 			{% include "../common/filter/tpl.twig" with {
 				prefix:"filter__",
@@ -16,6 +15,7 @@
                     	id:"cat",
                     	name:"категории",
 						sublist:[
+	                        {name:"все"},
 	                        {name:"авто"},
 	                        {name:"девелопмент"},
 	                        {name:"еда/напитки"},
@@ -49,25 +49,13 @@
 {% endif %}
 
 {% if view == "works_card" %}
-	<section class="{{content_prefix}}panel  {{content_mod}}">
-		<div class="{{prefix.heading}}panel  {{content_mod}}">
-			<p class="{{content_prefix}}link  {{content_mod}}">
-				{% include "../common/button/btn.twig" with {
-					view:"link",
-					prefix:"link__", 
-					icon:"arrow-back", 
-					mod:"is--prev", 
-					link:page.works, 
-					name:"назад к проектам" 
-				} %}	
-			</p>
-			{% include "../common/page-header/tpl.twig" with {
-				prefix:"page-header__", 
-				mod:heading_mod,
-				level:heading_level, 
-				heading:heading
-			} %}
-		</div>
+	<section class="{{content_prefix}}panel  is--page-base">
+		{% include "../common/page-header/tpl.twig" with {
+			prefix:"page-header__", 
+			mod:heading_mod,
+			level:heading_level, 
+			heading:heading
+		} %}
 		<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
 			<div class="{{prefix.card}}item  {{content_mod}}" >
 				<h2 class="{{prefix.card}}heading  {{content_mod}}">задача</h3>
@@ -93,18 +81,26 @@
 		} %}			
 		<div class="{{content_prefix}}btn  {{content_mod}}">
 			{% include "../common/button/btn.twig" with {
-				view:"link",
-				prefix:"link__", 
-				icon:"arrow-next", 
-				mod:"is--next-rect", 
-				link:page.works_card, 
+				view:"modal",
+				prefix:"btn__", 
+				mod:"", 
+				target:"modal-order", 
+				name:"заказать проект"
 			} %}
 		</div>
-		{% include "../common/card/card.twig" with {
-		 	view: "works_card_xs", 
-		 	prefix:prefix.card, 
-		 	mod:"is--works-card-xs", 
-		 	list:works
+		{% include "../common/page-header/tpl.twig" with {
+			prefix:"page-header__", 
+			mod:heading_xs_mod,
+			level:heading_xs_level, 
+			heading:heading_xs
 		} %}
+		<div class="{{content_prefix}}slider  is--block-works"  data-slick-works>
+			{% include "../common/card/card.twig" with {
+			 	view: "works_card", 
+			 	prefix:prefix.card, 
+			 	mod:"is--works-card  is--block", 
+			 	list:works
+			} %}
+		</div>
 	</section>
 {% endif %}

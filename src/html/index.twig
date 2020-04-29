@@ -50,7 +50,11 @@
                 } %} 
             </div>
             <main class="content-block__main">
-                
+                {% include "../block/page/index.twig" with {
+                    view: "works_card",
+                    content_prefix:"content-block__", 
+                    content_mod:"is--page-index",               
+                } %} 
             </main>
         </div>
         {% include "../block/common/footer/footer.twig" with {
