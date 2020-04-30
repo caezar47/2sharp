@@ -1,5 +1,5 @@
 <div class="{{prefix}}block">
-	<div class="{{prefix}}group  panel-group" id="{{id}}" role="tablist">
+	<div class="{{prefix}}group  panel-group" id="{{id}}"  data-tablist role="tablist">
 		{% for value in list %}
 		<div class="{{prefix}}panel  panel  {% if value.active %}is--open{% endif %}">
 			<a class="{{prefix}}link" role="button" data-toggle="collapse" data-parent="#{{id}}" href="#{{id}}_{{value.id}}" aria-expanded="{% if value.active %}true{% else %}false{% endif %}">

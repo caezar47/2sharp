@@ -13,12 +13,13 @@
 			padding-bottom: 75px;
 			display: grid;
 			//grid-template-columns: minmax(150px, 215px) 1fr;
-			grid-template-columns: minmax(150px, 11.2vw) 1fr;
+			//grid-template-columns: minmax(150px, 11.2vw) 1fr;
+			grid-template-columns: minmax(150px, 11.2vw) minmax(auto, 81.5vw) 1fr;
 			grid-gap: 30px 24px;
 		});
 		.media-breakpoint-up(@xxl; {
-			padding-left: 6.7vw;
-			padding-right: 6.7vw;
+			padding-left: @container_gap_xl;
+			padding-right: @container_gap_xl;
 		});
 		&-cols{
 			position: relative;
@@ -68,14 +69,6 @@
 	}
 	&row{
 		&.is--page{
-			&-agency{
-				.media-breakpoint-up(@md; {
-					grid-template-columns: repeat(3, 1fr);					
-				});
-				.media-breakpoint-up(@xxl; {
-					grid-gap: 30px 90px;
-				});
-			}
 			&-works{
 				grid-gap: 30px;
 				.media-breakpoint-up(@md; {
@@ -232,6 +225,11 @@
 	}
 	&btn{
 		&.is--page{
+			&-agency{
+				.media-breakpoint-up(@xl; {
+					padding-left: @block_pl;
+				});	
+			}
 			&-works-card{
 				text-align: center;
 				margin-bottom: 50px;

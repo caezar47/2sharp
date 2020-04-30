@@ -13,12 +13,13 @@
 			padding-bottom: 75px;
 			display: grid;
 			//grid-template-columns: minmax(150px, 215px) 1fr;
-			grid-template-columns: minmax(150px, 11.2vw) 1fr;
+			//grid-template-columns: minmax(150px, 11.2vw) 1fr;
+			grid-template-columns: minmax(150px, 11.2vw) minmax(auto, 81.5vw) 1fr;
 			grid-gap: 30px 24px;
 		});
 		.media-breakpoint-up(@xxl; {
-			padding-left: 6.7vw;
-			padding-right: 6.7vw;
+			padding-left: @container_gap_xl;
+			padding-right: @container_gap_xl;
 		});
 		&-cols{
 			position: relative;
@@ -68,14 +69,6 @@
 	}
 	&row{
 		&.is--page{
-			&-agency{
-				.media-breakpoint-up(@md; {
-					grid-template-columns: repeat(3, 1fr);					
-				});
-				.media-breakpoint-up(@xxl; {
-					grid-gap: 30px 90px;
-				});
-			}
 			&-works{
 				grid-gap: 30px;
 				.media-breakpoint-up(@md; {
@@ -232,6 +225,11 @@
 	}
 	&btn{
 		&.is--page{
+			&-agency{
+				.media-breakpoint-up(@xl; {
+					padding-left: @block_pl;
+				});	
+			}
 			&-works-card{
 				text-align: center;
 				margin-bottom: 50px;
@@ -428,6 +426,64 @@
 }
 .card__{
 	&item{
+		&.is--page{
+			&-agency{
+				&.is--right{
+				    margin-bottom: 40px;
+					.media-breakpoint-up(@md; {
+					    margin-left: auto;
+					    max-width: 370px;
+					    margin-top: -35px;
+					});
+					.media-breakpoint-up(@xl; {
+					    padding-right: 90px;
+					    max-width: 570px;
+					});
+				}
+				&.is--whowow{
+					position: relative;
+					max-width: 328px;
+					.media-breakpoint-up(@md; {
+						max-width: 350px;
+					});
+					.media-breakpoint-up(@lg; {
+						max-width: 955px;
+					});
+					.media-breakpoint-up(@xl; {
+						padding-left: @block_pl;
+					});	
+					.media-breakpoint-up(@xxl; {
+						max-width: 1200px;
+					});
+				}
+				&.is--approach{
+					margin-top: -23px;
+					margin-bottom: 45px;
+					.media-breakpoint-up(@md; {
+						margin-top: -15px;
+						margin-bottom: 110px;
+					});
+					.media-breakpoint-up(@xl; {
+						padding-left: @block_pl;
+					});	
+				}
+				&.is--works{
+					margin-bottom: 48px;
+					.media-breakpoint-up(@md; {
+						margin-bottom: 95px;
+					});
+					.media-breakpoint-up(@xl; {
+						padding-left: @block_pl;
+					});	
+				}
+				&.is--team{
+					margin-bottom: 30px;
+					.media-breakpoint-up(@md; {
+						margin-bottom: 70px;
+					});
+				}
+			}
+		}
 		&.is--works{
 			&-card{
 				color: @default;
@@ -439,15 +495,83 @@
 				});
 			}
 		}
-		&.is--team{
+		&.is--team-card{
 			transition: @trs-site;
+			.media-breakpoint-up(@lg; {
+				max-width: 300px;
+				&:hover{
+					max-width: 410px;
+				}
+			});
+			.media-breakpoint-up(@xxl; {
+				max-width: 320px;
+				&:hover{
+					max-width: 410px;
+				}				
+			});
 			&:hover{
-				transition: @trs-site 0.3s;
-				box-shadow: 20px 22px 54px @black-50;
+				transition: @trs-site, box-shadow 0.35s 0.3s;
+				box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.06), 0px 21px 24px rgba(0, 0, 0, 0.15);
 			}
 		}
 	}
 	&group{	
+		&.is--page{
+			&-agency{
+				&.is--approach{
+					.media-breakpoint-down(@md; {
+						position: relative;
+						&::after{
+							content: '';
+							position: absolute;
+							width: 16px;
+							height: 96px;
+							background-color: @primary;
+						}
+						&:nth-child(1){
+							margin-right: -@container_gap;
+							padding-right: @container_gap + 16px;
+							&::after{
+								right: 0;
+								bottom: -20px;
+							}
+						}
+						&:nth-child(2){
+							margin-left: -@container_gap;
+							padding-left: @container_gap + 90px;
+							&::after{
+								left: 0;
+								bottom: 0px;
+							}
+						}
+					});
+				}
+				&.is--works{
+					transition: @trs-site;
+					margin-left: -@container_gap;
+					padding-left: @container_gap;
+					margin-right: -@container_gap;
+					padding-right: @container_gap;
+					padding-top: 15px;
+					&.is--open{
+						background-color: @default;
+						margin-top:35px;
+					}
+					.media-breakpoint-up(@md; {
+						margin-bottom: 11px;
+						&.is--open{
+							padding-top: 16px;
+							margin-top: 0px;
+							margin-bottom: 30px;
+						}
+					});
+					.media-breakpoint-up(@xl; {
+						margin-right: -@container_gap_xl;
+						padding-right: @container_gap_xl;
+					});
+				}
+			}
+		}
 		&.is--works{
 			&-gallery{
 				margin: 0 -@container_gap 50px;
@@ -459,6 +583,35 @@
 		}
 	}
 	&row{	
+		&.is--page{
+			&-agency{
+				&.is--approach{
+					display: grid;
+					grid-gap: 20px;
+					.media-breakpoint-up(@md; {
+						grid-gap: 90px;
+						grid-template-columns: minmax(auto, 510px) minmax(auto, 435px);
+					});
+				}
+				&.is--team{
+					display: grid;
+					grid-gap: 25px;
+					grid-template-columns: repeat(2, 1fr);
+					.media-breakpoint-down(@sm; {
+						& > *:nth-child(1),
+						& > *:nth-child(2){
+							grid-column: span 2;
+						}						
+					});
+					.media-breakpoint-up(@xl; {
+						grid-template-columns: repeat(3, 1fr);
+					});
+					.media-breakpoint-up(@xxl; {
+						grid-gap: 30px 110px;
+					});
+				}
+			}
+		}
 		&.is--works{
 			&-gallery{
 				display: grid;
@@ -480,6 +633,42 @@
 		display: block;
 		position: relative;
 		svg{display: block;}
+		&.is--page{			
+			&-agency{
+				&.is--whowow{
+					position: absolute;
+					width: 100%;
+					max-width: 170px;
+				    top: -30px;
+    				right: 0px;
+					g{
+						transform-box: fill-box;
+  						transform-origin: center;
+					}
+					svg{
+						width: 100%;
+						height: auto
+					}
+					.media-breakpoint-down(@lg; {
+						.amp{
+							transform: translateX(-40px);
+						}
+					});
+					.media-breakpoint-up(@lg; {
+						max-width: 400px;
+    					top: -50px;
+					});			
+					.media-breakpoint-up(@xl; {
+						right: -50px;
+					});			
+					.media-breakpoint-up(@xxl; {
+						max-width: 548px;
+					    top: -87px;
+	    				right: 30px;
+					});
+				}
+			}
+		}
 		&.is--works{
 			&-card{
 				overflow: hidden;
@@ -570,62 +759,162 @@
 				}
 			}
 		}
-		&.is--team{
+		&.is--team-card{
 			transition: @trs-site;
+			.media-breakpoint-down(@md; {
+				height: 250px;
+				margin-bottom: 10px;
+			});
+			.media-breakpoint-down(@sm; {
+				height: 145px;
+				.card__item.is--team-card:nth-child(1) &,
+				.card__item.is--team-card:nth-child(2) &{
+					height: 210px;
+				}
+			});
 			.media-breakpoint-up(@md; {
 				max-width: 410px;
-				height: 345px;
+				height: 300px;
+				//квадрат
+				.card__item.is--team-card:nth-child(18n+1) &{
+					clip-path: polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
+				}
+				.card__item.is--team-card:nth-child(18n+1):hover &{
+					clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+				}
+				//end,s квадрат
+				//ромб
+				.card__item.is--team-card:nth-child(18n+2) &{
+					clip-path: polygon(0% 49.5%,49.5% 0%,99% 49.5%,49.5% 99%,0% 49.5%);
+				}
+				.card__item.is--team-card:nth-child(18n+2):hover &{
+					clip-path: polygon(0 0%,100% 0,100% 100%,0 100%,0 0);
+				}
+				//end,s ромб
+				//круг
+				.card__item.is--team-card:nth-child(18n+3) &{
+					border-radius: 50%;
+					overflow: hidden;
+				}
+				.card__item.is--team-card:nth-child(18n+3):hover &{				
+					border-radius: 0%;
+				}
+				//end,s круг
+				//звезда
+				.card__item.is--team-card:nth-child(18n+4) &{
+					clip-path: polygon(50% 2%,65.45% 33.34%,100% 38.36%,75% 62.75%,80.9% 97.2%,50% 80.93%,19.1% 97.2%,25% 62.75%,0% 38.36%,34.55% 33.34%,50% 2%);
+				}
+				.card__item.is--team-card:nth-child(18n+4):hover &{
+					clip-path: polygon(50% 0%,100% 0%,100% 38.36%,100% 100%,80.9% 100%,50% 100%,19.1% 100%,0% 100%,0 38.36%,0% 0%,50% 0%);
+				}
+				//end,s звезда
+				//треугольник
+				.card__item.is--team-card:nth-child(18n+5) &{
+					clip-path: polygon(0% 94.52%,50% 6%,50% 6%,100% 94.52%);
+				}
+				.card__item.is--team-card:nth-child(18n+5):hover &{
+					clip-path: polygon(0 100%,0% 0%,100% 0%,100% 100%);
+				}
+				//end,s треугольник
+				//6-угольник
+				.card__item.is--team-card:nth-child(18n+6) &{
+					clip-path: polygon(24% 6%,0% 50%,24% 93%,75% 93%,100% 50%,75% 6%);
+				}
+				.card__item.is--team-card:nth-child(18n+6):hover &{
+					clip-path: polygon(0% 0%,0 50%,0 100%,100% 100%,100% 50%,100% 0%);
+				}
+				//end,s 6-угольник
+				//цветок
+				.card__item.is--team-card:nth-child(18n+7) &{
+				}
+				.card__item.is--team-card:nth-child(18n+7):hover &{
+				}
+				//end,s цветок
+				//подушка
+				.card__item.is--team-card:nth-child(18n+8) &{
+					clip-path: polygon(93.56% 50%,93.6% 52%,93.76% 54%,93.91% 56%,94.09% 58%,94.29% 60%,94.51% 62%,94.75% 64%,95% 66%,95.27% 68%,95.54% 70%,95.83% 72%,96.13% 74%,96.44% 76%,96.76% 78%,97.08% 80%,97.42% 82%,97.76% 84%,98.11% 86%,98.46% 88%,98.83% 90%,99.2% 92%,99.57% 94%,99.79% 96%,100% 97%,98.5% 96.52%,96.5% 95.67%,94% 94.68%,91.19% 93.64%,88.18% 92.62%,85.16% 91.67%,81.5% 90.63%,77.72% 89.67%,73.5% 88.74%,69.75% 88.04%,63.64% 87.14%,59.29% 86.69%,54.82% 86.4%,50% 86.29%,45% 86.41%,40.59% 86.7%,36.2% 87.16%,32.38% 87.69%,30.18% 88.05%,27.4% 88.56%,22.21% 89.69%,19% 90.5%,15.42% 91.5%,12.37% 92.44%,8.75% 93.66%,5.83% 94.74%,3.26% 95.77%,0% 97.21%,0.43% 95%,0.8% 93%,1.36% 90%,1.89% 87%,2.41% 84%,2.92% 81%,3.39% 78.04%,3.87% 75%,4.46% 71%,4.87% 68%,5.25% 65%,5.6% 62%,5.91% 59%,6.17% 56%,6.36% 53%,6.44% 49.6%,6.35% 46%,6.15% 43%,5.89% 40%,5.58% 37%,5.23% 34%,4.84% 31%,4.43% 28%,3.99% 25%,3.37% 21%,2.71% 17%,2.2% 14%,1.68% 11%,1.14% 8%,0.58% 5%,0% 2%,3.21% 3.42%,5.96% 4.47%,8.71% 5.53%,11% 6.32%,12.76% 6.89%,15.35% 7.68%,16.75% 8.09%,18.41% 8.55%,22% 9.47%,25.42% 10.24%,27.87% 10.74%,33.17% 11.64%,35.24% 11.93%,38.07% 12.26%,39.5% 12.41%,42.5% 12.65%,44.05% 12.75%,46.38% 12.85%,48.19% 12.88%,50% 12.91%,52.44% 12.88%,57.19% 12.67%,60.5% 12.41%,64.77% 11.93%,67.55% 11.53%,72.76% 10.61%,78% 9.47%,81.57% 8.56%,83.22% 8.1%,86.3% 7.19%,88.14% 6.6%,89.58% 6.12%,91.35% 5.51%,93.19% 4.84%,95.16% 4.08%,96.79% 3.42%,100% 2%,99.61% 4%,99.23% 6%,98.86% 8%,98.5% 10%,98.14% 12%,97.8% 14%,97.45% 16%,97.12% 18%,96.79% 20%,96.47% 22%,96.16% 24%,95.86% 26%,95.57% 28%,95.29% 30%,95.03% 32%,94.73% 34%,94.53% 36%,94.31% 38%,94.1% 40%,93.91% 42%,93.8% 44%,93.65% 46%,93.58% 48%,93.56% 50%);
+				}
+				.card__item.is--team-card:nth-child(18n+8):hover &{
+					clip-path: polygon(100% 50%,100% 52%,100% 54%,100% 56%,100% 58%,100% 60%,100% 62%,100% 64%,100% 66%,100% 68%,100% 70%,100% 72%,100% 74%,100% 76%,100% 78%,100% 80%,100% 82%,100% 84%,100% 86%,100% 88%,100% 90%,100% 92%,100% 94%,100% 96%,100% 100%,98.5% 100%,96.5% 100%,94% 100%,91.19% 100%,88.18% 100%,85.16% 100%,81.5% 100%,77.72% 100%,73.5% 100%,69.75% 100%,63.64% 100%,59.29% 100%,54.82% 100%,50% 100%,45% 100%,40.59% 100%,36.2% 100%,32.38% 100%,30.18% 100%,27.4% 100%,22.21% 100%,19% 100%,15.42% 100%,12.37% 100%,8.75% 100%,5.83% 100%,3.26% 100%,0% 100%,0% 95%,0% 93%,0% 90%,0% 87%,0% 84%,0% 81%,0% 78.04%,0% 75%,0% 71%,0% 68%,0% 65%,0% 62%,0% 59%,0% 56%,0% 53%,0% 49.6%,0% 46%,0% 43%,0% 40%,0% 37%,0% 34%,0% 31%,0% 28%,0% 25%,0% 21%,0% 17%,0% 14%,0% 11%,0% 8%,0% 5%,0% 0%,3.21% 0%,5.96% 0%,8.71% 0%,11% 0%,12.76% 0%,15.35% 0%,16.75% 0%,18.41% 0%,22% 0%,25.42% 0%,27.87% 0%,33.17% 0%,35.24% 0%,38.07% 0%,39.5% 0%,42.5% 0%,44.05% 0%,46.38% 0%,48.19% 0%,50% 0%,52.44% 0%,57.19% 0%,60.5% 0%,64.77% 0%,67.55% 0%,72.76% 0%,78% 0%,81.57% 0%,83.22% 0%,86.3% 0%,88.14% 0%,89.58% 0%,91.35% 0%,93.19% 0%,95.16% 0%,96.79% 0%,100% 0%,100% 4%,100% 6%,100% 8%,100% 10%,100% 12%,100% 14%,100% 16%,100% 18%,100% 20%,100% 22%,100% 24%,100% 26%,100% 28%,100% 30%,100% 32%,100% 34%,100% 36%,100% 38%,100% 40%,100% 42%,100% 44%,100% 46%,100% 48%,100% 50%);
+				}
+				//end,s подушка
+				//флаг
+				.card__item.is--team-card:nth-child(18n+9) &{
+					clip-path: polygon(100% 77.53%,99% 78.47%,96.5% 80.5%,93% 83.09%,87% 86.08%,84% 87.02%,81% 87.63%,78% 87.92%,75% 87.93%,72% 87.68%,69% 87.21%,66% 86.53%,63% 85.67%,60% 84.67%,57% 83.56%,54% 82.36%,51% 81.11%,48% 79.84%,45% 78.58%,42% 77.37%,39% 76.23%,36% 75.2%,33% 74.33%,30% 73.63%,27% 73.15%,24% 72.92%,21% 72.99%,18% 73.38%,15% 74.14%,12% 75.3%,9% 76.91%,5.5% 79.5%,3% 81.61%,3% 19.15%,6% 16.54%,8.95% 14.48%,12% 12.85%,15% 11.69%,18% 10.94%,21% 10.56%,24% 10.5%,27% 10.74%,30% 11.23%,33% 11.94%,36% 12.83%,39% 13.87%,42% 15.02%,45% 16.24%,48% 17.52%,51% 18.8%,54% 20.06%,57% 21.27%,60% 22.4%,63% 23.41%,66% 24.27%,69% 24.97%,72% 25.45%,75% 25.71%,81% 25.43%,84% 24.83%,87% 23.89%,90% 22.6%,93% 20.91%,96% 18.82%,99% 16.29%,100% 15.35%);
+				}
+				.card__item.is--team-card:nth-child(18n+9):hover &{
+					clip-path: polygon(100% 100%,99% 100%,96.5% 100%,93% 100%,87% 100%,84% 100%,81% 100%,78% 100%,75% 100%,72% 100%,69% 100%,66% 100%,63% 100%,60% 100%,57% 100%,54% 100%,51% 100%,48% 100%,45% 100%,42% 100%,39% 100%,36% 100%,33% 100%,30% 100%,27% 100%,24% 100%,21% 100%,18% 100%,15% 100%,12% 100%,9% 100%,5.5% 100%,0% 100%,0% 0%,6% 0%,8.95% 0%,12% 0%,15% 0%,18% 0%,21% 0%,24% 0%,27% 0%,30% 0%,33% 0%,36% 0%,39% 0%,42% 0%,45% 0%,48% 0%,51% 0%,54% 0%,57% 0%,60% 0%,63% 0%,66% 0%,69% 0%,72% 0%,75% 0%,81% 0%,84% 0%,87% 0%,90% 0%,93% 0%,96% 0%,99% 0%,100% 0%);
+				}
+				//end,s флаг
+				//стрелка вправо
+				.card__item.is--team-card:nth-child(18n+10) &{
+					clip-path: polygon(0.55% 94.12%,18.14% 49.45%,0% 5%,100% 48.95%,100% 48.95%,0.55% 94.12%);
+				}
+				.card__item.is--team-card:nth-child(18n+10):hover &{
+					clip-path: polygon(0% 94.12%,0% 49.45%,0 0%,100% 0%,100% 100%,0% 100%);
+				}
+				//end,s стрелка вправо
+				//клякса
+				.card__item.is--team-card:nth-child(18n+11) &{
+				}
+				.card__item.is--team-card:nth-child(18n+11):hover &{
+				}
+				//end,s клякса
+				//сердце
+				.card__item.is--team-card:nth-child(18n+12) &{
+				}
+				.card__item.is--team-card:nth-child(18n+12):hover &{
+				}
+				//end,s сердце
+				//стрелка вверх
+				.card__item.is--team-card:nth-child(18n+13) &{
+					clip-path: polygon(93.34% 98.18%,93.32% 98.47%,93.26% 98.73%,93.11% 99.1%,92.95% 99.37%,92.33% 99.87%,92.05% 99.96%,91.73% 100%,8.43% 99.98%,8.21% 99.94%,7.93% 99.83%,7.69% 99.68%,7.53% 99.53%,7.36% 99.33%,7.22% 99.09%,7.12% 98.87%,7.06% 98.67%,7.01% 98.42%,7% 98.18%,7.02% 49.38%,7.08% 49%,7.2% 48.53%,7.4% 48%,7.65% 47.5%,8.09% 46.76%,8.61% 46.05%,49.03% 0.54%,49.26% 0.32%,49.5% 0.17%,49.76% 0.06%,50.17% 0%,50.5% 0.04%,50.86% 0.17%,51.08% 0.3%,51.32% 0.52%,91.84% 46.5%,92.2% 47%,92.43% 47.35%,92.69% 47.78%,92.88% 48.15%,93.03% 48.5%,93.18% 48.89%,93.28% 49.28%,93.34% 49.69%);
+
+				}
+				.card__item.is--team-card:nth-child(18n+13):hover &{
+					clip-path: polygon(100% 98.18%,100% 98.47%,100% 98.73%,100% 99.1%,100% 99.37%,100% 99.87%,100% 99.96%,100% 100%,0% 99.98%,0% 99.94%,0% 99.83%,0% 99.68%,0% 99.53%,0% 99.33%,0% 99.09%,0% 98.87%,0% 98.67%,0% 98.42%,0% 98.18%,0% 49.38%,0% 49%,0% 48.53%,0% 48%,0% 47.5%,0% 46.76%,0% 0%,49.03% 0%,49.26% 0%,49.5% 0%,49.76% 0%,50.17% 0%,50.5% 0%,50.86% 0%,51.08% 0%,51.32% 0%,100% 0%,100% 47%,100% 47.35%,100% 47.78%,100% 48.15%,100% 48.5%,100% 48.89%,100% 49.28%,100% 49.69%);
+
+				}
+				//end,s стрелка вверх
+				//буква х
+				.card__item.is--team-card:nth-child(18n+14) &{
+				}
+				.card__item.is--team-card:nth-child(18n+14):hover &{
+				}
+				//end,s буква х	
+				//тучка
+				.card__item.is--team-card:nth-child(18n+15) &{
+				}
+				.card__item.is--team-card:nth-child(18n+15):hover &{
+				}
+				//end,s тучка		
+				//круг
+				.card__item.is--team-card:nth-child(18n+16) &{
+					border-radius: 50%;
+					overflow: hidden;
+				}
+				.card__item.is--team-card:nth-child(18n+16):hover &{				
+					border-radius: 0%;
+				}
+				//end,s круг
+				//попка
+				.card__item.is--team-card:nth-child(18n+17) &{
+				}
+				.card__item.is--team-card:nth-child(18n+17):hover &{
+				}
+				//end,s попка			
+				//квадрат
+				.card__item.is--team-card:nth-child(18n+18) &{
+					clip-path: polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
+				}
+				.card__item.is--team-card:nth-child(18n+18):hover &{
+					clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+				}
+				//end,s квадрат
 			});
-			.card__item:nth-child(18n+1) &{
-				clip-path: polygon(50% 2%,65.45% 33.34%,100% 38.36%,75% 62.75%,80.9% 97.2%,50% 80.93%,19.1% 97.2%,25% 62.75%,0% 38.36%,34.55% 33.34%,50% 2%);
-			}
-			.card__item:nth-child(18n+1):hover &{
-				clip-path: polygon(50% 0%,100% 0%,100% 38.36%,100% 100%,80.9% 100%,50% 100%,19.1% 100%,0% 100%,0 38.36%,0% 0%,50% 0%);
-			}
-			.card__item:nth-child(18n+2) &{
-				clip-path: polygon(0% 49.5%,49.5% 0%,99% 49.5%,49.5% 99%,0% 49.5%);
-			}
-			.card__item:nth-child(18n+2):hover &{
-				clip-path: polygon(0 0%,100% 0,100% 100%,0 100%,0 0);
-			}
-			.card__item:nth-child(18n+3) &{
-				clip-path: polygon(0% 94.52%,50% 6%,50% 6%,100% 94.52%);
-			}
-			.card__item:nth-child(18n+3):hover &{
-				clip-path: polygon(0 100%,0% 0%,100% 0%,100% 100%);
-			}
-			.card__item:nth-child(18n+4) &{
-				clip-path: polygon(24% 6%,0% 50%,24% 93%,75% 93%,100% 50%,75% 6%);
-			}
-			.card__item:nth-child(18n+4):hover &{
-				clip-path: polygon(0% 0%,0 50%,0 100%,100% 100%,100% 50%,100% 0%);
-			}
-			.card__item:nth-child(18n+5) &{
-				clip-path: polygon(93.56% 50%,93.6% 52%,93.76% 54%,93.91% 56%,94.09% 58%,94.29% 60%,94.51% 62%,94.75% 64%,95% 66%,95.27% 68%,95.54% 70%,95.83% 72%,96.13% 74%,96.44% 76%,96.76% 78%,97.08% 80%,97.42% 82%,97.76% 84%,98.11% 86%,98.46% 88%,98.83% 90%,99.2% 92%,99.57% 94%,99.79% 96%,100% 97%,98.5% 96.52%,96.5% 95.67%,94% 94.68%,91.19% 93.64%,88.18% 92.62%,85.16% 91.67%,81.5% 90.63%,77.72% 89.67%,73.5% 88.74%,69.75% 88.04%,63.64% 87.14%,59.29% 86.69%,54.82% 86.4%,50% 86.29%,45% 86.41%,40.59% 86.7%,36.2% 87.16%,32.38% 87.69%,30.18% 88.05%,27.4% 88.56%,22.21% 89.69%,19% 90.5%,15.42% 91.5%,12.37% 92.44%,8.75% 93.66%,5.83% 94.74%,3.26% 95.77%,0% 97.21%,0.43% 95%,0.8% 93%,1.36% 90%,1.89% 87%,2.41% 84%,2.92% 81%,3.39% 78.04%,3.87% 75%,4.46% 71%,4.87% 68%,5.25% 65%,5.6% 62%,5.91% 59%,6.17% 56%,6.36% 53%,6.44% 49.6%,6.35% 46%,6.15% 43%,5.89% 40%,5.58% 37%,5.23% 34%,4.84% 31%,4.43% 28%,3.99% 25%,3.37% 21%,2.71% 17%,2.2% 14%,1.68% 11%,1.14% 8%,0.58% 5%,0% 2%,3.21% 3.42%,5.96% 4.47%,8.71% 5.53%,11% 6.32%,12.76% 6.89%,15.35% 7.68%,16.75% 8.09%,18.41% 8.55%,22% 9.47%,25.42% 10.24%,27.87% 10.74%,33.17% 11.64%,35.24% 11.93%,38.07% 12.26%,39.5% 12.41%,42.5% 12.65%,44.05% 12.75%,46.38% 12.85%,48.19% 12.88%,50% 12.91%,52.44% 12.88%,57.19% 12.67%,60.5% 12.41%,64.77% 11.93%,67.55% 11.53%,72.76% 10.61%,78% 9.47%,81.57% 8.56%,83.22% 8.1%,86.3% 7.19%,88.14% 6.6%,89.58% 6.12%,91.35% 5.51%,93.19% 4.84%,95.16% 4.08%,96.79% 3.42%,100% 2%,99.61% 4%,99.23% 6%,98.86% 8%,98.5% 10%,98.14% 12%,97.8% 14%,97.45% 16%,97.12% 18%,96.79% 20%,96.47% 22%,96.16% 24%,95.86% 26%,95.57% 28%,95.29% 30%,95.03% 32%,94.73% 34%,94.53% 36%,94.31% 38%,94.1% 40%,93.91% 42%,93.8% 44%,93.65% 46%,93.58% 48%,93.56% 50%);
-			}
-			.card__item:nth-child(18n+5):hover &{
-				clip-path: polygon(100% 50%,100% 52%,100% 54%,100% 56%,100% 58%,100% 60%,100% 62%,100% 64%,100% 66%,100% 68%,100% 70%,100% 72%,100% 74%,100% 76%,100% 78%,100% 80%,100% 82%,100% 84%,100% 86%,100% 88%,100% 90%,100% 92%,100% 94%,100% 96%,100% 100%,98.5% 100%,96.5% 100%,94% 100%,91.19% 100%,88.18% 100%,85.16% 100%,81.5% 100%,77.72% 100%,73.5% 100%,69.75% 100%,63.64% 100%,59.29% 100%,54.82% 100%,50% 100%,45% 100%,40.59% 100%,36.2% 100%,32.38% 100%,30.18% 100%,27.4% 100%,22.21% 100%,19% 100%,15.42% 100%,12.37% 100%,8.75% 100%,5.83% 100%,3.26% 100%,0% 100%,0% 95%,0% 93%,0% 90%,0% 87%,0% 84%,0% 81%,0% 78.04%,0% 75%,0% 71%,0% 68%,0% 65%,0% 62%,0% 59%,0% 56%,0% 53%,0% 49.6%,0% 46%,0% 43%,0% 40%,0% 37%,0% 34%,0% 31%,0% 28%,0% 25%,0% 21%,0% 17%,0% 14%,0% 11%,0% 8%,0% 5%,0% 0%,3.21% 0%,5.96% 0%,8.71% 0%,11% 0%,12.76% 0%,15.35% 0%,16.75% 0%,18.41% 0%,22% 0%,25.42% 0%,27.87% 0%,33.17% 0%,35.24% 0%,38.07% 0%,39.5% 0%,42.5% 0%,44.05% 0%,46.38% 0%,48.19% 0%,50% 0%,52.44% 0%,57.19% 0%,60.5% 0%,64.77% 0%,67.55% 0%,72.76% 0%,78% 0%,81.57% 0%,83.22% 0%,86.3% 0%,88.14% 0%,89.58% 0%,91.35% 0%,93.19% 0%,95.16% 0%,96.79% 0%,100% 0%,100% 4%,100% 6%,100% 8%,100% 10%,100% 12%,100% 14%,100% 16%,100% 18%,100% 20%,100% 22%,100% 24%,100% 26%,100% 28%,100% 30%,100% 32%,100% 34%,100% 36%,100% 38%,100% 40%,100% 42%,100% 44%,100% 46%,100% 48%,100% 50%);
-			}
-			.card__item:nth-child(18n+6) &{
-				clip-path: polygon(100% 77.53%,99% 78.47%,96.5% 80.5%,93% 83.09%,87% 86.08%,84% 87.02%,81% 87.63%,78% 87.92%,75% 87.93%,72% 87.68%,69% 87.21%,66% 86.53%,63% 85.67%,60% 84.67%,57% 83.56%,54% 82.36%,51% 81.11%,48% 79.84%,45% 78.58%,42% 77.37%,39% 76.23%,36% 75.2%,33% 74.33%,30% 73.63%,27% 73.15%,24% 72.92%,21% 72.99%,18% 73.38%,15% 74.14%,12% 75.3%,9% 76.91%,5.5% 79.5%,3% 81.61%,3% 19.15%,6% 16.54%,8.95% 14.48%,12% 12.85%,15% 11.69%,18% 10.94%,21% 10.56%,24% 10.5%,27% 10.74%,30% 11.23%,33% 11.94%,36% 12.83%,39% 13.87%,42% 15.02%,45% 16.24%,48% 17.52%,51% 18.8%,54% 20.06%,57% 21.27%,60% 22.4%,63% 23.41%,66% 24.27%,69% 24.97%,72% 25.45%,75% 25.71%,81% 25.43%,84% 24.83%,87% 23.89%,90% 22.6%,93% 20.91%,96% 18.82%,99% 16.29%,100% 15.35%);
-			}
-			.card__item:nth-child(18n+6):hover &{
-				clip-path: polygon(100% 100%,99% 100%,96.5% 100%,93% 100%,87% 100%,84% 100%,81% 100%,78% 100%,75% 100%,72% 100%,69% 100%,66% 100%,63% 100%,60% 100%,57% 100%,54% 100%,51% 100%,48% 100%,45% 100%,42% 100%,39% 100%,36% 100%,33% 100%,30% 100%,27% 100%,24% 100%,21% 100%,18% 100%,15% 100%,12% 100%,9% 100%,5.5% 100%,0% 100%,0% 0%,6% 0%,8.95% 0%,12% 0%,15% 0%,18% 0%,21% 0%,24% 0%,27% 0%,30% 0%,33% 0%,36% 0%,39% 0%,42% 0%,45% 0%,48% 0%,51% 0%,54% 0%,57% 0%,60% 0%,63% 0%,66% 0%,69% 0%,72% 0%,75% 0%,81% 0%,84% 0%,87% 0%,90% 0%,93% 0%,96% 0%,99% 0%,100% 0%);
-			}
-			.card__item:nth-child(18n+7) &{
-				clip-path: polygon(0.55% 94.12%,18.14% 49.45%,0% 5%,100% 48.95%,100% 48.95%,0.55% 94.12%);
-			}
-			.card__item:nth-child(18n+7):hover &{
-				clip-path: polygon(0% 94.12%,0% 49.45%,0 0%,100% 0%,100% 100%,0% 100%);
-			}
-			.card__item:nth-child(18n+8) &{
-				clip-path: polygon(93.34% 98.18%,93.32% 98.47%,93.26% 98.73%,93.11% 99.1%,92.95% 99.37%,92.33% 99.87%,92.05% 99.96%,91.73% 100%,8.43% 99.98%,8.21% 99.94%,7.93% 99.83%,7.69% 99.68%,7.53% 99.53%,7.36% 99.33%,7.22% 99.09%,7.12% 98.87%,7.06% 98.67%,7.01% 98.42%,7% 98.18%,7.02% 49.38%,7.08% 49%,7.2% 48.53%,7.4% 48%,7.65% 47.5%,8.09% 46.76%,8.61% 46.05%,49.03% 0.54%,49.26% 0.32%,49.5% 0.17%,49.76% 0.06%,50.17% 0%,50.5% 0.04%,50.86% 0.17%,51.08% 0.3%,51.32% 0.52%,91.84% 46.5%,92.2% 47%,92.43% 47.35%,92.69% 47.78%,92.88% 48.15%,93.03% 48.5%,93.18% 48.89%,93.28% 49.28%,93.34% 49.69%);
-
-			}
-			.card__item:nth-child(18n+8):hover &{
-				clip-path: polygon(100% 98.18%,100% 98.47%,100% 98.73%,100% 99.1%,100% 99.37%,100% 99.87%,100% 99.96%,100% 100%,0% 99.98%,0% 99.94%,0% 99.83%,0% 99.68%,0% 99.53%,0% 99.33%,0% 99.09%,0% 98.87%,0% 98.67%,0% 98.42%,0% 98.18%,0% 49.38%,0% 49%,0% 48.53%,0% 48%,0% 47.5%,0% 46.76%,0% 0%,49.03% 0%,49.26% 0%,49.5% 0%,49.76% 0%,50.17% 0%,50.5% 0%,50.86% 0%,51.08% 0%,51.32% 0%,100% 0%,100% 47%,100% 47.35%,100% 47.78%,100% 48.15%,100% 48.5%,100% 48.89%,100% 49.28%,100% 49.69%);
-
-			}
+			.media-breakpoint-up(@xxl; {
+				height: 320px;
+			});
 			img{
 				width: 100%;
 				height: 100%;
@@ -635,18 +924,19 @@
 		}
 	}
 	&wrap{
-		&.is--team{
+		&.is--team-card{
 			background-color: @white;
 			.media-breakpoint-up(@md; {
-				padding: 20px 20px 30px 45px;
-			});
-			.media-breakpoint-up(@xl; {
+				padding: 20px 20px;
 				opacity: 0;
 				transition: @trs-site;
-				.card__item:hover &{
+				.card__item.is--team-card:hover &{
 					opacity: 1;
 					transition: @trs-site 0.3s;
 				}
+			});
+			.media-breakpoint-up(@xxl; {
+				padding: 20px 35px;
 			});
 		}
 	}
@@ -673,6 +963,70 @@
 			}
 		}
 		&.is--page{
+			&-agency{
+				&.is--right{
+					margin-bottom: 10px;
+					font-family: @site_ff_custom;
+					.heading3();
+					.media-breakpoint-up(@md; {
+						margin-bottom: 15px;
+					});
+				}
+				&.is--whowow{
+					font-family: @site_ff_custom;
+					font-size: 4.375em;
+					line-height: 0.82em;
+					padding-right: 15px;
+					span{
+						display: block;
+						text-align: right;
+					}
+					.media-breakpoint-up(@lg; {
+						padding-right: 0;
+						font-size: 13.611em;
+						line-height: 0.77em;
+					});
+				}
+				&.is--approach{
+					font-family: @site_ff_custom;
+					.heading3();
+					margin-bottom: 10px;
+					&.is--base{
+						font-size: 0.875em;
+						line-height: 1.143em;
+						margin-bottom: 62px;
+					}
+					.media-breakpoint-up(@md; {
+						margin-bottom: 15px;
+						&.is--base{
+							.heading3();
+							margin-bottom: 130px;
+						}
+					});
+				}
+				&.is--works{
+					font-family: @site_ff_custom;
+					.heading2();
+					color: @primary;
+					margin-bottom: 35px;
+					margin-bottom: 20px;
+					.media-breakpoint-up(@md; {
+						margin-bottom: 55px;
+					});
+				}
+				&.is--team{
+					font-family: @site_ff_custom;
+					.heading2();
+					color: @primary;
+					margin-bottom: 37px;
+					.media-breakpoint-up(@md; {
+						margin-bottom: 85px;
+					});
+					.media-breakpoint-up(@xl; {
+						padding-left: @block_pl;
+					});	
+				}
+			}
 			&-works-card{
 				.heading3();
 				font-family: @site_ff_custom;
@@ -682,11 +1036,15 @@
 				});
 			}
 		}
-		&.is--team{
+		&.is--team-card{
 			font-family: @site_ff_custom;
+			color: @primary;
+			font-size: 0.875em;
+			line-height: 1.143em;
+			margin-bottom: 4px;
 			.media-breakpoint-up(@md; {
-				font-size: 0.788em;
-				line-height: 1.214em;
+				color: @default;
+				font-size: 1.556em;
 				margin-bottom: 10px;
 			});
 		}
@@ -716,6 +1074,19 @@
 		}
 	}
 	&note{
+		&.is--page{
+			&-works-card{
+				.heading5();
+			}		
+			&-agency{
+				&.is--right{					
+					.heading5();
+				}
+				&.is--approach{			
+					.heading5();
+				}
+			}
+		}
 		&.is--works{
 			&-card{
 				.heading5();
@@ -755,17 +1126,63 @@
 				});
 			}
 		}
-		&.is--page{
-			&-works-card{
-				.heading5();
-			}
-		}
-		&.is--team{
-			font-size: 0.788em;
-			line-height: 1.33em;
-		}
 	}
 	&label{
+		&.is--page{
+			&-agency{
+				&.is--works{
+					display: flex;
+					font-family: @site_ff_custom;
+					.heading3();
+					color: @default;
+					span{
+						display: block;
+						color: @primary;
+						margin-top: 12px;
+						min-width: 20px;
+						width: 20px;
+						height: 11px;
+						margin-right: 13px;
+						transform-origin: center;
+						transition: @trs-site;
+						svg{display: block;}
+					}
+					.media-breakpoint-up(@md; {	
+						align-items: center;
+						padding: 15px 4px;				
+						span{
+							margin-top: 0;
+							min-width: 26px;
+							width: 26px;
+							height: 14px;
+							margin-right: 20px;
+						}
+					});
+					&[aria-expanded="true"]{
+						color: @success;
+						span{
+							color: @success;
+							transform: rotate(-180deg);
+						}
+
+					}					
+				}
+			}
+			&-works-card{				
+				color: @primary;
+				font-size: 0.75em;
+				line-height: 1em;
+				.media-breakpoint-up(@md; {
+					font-size: 0.778em;
+					line-height: 1.286em;
+				});
+				span{
+					display: inline-block;
+					margin-right: 8px;
+				}
+			}
+		}
+		//block
 		&.is--works{
 			&-card{
 				color: @primary;
@@ -781,28 +1198,15 @@
 				}
 			}
 		}
-		&.is--page{
-			&-works-card{				
-				color: @primary;
-				font-size: 0.75em;
-				line-height: 1em;
-				.media-breakpoint-up(@md; {
-					font-size: 0.778em;
-					line-height: 1.286em;
-				});
-				span{
-					display: inline-block;
-					margin-right: 8px;
-				}
-			}
-		}
-		&.is--team{
-			font-family: @site_ff_custom;
-			color: @primary;
+		&.is--team-card{
+			font-size: 0.625em;
+			line-height: 1em;
 			.media-breakpoint-up(@md; {
-				font-size: 0.77em;
-				line-height: 1.214em;
-				margin-bottom: 12px;
+				font-family: @site_ff_custom;
+				color: @success;
+				font-size: 0.889em;
+				line-height: 1.250em;
+				margin-bottom: 5px;
 			});
 		}
 	}	
@@ -812,7 +1216,66 @@
 	}
 	&date{	
 	}
+	&group-value{
+		&.is--page{
+			&-agency{
+				&.is--works{
+					display: grid;
+					padding: 20px 16px 12px;
+					.media-breakpoint-up(@md; {
+						padding: 0 0 20px 70px;
+						grid-gap: 16px 60px;
+						grid-template-columns: repeat(2, 1fr);
+						max-width: 1050px;
+					});
+					ul{
+						list-style: none;
+						margin: 0;
+						padding: 0;
+						li{
+							display: flex;
+							position: relative;
+							//align-items: center;
+							.heading5();
+							color: @white;
+							padding-left: 16px;
+							margin-bottom: 12px;
+							span{
+								position: absolute;
+								left: 0;
+								display: block;
+								color: @primary;
+								width: 5px;
+								height: 26px;
+								transition: @trs-site;
+								svg{display: block;}
+							}
+							.media-breakpoint-up(@md; {	
+								padding-left: 10px;
+								margin-bottom: 16px;
+								span{
+									width: 7px;
+									height: 30px;
+								}
+							});
+						}
+					}
+				}
+			}
+		}
+	}
 	&value{
+		&.is--page{
+			&-agency{
+				&.is--works{
+					
+					.media-breakpoint-up(@md; {	
+						span{
+						}
+					});				
+				}
+			}
+		}
 	}
 	&btn{
 	}
@@ -3743,10 +4206,17 @@
 			&-base-xs{ 
 				margin-bottom: 30px;		
 			}
-			&-card{
-				.media-breakpoint-down(@xl; {
-					word-break: break-all;
-				});
+			&-agency{ 
+				margin-bottom: 30px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 0px;
+					max-width: 450px;
+				});	
+				.media-breakpoint-up(@xl; {
+					margin-bottom: 0px;
+					padding-left: @block_pl;
+					max-width: 910px;
+				});			
 			}
 		}
 	}

@@ -44,9 +44,11 @@
                 {% include "../block/common/navbar/navbar.twig" with {
                     navbar_prefix:"navbar__",
                     navbar_mod:"is--second",
-                    active:page.works,
-                    lang_ru:page.works,
-                    lang_en:page.agency_en
+                    active:page.index,
+                    lang_icon: 'lang-left',
+                    lang_ru: page.index,
+                    lang_en: page.agency_en,
+                    lang_active: page.index
                 } %} 
             </div>
             <main class="content-block__main">
@@ -59,10 +61,10 @@
         </div>
         {% include "../block/common/footer/footer.twig" with {
             footer_prefix:"footer__",
-            lang_ru: page.contacts,
+            lang_icon: 'lang-left',
+            lang_ru: page.index,
             lang_en: page.agency_en,
-            lang_active: page.contacts,
-            soc_group: 'is--fixed'
+            lang_active: page.index
         } %}
 
         {# {% include "../block/common/modals/include.twig"%} #}

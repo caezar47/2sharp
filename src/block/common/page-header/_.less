@@ -37,10 +37,17 @@
 			&-base-xs{ 
 				margin-bottom: 30px;		
 			}
-			&-card{
-				.media-breakpoint-down(@xl; {
-					word-break: break-all;
-				});
+			&-agency{ 
+				margin-bottom: 30px;
+				.media-breakpoint-up(@md; {
+					margin-bottom: 0px;
+					max-width: 450px;
+				});	
+				.media-breakpoint-up(@xl; {
+					margin-bottom: 0px;
+					padding-left: @block_pl;
+					max-width: 910px;
+				});			
 			}
 		}
 	}

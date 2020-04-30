@@ -1,9 +1,9 @@
-$('#filter').on('hide.bs.collapse', function (e) {
+$('[data-tablist]').on('hide.bs.collapse', function (e) {
     if(e.target){
-        $(e.target).closest('.filter__panel').removeClass('is--open');
+        $(e.target).closest('.panel').removeClass('is--open');
     }
 });
-$('#filter').on('show.bs.collapse', function (e) {
-    $(this).find('.filter__panel').removeClass('is--open');
-    $(e.target).closest('.filter__panel').addClass('is--open');
+$('[data-tablist]').on('show.bs.collapse', function (e) {
+    $(this).find('.panel').removeClass('is--open');
+    $(e.target).closest('.panel').addClass('is--open');
 })

@@ -44,20 +44,56 @@
 				{% include "../block/common/navbar/navbar.twig" with {
 					navbar_prefix:"navbar__",
 					navbar_mod:"is--second",
-					active:page.works,
-					lang_ru:page.works,
-					lang_en:page.agency_en
-				} %} 
+					active:page.agency,
+					lang_icon: 'lang-left',
+					lang_ru: page.agency,
+					lang_en: page.agency_en,
+					lang_active: page.agency
+				} %}
 			</div>
 			<main class="content-block__main">
 				{% include "../block/page/agency.twig" with {
 					view: "agency_page",
 					content_prefix:"content-block__", 
 					content_mod:"is--page-agency",
-					heading_mod:"is--h1  fw--500  color--primary  font-family--custom  is--page-works", 
+					heading_mod:"is--h1  fw--500  color--primary  font-family--custom  is--page-agency", 
 					heading_level:"h1", 
-					heading:"projects",  
-					list:[
+					heading:"помогаем брендам расти",
+					works_id: "agency_works", 
+					works:[
+						{
+							id: "strategy",
+							name:"исследования и стратегия",
+							work_list: [
+								{
+									work_list_col: [
+										{name: "маркетинговая стратегия"},
+										{name: "концепт продукта"},
+										{name: "бренд-стратегия"},
+										{name: "коммуникационная стратегия"},
+										{name: "канальная стратегия: smm, digital, shopper marketing"},
+									]
+								},
+								{
+									work_list_col: [
+										{name: "разработка employer бренда"},
+										{name: "проведение стратегических воркшопов и мастер-классов"},
+										{name: "коммуникационный аудит и консалтинг "},
+										{name: "стратегическое лидирование брендов"},
+									]
+								},
+							]
+						},
+						{
+							id: "design",
+							name:"дизайн и брендинг ",
+						},
+						{
+							id: "communication",
+							name:"коммуникация",
+						},
+					],
+					team:[
 						{
 							link:page.works_card,
 							name:"Максим Севастьянов",
@@ -153,13 +189,14 @@
 				} %} 
 			</main>
 		</div>
+
 		{% include "../block/common/footer/footer.twig" with {
-			footer_prefix:"footer__",
-			lang_ru: page.contacts,
-			lang_en: page.agency_en,
-			lang_active: page.contacts,
-			soc_group: 'is--fixed'
-		} %}
+            footer_prefix:"footer__",
+            lang_icon: 'lang-left',
+            lang_ru: page.agency,
+            lang_en: page.agency_en,
+            lang_active: page.agency
+        } %}
 
 		{# {% include "../block/common/modals/include.twig"%} #}
 		
