@@ -14,8 +14,8 @@
 			</p>
 		</a>
 
-		<div class="{{content_prefix}}bg  {{content_mod}}">
-			<video autoplay loop playsinline muted><source src="http://www.2sharp.ru/data/upload/videos/5e5003bc7def5.mp4"></video>
+		<div class="{{content_prefix}}bg  {{content_mod}}" {% if bg %}style="background-image: url({{bg}})"{% endif %}>
+			{# <video autoplay loop playsinline muted><source src="http://www.2sharp.ru/data/upload/videos/5e5003bc7def5.mp4"></video> #}
 		</div>	
 		<div class="{{prefix.card}}preview  {{content_mod}}  is--whowow">
 			<svg width="548" height="564" viewBox="0 0 548 564" xmlns="http://www.w3.org/2000/svg" >
