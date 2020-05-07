@@ -1,3 +1,32 @@
+{% if view == "index_works_page" %}
+	<section class="{{content_prefix}}panel  is--page-index-works">
+		{% include "../common/page-header/tpl.twig" with {
+			prefix:"page-header__", 
+			mod:heading_mod,
+			level:heading_level, 
+			heading:heading
+		} %}
+		<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+			{% include "../common/card/card.twig" with {
+			 	view: "works_card", 
+			 	prefix:prefix.card, 
+			 	mod:"is--works-card", 
+			 	list:list
+			} %}
+		</div>
+		<div class="{{content_prefix}}btn  is--page-index-works">
+			{% include "../common/button/btn.twig" with {
+				view:"link",
+				prefix:"link__", 
+				mod:"", 
+				icon: 'arrow-next',
+				link:page.works, 
+				name:"Все проекты"
+			} %}
+		</div>
+	</section>
+{% endif %}
+
 {% if view == "works_page" %}
 	<section class="{{content_prefix}}panel  is--page-base">
 		{% include "../common/page-header/tpl.twig" with {

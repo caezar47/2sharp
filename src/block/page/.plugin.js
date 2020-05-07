@@ -18,8 +18,9 @@
 var slogan = document.getElementById("slogan");
     
 // to use the script *without* anti-jank, set the event to "scroll" and remove the anonymous function.
-
-window.addEventListener("optimizedScroll", function() {
-    slogan.style.transform = "rotate("+window.pageYOffset+"deg)";
-    //rightgear.style.transform = "rotate(-"+window.pageYOffset+"deg)";
-});
+if(slogan){
+    window.addEventListener("optimizedScroll", function() {
+        slogan.style.transform = "rotate("+window.pageYOffset+"deg)";
+        //rightgear.style.transform = "rotate(-"+window.pageYOffset+"deg)";
+    });
+}

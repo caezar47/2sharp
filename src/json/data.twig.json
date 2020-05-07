@@ -30,7 +30,6 @@
 
 	"page":{
 		"index":"./",
-		"index":"#",
 		"works":"./works.html",
 		"works_card":"./works-card.html",
 		"agency":"./agency.html",

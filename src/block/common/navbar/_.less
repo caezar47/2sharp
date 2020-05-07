@@ -8,6 +8,14 @@
 			left: 0;
 			z-index: 100;
 		});
+		.media-breakpoint-up(@xl; {
+			&.is--index{
+				position: absolute;
+				z-index: 5;
+				bottom: 25px;
+    			left: @container_gap_xl;
+			}
+		});
 	}
 	//header
 	&header{
@@ -15,6 +23,15 @@
 		//z-index: 1;
 		background-color: @navbar_header_bg;
 		padding: 11px @container_gap;
+		&.is--index{
+			background-color: fadeout(@navbar_header_bg, 100%);
+			transition: @trs-site;			
+			.media-breakpoint-down(@xl; {
+				.navbar__block.is--scroll &{
+					background-color: @navbar_header_bg;
+				}
+			});
+		}
 		.media-breakpoint-up(@xl; {
 			display: none;
 		});	
@@ -46,15 +63,33 @@
 		width: 100%;
 		max-width: @navbar_logo_device_widht;
 		//height: @navbar_logo_device_height;
+		&.is--index{
+			max-width: 155px;
+		}
 		.media-breakpoint-up(@xl; {
 			max-width: @navbar_logo_widht;
 			//height: @navbar_logo_height;
 			margin-bottom: 35px;
+			&.is--index{
+				max-width: 265px;
+			}			
 		});	
 		svg{
 			display: block;
 			width: 100%;
 			height: auto;
+		}
+		&-logo{
+			fill: @default;
+			&.is--index{
+				fill: @white;
+				transition: @trs-site;
+				.media-breakpoint-down(@xl; {					
+					.navbar__block.is--scroll &{
+						fill: @default;
+					}
+				});
+			}
 		}
 		&-rotate{
 			animation-name: rotation;
@@ -234,6 +269,9 @@
 				}
 				&.is--lang{
 					margin-top: 90px;
+					&.is--index{
+						margin-top: 56px;
+					}
 				}
 				&.is--soc{
 					display: none;
@@ -299,6 +337,9 @@
 				cursor: default;
 			}
 			.media-breakpoint-up(@xl; {
+				&.is--index{
+					color: @white;
+				}
 				&::after{
 					bottom: 1px;
 				}

@@ -1,6 +1,22 @@
 .card__{
 	&item{
 		&.is--page{
+			&-index-header{
+				&.is--work{
+					position: absolute;
+					z-index: 2;
+					top: 56.5%;
+					left: 15px;
+					max-width: 240px;
+					.media-breakpoint-up(@lg; {
+						top: 30px;
+						left: 10px;
+					});
+					.media-breakpoint-up(@xxl; {
+						max-width: auto;
+					});
+				}
+			}
 			&-agency{
 				&.is--right{
 				    margin-bottom: 40px;
@@ -208,6 +224,49 @@
 		position: relative;
 		svg{display: block;}
 		&.is--page{			
+			&-index-header{
+				&.is--work{
+					height: 160px;
+					img{
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						object-position: center;		
+					}
+					.media-breakpoint-up(@lg; {
+						height: 60vh;
+						width: 42vw;
+						height: 40vh;
+						width: 32vw;
+						min-width: 400px;
+					});
+				}
+				&.is--whowow{
+					position: absolute;
+					z-index: 5;
+					width: 100%;
+					max-width: 183px;
+				    bottom: 0px;
+    				right: 45px;
+					transform: translate(0, 45%);
+					g{
+						transform-box: fill-box;
+  						transform-origin: center;
+					}
+					svg{
+						width: 100%;
+						height: auto
+					}
+					.media-breakpoint-up(@lg; {
+						max-width: 400px;
+					});		
+					.media-breakpoint-up(@xxl; {
+						max-width: 490px;
+					   	right: 14.5vw;
+						transform: translate(0, 59%);
+					});
+				}
+			}		
 			&-agency{
 				&.is--whowow{
 					position: absolute;
@@ -537,6 +596,22 @@
 			}
 		}
 		&.is--page{
+			&-index-header{
+				&.is--work{
+					background-color: @primary;
+					font-family: @site_ff_custom;
+					color: @default;
+					font-size: 0.5em;
+					line-height: 1em;
+					display: flex;
+					justify-content: space-between;
+					text-transform: uppercase;
+					padding: 8px 5px 7px 9px;
+					.media-breakpoint-up(@lg; {
+						display: none;
+					});
+				}
+			}
 			&-agency{
 				&.is--right{
 					margin-bottom: 10px;
@@ -624,6 +699,21 @@
 		}
 	}
 	&icon {
+		&.is--page{			
+			&-index-header{
+				&.is--work{
+					min-width: 18px;
+					width: 18px;
+					height: 10px;
+					margin-left: 10px;
+					margin-top: -1px;
+					svg{display: block;}
+					.card__item:hover &{
+						transform: translateX(5px);
+					}
+				}
+			}
+		}
 		&.is--works{
 			&-card{
 				display: block;

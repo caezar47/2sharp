@@ -38,25 +38,83 @@
                     name:"Winning at Cannes Lions",
                 }                    
             ],
-        } %} 
+        } %}
+        <div class="content-block__panel  is--page-index-header">    
+            {% include "../block/common/navbar/navbar.twig" with {
+                view: "index",
+                navbar_prefix:"navbar__",
+                navbar_mod:"is--index",
+                active:page.index,
+                lang_icon: 'lang-left',
+                lang_ru: page.index,
+                lang_en: page.agency_en,
+                lang_active: page.index
+            } %} 
+            {% include "../block/page/index.twig" with {
+                view: "index_header",
+                content_prefix:"content-block__", 
+                content_mod:"is--page-index-header", 
+
+                heading_mod:"fw--500  font-family--custom  is--page-index-header", 
+                heading_level:"h1", 
+                heading_color:"#AFDE0E", 
+                heading:"we help brands grow ", 
+
+                work_link:page.works_card,
+                work_name:"Проект: Хамовники",
+                work_img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                         
+            } %} 
+        </div>
         <div class="content-block__wrapper">  
-            <div class="content-block__wrapper-cols">  
-                {% include "../block/common/navbar/navbar.twig" with {
-                    navbar_prefix:"navbar__",
-                    navbar_mod:"is--second",
-                    active:page.index,
-                    lang_icon: 'lang-left',
-                    lang_ru: page.index,
-                    lang_en: page.agency_en,
-                    lang_active: page.index
-                } %} 
+            <div class="content-block__wrapper-cols">
             </div>
             <main class="content-block__main">
-                {% include "../block/page/index.twig" with {
-                    view: "works_card",
+                {% include "../block/page/works.twig" with {
+                    view: "index_works_page",
                     content_prefix:"content-block__", 
-                    content_mod:"is--page-index",               
-                } %} 
+                    content_mod:"is--page-works",
+                    heading_mod:"is--h3  fw--500  font-family--custom  is--page-index-works", 
+                    heading_level:"h1", 
+                    heading:"wow work",  
+                    list:[
+                        {
+                            link:page.works_card,
+                            name:"Шереметьево",
+                            note:"Консолидация всех подразделений в один стиль",
+                            label:"<span>branding</span> <span>digital</span> <span>strategy</span> <span>packaging</span> <span>logo</span>",
+                            img:"http://www.2sharp.ru/data/upload/images/59942a75c4dfc.jpg",
+                        },
+                        {
+                           link:"#",
+                           name:"М.Видео",
+                           note:"Оформление магазинов М.Видео к Новому Году",
+                           label:"<span>Branding</span>",
+                           img:"http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg",
+                        },
+                        {
+                           link:"#",
+                           name:"Хамовники",
+                           note:"Рекламная кампания безалкогольного пива",
+                           label:"<span>Communication</span>",
+                           img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                        },
+                        {
+                           link:"#",
+                           name:"CROCUS CITY MALL",
+                           note:"Рестайлинг логотипа и концепция коммуникации",
+                           label:"<span>Branding</span>",
+                           img:"http://www.2sharp.ru/data/upload/images/5994612b71e98.jpg",
+                        }, 
+                        {
+                           link:"#",
+                           name:"М.Видео",
+                           note:"Новогодний имиджевый видеоролик «Дорогими подарки делаете&nbsp;вы!»",
+                           label:"<span>Communication</span>",
+                           img:"http://www.2sharp.ru/data/upload/images/59945558bd8eb.jpg",
+                        }  
+                    ],                    
+                } %}                 
             </main>
         </div>
         {% include "../block/common/footer/footer.twig" with {
