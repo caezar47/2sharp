@@ -1,92 +1,29 @@
 //===== url =====//
 @url-site 					: 	'';
-//@url-path 					: 	'/wp-content/themes/azbn7theme'; 
 @url-path 					: 	'..';
-//@url-path 					: 	'';
 @url-path-css 				: 	'@{url-path}/css';
 @url-path-fonts 			: 	'@{url-path}/fonts';
 @url-path-img 				: 	'@{url-path}/img';
 @url-path-js 				: 	'@{url-path}/js';
 
 //===== color =====//
-//= social
-@color-vk 					: 	#4d7198;
-@color-yb 					: 	#bb0000;
-@color-skype 				: 	#4d7198;
-@color-viber 				: 	#7F40BD;
-@color-whatsapp 			: 	#7AD06D;
-@color-ok 					: 	#ee8208;
-@color-fb 					: 	#3b5998;
-@color-tw 					: 	#1faee9;
-@color-be 					: 	#4176fa;
-@color-pint 				:	#cd1f28;
-@color-inst 				: 	#fed022;
-@color-drb 					: 	#f26798;
-@color-pdf 					:	#bb0706;
-@color-doc 					:	#2186fa;
-@color-xls 					:	#23a565;
-@color-ppt 					:	#cd4b33;
-@color-jpg 					:	#208895;
-@color-zip 					:	#f2e295;
-@color-txt 					:	#6fbbcc;
-
-//= default
-@black-b5 					: 	#B5B5BD;
-@black-2e 					: 	#2E2E2E;
-@black-29 					: 	#292929;
-@black-33 					: 	#333;
-@black-41 					: 	#414141;
-@black-50 					: 	#505050;
-@black-54 					: 	#545454;
-@black-63 					: 	#636363;
-@black-87 					: 	#878787; 
-@black-9a 					: 	#9A9A9A; 
-@black-98 					: 	#989898; 
-@black-9c 					: 	#9C9C9C; 
-@white-f2 					:	#F2F2F2;
-@white-f9 					:	#F9F9F9;
-@white-6f 					:	#6F6F6F;
-@white-e9 					:	#E9E9E9;
-@white-db 					:	#DBDBDB;
-@white-c0 					:	#C0C0C0;
-@white-f8 					:	#F8F8F8;
-@orange 					:	#F99F1B;
-@orange-h 					:	#FFC266;
-@orange-a 					:	@orange;
-@blue 						:	#004D99; 
-@blue-h 					:	#4AADF7;
-@blue-a 					:	#3C91E6;
-@blue-light 				:	#E5F6FF;
-@blue-08 					:	#0864AA;
-@blue-75 					:	#75BAFF;
-@blue-c6 					:	#C6E2F7;
-@blue-00 					:	#0077B2;
-@red 						:	#FF7A7A;
-@yellow 					:	#FF8E26;
-
-
-@green-h 					: 	#A1E100;
-
 //= default
 @white 						:	#fff;
 @black 						: 	#000;
 @black-14 					: 	#181417;
 @green 						: 	#AFDE0E;
+@green-h 					: 	#A1E100;
 @green-a 					: 	#95D212;
 @black-d0 					: 	#D0D0D0;
 @red 						:	#DB5610;
 
 @primary 					:	@green;
 @primary-h 					:	@green-h;
-@primary-a 					:	fadeout(@white, 100%);
-@primary-l 					:	fadeout(@white, 100%);
 @default 					:	@black-14;
 @warning 					:	@red;
 @success 					:	@green-a;
-@success-h 					:	fadeout(@white, 100%);
-@success-a					:	fadeout(@white, 100%);
 @info 						:	@black-d0;
-@danger 					:	fadeout(@white, 100%);
+@danger 					:	@red;
 
 //===== fonts =====//
 @stem 						: 	stem-400;
@@ -110,7 +47,6 @@
 @site_fs_xs 				:	16px; 
 @site_lh_xs 				:	24px; 
 
-@block_pl 					: 	120px;
 @block_pl 					: 	6.2vw;
 
 @b-ff 						:	@stem;
@@ -118,7 +54,6 @@
 
 @b-color-a 					:	@primary; 
 @b-color-a-hover 			:	@primary-h; 
-
  		
 @b-fs 						: 	@site_fs;
 @b-lh 						: 	@site_lh;
@@ -183,42 +118,15 @@
 @navbar_nav_color_hover 	:	@primary;
 @navbar_nav_color_active 	:	@primary;
 
-@navbar_collapse_color  	:	@white-6f;
-@navbar_collapse_color_hover: 	@success;
-
 @navbar_xs 					:	40px; 
 @navbar_xs_height			:	92px; 
 @navbar_screen 				:	80px;  
-
-//old
-@navbar_bg_screen 			:	@white;
-@navbar_bg_screen_hover 	:	@info; 
-@navbar_bg_device 			:	@info;
-@navbar_ff 					:	@b-ff;
-@navbar_fs 					:	@b-fs; 
-@navbar_lh 					:	@b-lh;  
-@navbar_color_link 			:	@primary;
-@navbar_color 				:	@site_color;
-@navbar_color_hover 		:	@primary;
-@navbar_active_bg 			:	@primary;
-@navbar_active_color 		:	@primary;
-
-@navbar_color_device 		:	@site_color;
-@navbar_color_device_hover 	:	@primary;
-
-//= logotip
-
-//= size
-
-
-@navbar_bottom 				:	40px;
-@navbar_bottom_tabs 		:	64px;
 //===== end's navbar =====//
 
 //===== footer =====//
-@footer_color 				:	@white-6f; 
+@footer_color 				:	@white; 
 @footer_color_hover 		:	@white; 
-@footer_bg 					:	@black-29;
+@footer_bg 					:	@default;
 @footer_ff 					:	@b-ff; 
 @footer_fs 					:	@b-fs; 
 @footer_lh 					:	@b-lh; 
@@ -227,16 +135,6 @@
 @footer_logo_color 			: 	@primary;
 @footer_logo_widht 			: 	120px;
 @footer_logo_height 		: 	50px;
-
-//= size
-/*@footer_xs 				:	75px;*/
-@footer_sm 					:	84px;
-@footer_device_sm_p 		:	84px;
-@footer_device_sm_l 		:	84px;
-@footer_screen 				:	90px;
-@footer_screen_md 			:	@footer_screen;
-@footer_screen_lg 			:	@footer_screen;
-@footer_screen_xxl 			:	@footer_screen;
 //===== end's footer =====//
 
 //===== btn =====//
@@ -251,54 +149,24 @@
 @btn_hover_color 			:	@white;
 @btn_hover_bg_color 		:	@primary;	
 @btn_hover_border_color 	:	@primary;
-//= active =
-@btn_active_color 			:	@white;
-@btn_active_bg_color 		:	@primary-a;	
-@btn_active_border_color 	:	@primary-a;
-
-//== white ==
-@btn_w_color 				:	@default;
-@btn_w_border_color 		:	@success;
-@btn_w_bg_color 			:	@white;
-//= hover =
-@btn_w_hover_color 			:	@white;
-@btn_w_hover_bg_color 		:	@success;	
-@btn_w_hover_border_color 	:	@success;
-//= active =
-@btn_w_active_color 		:	@white;
-@btn_w_active_bg_color 		:	@success;	
-@btn_w_active_border_color 	:	@success;
-
-//== invers ==
-@btn_i_color 				:	@btn_hover_color;
-@btn_i_border_color 		:	@btn_hover_border_color;
-@btn_i_bg_color 			:	@btn_hover_bg_color;
-//= hover =
-@btn_i_hover_color 			:	@btn_color;
-@btn_i_hover_border_color 	:	@btn_border_color;
-@btn_i_hover_bg_color 		:	@btn_bg_color;	
 
 //== link ==
 @link_color 				:	@primary;
 @link_color_hover 			:	@success;
 //===== end's btn =====//
 
-//===== tabs =====//
-@tabs_color 				:	@black-98;
-@tabs_color_active 			:	@success;
-//===== end's tabs =====//
-
 //===== form  =====//
 //=== input ===
-@input_label				: 	@default;
+@input_label				: 	@info;
 @input_bg					:	@white;
-@input_height				:	48px;
+@input_height				:	40px;
 @input_height_textarea		:	65px;
 @input_radius				:	0px;
-@input_border_color			:	@white;
+@input_border_color			:	@primary;
 @input_border_width			:	1px;
 
 //= focus =
+@input_focus_label			:	@info;
 @input_focus_bg				:	@white;
 @input_focus_border_color	:	@primary;
 
@@ -310,182 +178,37 @@
 @input_focus_t_color		:	@default;
 
 //== placeholder ==
-@input_plh_color			:	@black-87;
-//@input_plh_fs				:	@b-fs - 2;
-//@input_plh_lh				:	@b-lh - 2;
+@input_plh_color			:	@info;
 @input_plh_fs				:	@b-fs;
 @input_plh_lh				:	@b-fs;
 //= focus =
 @input_focus_plh_color		:	@site_color;
 
-//== white ==
-@input_w_bg					:	fadeout(@white, 100%);
-@input_w_color				:	@white;
-@input_w_border_color		:	@white;
-//= focus =
-@input_w_focus_bg			:	@white;
-@input_w_focus_border_color	:	@primary;
-@input_w_focus_color		:	@site_color;
-
-//== placeholder ==
-@input_w_plh_color			:	@white;
-//= focus =
-@input_w_focus_plh_color	:	@site_color;
-
-//=== range ===
-@range_height 				: 	40px;
-@range_line_bg 				: 	@primary;
-@range_line_bg_hover 		: 	@success;
-
-@range_btn_bg 				: 	@success;
-@range_btn_bg_hover 		: 	@primary;
-@range_btn_color 			: 	@white;
-
-//=== radio ===
-@radio_gutter 				: 	4px;
-@radio_bg 					: 	@primary;
-@radio_bg_hover 			: 	@success;
-@radio_bg_active 			: 	@site_color;
-
-//=== error ===
-@form_error_bg 				: 	@primary;
-@form_error_bg_pass 		: 	@success;
-@form_error_bg_load 		: 	@default;
-@form_error_text_color 		: 	@white;
-@form_error_border_color 	: 	@primary;
-@form_error_border_width 	: 	0px;
-@form_error_fs 				: 	@b-fs - 6;
-@form_error_lh 				: 	@b-lh - 6;
-@form_error_radius 			: 	0;
-
-
-//=== radio ===
-@radio_color 				: 	@default;
-@radio_size 				: 	20px;
-@radio_gutter 				: 	4px;
-@radio_bg 					: 	@white;
-@radio_border_width 		: 	1px;
-@radio_border_color 		: 	@default;
-@radio_icon 				: 	transparent;
-@radio_radius 				: 	50%;
-
-//= disabled =
-@radio_disabled_icon		:	@white;
-@radio_disabled_bg			: 	fadeout(@default, 30%);
-
-//= focus =
-@radio_focus_color 			: 	@primary;
-@radio_focus_bg 			: 	@primary;
-@radio_focus_shadow	 		:	@success;
-@radio_focus_border_color	: 	@primary;
-@radio_focus_icon 			: 	@white;
-
-//=== check ===
-@check_fs					:	@b-fs - 2;
-@check_lh					:	@b-lh - 4;
-@check_size					:	16px;
-@check_color				:	@default;
-@check_border_width			:	1px;
-
-@check_bg					:	@white;
-@check_border_color			:	@black-98;
-
-//= focus =
-@check_focus_border_color	:	@success-h;
-
-//= disabled =
-@check_disabled_border_color:	@white-db;
-
-//== white ==
-@check_w_bg					:	@white;
-@check_w_border_color 		: 	@black-98;
-//= focus =
-@check_w_focus_border_color : 	@black-29;
-
-//= disabled =
-@check_w_disabled_border_color : @white-db;
-
-//=== file ===
-@file_color					:	@primary;
-@file_icon					:	@primary;
-@file_size					:	18px;
-@file_border_color			:	currentColor;
-//= focus =
-@file_focus_color 			: 	@success;
-@file_focus_border_color 	: 	transparent;
-
-//=== reset ===
-@reset_color				:	@info;
-@reset_fs					:	@b-fs;
-@reset_lh					:	@b-lh;
-@reset_size					:	22px;
-@reset_border_width			:	2px;
-@reset_border_color			:	@info;
-@reset_bg_color				:	fadeout(@info, 50%);
-//= focus =
-@reset_focus_border_color	:	transparent;
-@reset_focus_bg_color		:	@primary;
-@reset_focus_color			:	@primary;
-
-//=== search ===
-@search_border 				:	1px;
-@search_radius				:	22px;
-@search_border_color		:	@info;
-@search_height				:	44px;
-
-@search_input_color			:	@site_color;
-@search_input_bg			:	@white;
-
-@search_btn_color			:	@site_color;
-@search_btn_bg				:	@white;
-//= focus =
-@search_input_f_color		:	@warning;
-@search_input_f_bg			:	@info;
-
-@search_btn_f_color			:	@warning;
-@search_btn_f_bg			:	@info;
-//===== end's form =====//
 //===== table =====//
 @table_color 				:	@default;
-@table_border_color 		:	@white-e9;
+@table_border_color 		:	@info;
 @table_bg_colspan 			:	@white;
-@table_padding 				:	30px 15px ;
+@table_padding 				:	30px 15px;
 
-@table_head_color 			:	@black-98;
+@table_head_color 			:	@default;
 @table_head_bg 				:	@info;
 @table_head_padding 		:	20px 15px;
-@table_head_border_color 	:	@white-e9;
+@table_head_border_color 	:	@info;
 //===== end's table =====//
 
-//===== pagination =====//
-@pagin_gutter 				:	5px;
-@pagin_color 				: 	@black-98;
-@pagin_color_hover 			: 	@success;
-@pagin_color_active 		: 	@success;
-//===== end's pagination =====//
-
-//===== breadcrumb =====//
-@bread_fs 					: 	@b-fs - 4;
-@bread_lh 					: 	@b-lh - 4;
-@bread_color 				: 	@black-41; 
-@bread_color_active 		: 	@black;
-@bread_style_line 			:	solid;
-//===== end's breadcrumb =====//
-
 //===== modals =====//
-@modal_backdrop 			:	@default;
-@modal_backdrop_fade 		:	0.9;
+@modal_backdrop 			:	@primary;
+@modal_backdrop_fade 		:	0.7;
 @modal_bg 					:	@white;
 @modal_border_rad 			:	5px;
-@modal_width 				:	590px;
-@modal_width_device 		:	650px;
-@modal_btn_width 			: 	34px;
-@modal_btn_border_rad 		:	50%;
-@modal_btn_color 			:	@default;
+@modal_width 				:	690px;
+@modal_btn_width 			: 	32px;
+@modal_btn_border_rad 		:	0%;
+@modal_btn_color 			:	@success;
 @modal_btn_bg 				:	@modal_bg;
 @modal_btn_border 			:	2px;
 @modal_btn_border_color 	:	@primary;
-@modal_btn_color_hover 		:	@success;
+@modal_btn_color_hover 		:	@default;
 @modal_btn_bg_hover 		:	@success;
 @modal_btn_border_color_hover:	@success;
 //===== end's modals =====//
@@ -534,7 +257,7 @@
 @slider_dots_bottom 		: 	1.5vw;
 @slider_dots_width 			: 	16px;
 @slider_dots_gutter 		: 	10px;
-@slider_dots_bg 			: 	@primary-a;
+@slider_dots_bg 			: 	@primary;
 @slider_dots_radius 		: 	50%;
 
 @slider_dots_bg_active 		: 	@white;

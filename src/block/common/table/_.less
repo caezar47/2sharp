@@ -15,60 +15,6 @@
 	border: 0; 
 	line-height: 1.15em;
 	margin-bottom: 0;
-	&.is--page{
-		&-vacancies{
-			margin-bottom: 25px;
-			thead{ 
-				tr{
-					td,th{
-						font-size: 14px;
-					}
-				}
-			}
-			tr{
-				td,th{
-					color: @black-98;
-				}
-			}
-			a{
-				color: @default;
-				font-weight: 700;
-				&:hover{
-					color: @primary;
-				}
-				&:active{
-					color: @primary-a;
-				}
-			}
-			.media-breakpoint-down(@md; {
-				margin-bottom: 30px;
-				line-height: 1.25em;
-				thead{
-					display: none;
-				}
-				tr{	
-					display: block;
-					border-bottom: 1px solid @table_border_color;
-					padding: 15px 10px;
-					&:first-child{
-						border-top: 1px solid @table_border_color;
-					}
-					td, th{
-						display: block;
-						padding: 0;
-						border: 0!important;
-						margin-bottom: 15px;
-						&:last-child{
-							margin-bottom: 0px;
-						}
-					}
-				}
-			});
-			.media-breakpoint-up(@md; {
-				margin-bottom: 3vw;
-			});
-		}
-	}
 	@media print{
 		* {color: @black}
 	}

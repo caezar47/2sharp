@@ -1,6 +1,8 @@
 var humb = $("[data-hamburger]");
 var collapse = $(".navbar__collapse");
 var html = $("html");
+var wrapper = $(".content-block__wrapper");
+var navbar = $(".navbar__block.is--index");
 
 humb.on('click',function() {	
 	$(this).toggleClass("is--active");			
@@ -15,23 +17,17 @@ $(document.body).on('click', function(event) {
 	}		
 });
 
-var url = window.location.pathname;
-//var url = window.location.href;
-$('.navbar__nav-link[href="'+url+'"]').addClass('is--active'); 
-
-$('.navbar-aside__nav a[href="'+url+'"]').parent().addClass('is--active'); 
-$('.tabs__nav a[href="'+url+'"]').parent().addClass('is--active'); 
-$('[data-azbn-toggle="dropdown"]').on('click', function(e) {
-	$(".azbn-dropdown").toggleClass('open');
-});	
-$('.navbar-aside__dropdown [data-toggle="dropdown"]').on('click', function(e) {
-	e.preventDefault();
-	e.stopPropagation();
-	$(this).parent().siblings().removeClass('open');
-	$(this).parent().toggleClass('open');
-});
-$('.azbn__search-dropdown').on('shown.bs.dropdown', function(e) {
-	$('.azbn__search-input').focus();
-});
-
-
+if(navbar.length){
+	$('[data-slick-top]').on('init', function(){
+		var wrapper_position = wrapper.offset().top;
+		$(document).on('scroll', function (){
+			var scroll = $(window).scrollTop();
+			console.log('sc '+scroll);
+			if(scroll > wrapper_position){
+				navbar.addClass('is--scroll');
+			} else {
+				navbar.removeClass('is--scroll');
+			}
+		})
+	});
+}

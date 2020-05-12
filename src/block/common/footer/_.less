@@ -1,7 +1,6 @@
 .footer__{
 	&block{
 		position: relative;
-		@media print{display: none;}
 		color: @footer_color;	
 		background: @footer_bg;
 		padding-top: 42px;
@@ -21,13 +20,14 @@
 			padding-bottom: 22px;
 			line-height: @site_lh;			
 		});
+		@media print{display: none;}
 	}
 	&container.container{
 		max-width: 100%;
 		margin-right: 0;
 		margin-left: 0;
 		.media-breakpoint-up(@xl; {
-			padding-left: 6.7vw;
+			padding-left: @container_gap_xl;
 		});
 	} 
 	&row{

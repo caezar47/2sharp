@@ -1,10 +1,17 @@
 {% if view == "input" %}
 	{% for value in list %}	
-	<p class="{{prefix}}item  {{mod}}  {{value.mod_elem}}"  {% if value.required == "required" %}data-error="Обязательно к заполнению"{% endif %}>
+	<label class="{{prefix}}item  {{mod}}  {{value.mod_elem}}"  {% if value.required == "required" %}data-error="Обязательно к заполнению"{% endif %}>
 		<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}  {% if value.view == "date" %}datepicker-here{% endif %}  {% if value.view == "time" %}datepicker-here{% endif %}" {{value.required}} placeholder="{{value.placeholder}}" {% if value.view == "time" %}data-timepicker="true"{% endif %}>
-		{# <input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %}> #}
-	</p>
+		{% if value.label %}<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>{% endif %}
+	</label>
 	{% endfor %}
+{% endif %}
+
+{% if view == "textarea" %}	
+	<div class="{{prefix}}item  {{mod}}  {{mod_elem}}">
+		<textarea class="{{prefix}}control form-control {{validate}}  {{mod}}  {{color}}"placeholder="{{placeholder}}" {{value.required}}></textarea>
+		{% if value.label %}<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>{% endif %}
+	</div>
 {% endif %}
 
 {% if view == "select" %}
@@ -54,12 +61,6 @@
 		<div class="{{prefix}}text  {{mod}}  {{color}}  is--agreement">	
 			Соглашаюсь с условиями передачи информации</a>
 		</div>	
-	</div>
-{% endif %}
-
-{% if view == "textarea" %}	
-	<div class="{{prefix}}item  {{mod}}  {{mod_elem}}">
-		<textarea class="{{prefix}}control form-control {{validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]" placeholder="{{placeholder}}"></textarea>
 	</div>
 {% endif %}
 
