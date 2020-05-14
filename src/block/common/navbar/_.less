@@ -66,6 +66,7 @@
 			max-width: 155px;
 		}
 		.media-breakpoint-up(@xl; {
+			margin-left: -4px;
 			max-width: @navbar_logo_widht;
 			//height: @navbar_logo_height;
 			margin-bottom: 35px;
@@ -336,9 +337,6 @@
 				cursor: default;
 			}
 			.media-breakpoint-up(@xl; {
-				&.is--index{
-					color: @white;
-				}
 				&::after{
 					bottom: 1px;
 				}
@@ -349,8 +347,15 @@
 						background-color: @navbar_nav_color_active;
 					}
 				}
-				&.is--active{					
-					font-weight: 700;
+				&.is--index{
+					color: @white;
+					&:hover,
+					&.is--active{
+						color: @success;
+						&:after{
+							background-color: @success;
+						}
+					}
 				}
 			});
 			/*		
