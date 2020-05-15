@@ -426,7 +426,7 @@
 		<div class="content-block__row  grid__row  is--page-works">
 			
 			
-	<a href="./works-card.html" class="card__item  is--works-card">
+	<a href="./works-card.html" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
 			<img src="http://www.2sharp.ru/data/upload/images/59942a75c4dfc.jpg" alt="" class="img-responsive">
 		</div>
@@ -441,7 +441,7 @@
 		<p class="card__label  is--works-card"><span>branding</span> <span>digital</span> <span>strategy</span> <span>packaging</span> <span>logo</span></p>
 	</a> 
 			
-	<a href="#" class="card__item  is--works-card">
+	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
 			<img src="http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg" alt="" class="img-responsive">
 		</div>
@@ -456,7 +456,7 @@
 		<p class="card__label  is--works-card"><span>Branding</span></p>
 	</a> 
 			
-	<a href="#" class="card__item  is--works-card">
+	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
 			<img src="http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg" alt="" class="img-responsive">
 		</div>
@@ -471,7 +471,7 @@
 		<p class="card__label  is--works-card"><span>Communication</span></p>
 	</a> 
 			
-	<a href="#" class="card__item  is--works-card">
+	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
 			<img src="http://www.2sharp.ru/data/upload/images/5994612b71e98.jpg" alt="" class="img-responsive">
 		</div>
@@ -486,7 +486,7 @@
 		<p class="card__label  is--works-card"><span>Branding</span></p>
 	</a> 
 			
-	<a href="#" class="card__item  is--works-card">
+	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
 			<img src="http://www.2sharp.ru/data/upload/images/59945558bd8eb.jpg" alt="" class="img-responsive">
 		</div>
@@ -501,7 +501,7 @@
 		<p class="card__label  is--works-card"><span>Communication</span></p>
 	</a> 
 			
-	<a href="#" class="card__item  is--works-card">
+	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
 			<img src="http://www.2sharp.ru/data/upload/images/5992ea6848633.jpg" alt="" class="img-responsive">
 		</div>
@@ -516,7 +516,7 @@
 		<p class="card__label  is--works-card"><span>Communication</span></p>
 	</a> 
 			
-	<a href="#" class="card__item  is--works-card">
+	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
 			<img src="http://www.2sharp.ru/data/upload/images/5992c3efcea5b.jpg" alt="" class="img-responsive">
 		</div>
@@ -531,7 +531,7 @@
 		<p class="card__label  is--works-card"><span>Communication</span></p>
 	</a> 
 			
-	<a href="#" class="card__item  is--works-card">
+	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
 			<img src="http://www.2sharp.ru/data/upload/images/59942cafdae0e.jpg" alt="" class="img-responsive">
 		</div>
@@ -546,7 +546,7 @@
 		<p class="card__label  is--works-card"><span>Communication</span></p>
 	</a> 
 			
-	<a href="#" class="card__item  is--works-card">
+	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
 			<img src="http://www.2sharp.ru/data/upload/images/5ab11151d2bd1.jpg" alt="" class="img-responsive">
 		</div>
@@ -561,7 +561,7 @@
 		<p class="card__label  is--works-card"><span>Branding</span></p>
 	</a> 
 			
-	<a href="#" class="card__item  is--works-card">
+	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
 			<img src="http://www.2sharp.ru/data/upload/images/59956cdab16af.jpg" alt="" class="img-responsive">
 		</div>
@@ -670,18 +670,27 @@
 </footer>
 		
 		
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 <script src="./js/jquery-3.2.1.min.js" ></script>
-<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnNznmhY_wMxtm4mF97XXIsQ_qkZlS0wg"></script>
 <script src="./js/document-ready.js" ></script>
 <script src="./js/svg4everybody.min.js" ></script>
 <script>
 svg4everybody();
 document.createElement("picture");
+AOS.init({
+	offset: 0,
+	duration: 500,
+	easing: 'ease',
+	delay: 300,
+	once: true,
+	disable: function () {
+    	var maxWidth = 768;
+    	return window.innerWidth < maxWidth;
+	}
+});
 </script> 	</body>
 </html> 

@@ -78,7 +78,8 @@
                     content_mod:"is--page-works",
                     heading_mod:"is--h3  fw--500  font-family--custom  is--page-index-works", 
                     heading_level:"h1", 
-                    heading:"wow work",  
+                    heading:"wow work",
+                    aos: 'fade-up',  
                     list:[
                         {
                             link:page.works_card,
@@ -129,6 +130,6 @@
 
         {# {% include "../block/common/modals/include.twig"%} #}
         
-        {% include "../block/common/script/script.twig" with {map: "view"}%}
+        {% include "../block/common/script/script.twig" with {aos: "view"}%}
     </body>
 </html> 

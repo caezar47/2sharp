@@ -219,6 +219,9 @@
 					&.is--xs-xl{
 						grid-template-columns: repeat(3, 1fr);
 					}
+					&.is--xs-3{
+						grid-template-columns: repeat(3, 1fr);
+					}
 				});
 			}
 		}
@@ -399,9 +402,13 @@
 							grid-column: span 2;
 						}
 					}
+					.card__row.is--xs-3 > &{
+						height: 30.25vw;
+					}
 				});	
 				video{
 					width: 100%;
+					background-color: @default;
 				}				
 				img{
 					width: 100%;

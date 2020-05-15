@@ -60,7 +60,8 @@
 					heading_mod:"is--h1  fw--500  color--primary  font-family--custom  is--page-base", 
 					heading_level:"h1", 
 					heading:"Проекты",  
-					heading:"projects",  
+					heading:"projects", 
+					aos: 'fade-up', 
 					list:[
 						{
 							link:page.works_card,
@@ -145,6 +146,6 @@
 
 		{# {% include "../block/common/modals/include.twig"%} #}
 		
-		{% include "../block/common/script/script.twig" with {map: "view"}%}
+        {% include "../block/common/script/script.twig" with {aos: "view"}%}
 	</body>
 </html> 

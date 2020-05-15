@@ -16,4 +16,17 @@ document.createElement("picture");
 {% if wow == "view" %}
 new WOW().init();
 {% endif %}
+{% if aos == "view" %}
+AOS.init({
+	offset: 0,
+	duration: 500,
+	easing: 'ease',
+	delay: 300,
+	once: true,
+	disable: function () {
+    	var maxWidth = 768;
+    	return window.innerWidth < maxWidth;
+	}
+});
+{% endif %}
 </script> 
