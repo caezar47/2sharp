@@ -2923,6 +2923,13 @@ body[data-aos-easing="ease"] [data-aos] {
 [data-aos="fade-up"] {
     transform: translate3d(0, 100px, 0);
 }
+.lazy{
+	opacity: 0;
+	transition: @trs-site;
+	&.loaded{
+		opacity: 1;
+	}
+}
 .slick {
 	@g: 15px;
 	&-slider{	
