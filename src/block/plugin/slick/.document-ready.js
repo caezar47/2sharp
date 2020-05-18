@@ -31,19 +31,15 @@ $(function() {
 		]
 	});
 	works.slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
+		slidesToShow: 3,
+		slidesToScroll: 3,
 		arrows: true,
 		dots: false,
 		infinite: false,
 		prevArrow: prevArrow,
 		nextArrow: nextArrow,
 		responsive: [
-		    {
-				breakpoint: 3000,
-					settings: "unslick"
-				
-		    },
+		  
 		    {
 				breakpoint: 767,
 				settings: {

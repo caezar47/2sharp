@@ -92,15 +92,15 @@
 		&.is--team-card{
 			transition: @trs-site;
 			.media-breakpoint-up(@lg; {
-				max-width: 300px;
+				//max-width: 300px;
 				&:hover{
-					max-width: 410px;
+					//max-width: 410px;
 				}
 			});
 			.media-breakpoint-up(@xxl; {
-				max-width: 320px;
+				//max-width: 320px;
 				&:hover{
-					max-width: 410px;
+					//max-width: 410px;
 				}				
 			});
 			&:hover{
@@ -432,7 +432,7 @@
 				}
 			});
 			.media-breakpoint-up(@md; {
-				max-width: 410px;
+				//max-width: 410px;
 				height: 300px;
 				//квадрат
 				.card__item.is--team-card:nth-child(18n+1) &{
@@ -590,8 +590,13 @@
 				}
 				//end,s квадрат
 			});
+			.media-breakpoint-up(@xl; {
+				max-width: 26.3vw;
+				height: 26.3vw;
+			});
 			.media-breakpoint-up(@xxl; {
-				height: 320px;
+				max-width: 21.7vw;
+				height: 21.7vw;
 			});
 			img{
 				width: 100%;

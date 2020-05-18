@@ -191,7 +191,9 @@
 		</a>
 
 		<div class="content-block__bg  is--page-index-header" style="background-image: url(./img/default/index-header.jpg)">
-			
+			<video autoplay loop playsinline muted poster="./img/default/index-header.jpg">
+				<source src="./img/index-header.mp4" type="video/mp4">
+			</video>
 		</div>	
 		
 
@@ -240,7 +242,7 @@
 			
 	<a href="./works-card.html" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
-			<img src="http://www.2sharp.ru/data/upload/images/59942a75c4dfc.jpg" alt="" class="img-responsive">
+			<img data-src="http://www.2sharp.ru/data/upload/images/59942a75c4dfc.jpg" alt="" class="img-responsive  lazy">
 		</div>
 		<p class="card__heading  is--works-card">
 			<span>Шереметьево</span>
@@ -255,7 +257,7 @@
 			
 	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
-			<img src="http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg" alt="" class="img-responsive">
+			<img data-src="http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg" alt="" class="img-responsive  lazy">
 		</div>
 		<p class="card__heading  is--works-card">
 			<span>М.Видео</span>
@@ -270,7 +272,7 @@
 			
 	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
-			<img src="http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg" alt="" class="img-responsive">
+			<img data-src="http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg" alt="" class="img-responsive  lazy">
 		</div>
 		<p class="card__heading  is--works-card">
 			<span>Хамовники</span>
@@ -285,7 +287,7 @@
 			
 	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
-			<img src="http://www.2sharp.ru/data/upload/images/5994612b71e98.jpg" alt="" class="img-responsive">
+			<img data-src="http://www.2sharp.ru/data/upload/images/5994612b71e98.jpg" alt="" class="img-responsive  lazy">
 		</div>
 		<p class="card__heading  is--works-card">
 			<span>CROCUS CITY MALL</span>
@@ -300,7 +302,7 @@
 			
 	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
-			<img src="http://www.2sharp.ru/data/upload/images/59945558bd8eb.jpg" alt="" class="img-responsive">
+			<img data-src="http://www.2sharp.ru/data/upload/images/59945558bd8eb.jpg" alt="" class="img-responsive  lazy">
 		</div>
 		<p class="card__heading  is--works-card">
 			<span>М.Видео</span>
@@ -439,6 +441,9 @@ AOS.init({
     	var maxWidth = 768;
     	return window.innerWidth < maxWidth;
 	}
+});
+var lazyLoadInstance = new LazyLoad({
+    elements_selector: ".lazy"
 });
 </script>     </body>
 </html> 

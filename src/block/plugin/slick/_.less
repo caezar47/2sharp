@@ -101,7 +101,7 @@
 		}
 		[data-slick-works] &{
 			.media-breakpoint-up(@sm; {
-				padding: 0 8px;
+				padding: 0 @container_gap;
 			});
 		}
 	}
@@ -117,6 +117,9 @@
 		&.is--prev{
 			left: 5px;
 			.icon-prev();
+			.media-breakpoint-up(@md; {
+				left: 15px;
+			});
 			&:hover{
 				.icon-prev(@c: '95D212');
 			}
@@ -124,6 +127,9 @@
 		&.is--next{
 			right: 5px;
 			.icon-next();
+			.media-breakpoint-up(@md; {
+				right: 15px;
+			});
 			&:hover{
 				.icon-next(@c: '95D212');
 			}

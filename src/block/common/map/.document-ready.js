@@ -79,7 +79,8 @@ function initMap() {
 			anchor: new google.maps.Point(0,0),
 			strokeWeight: 0,
 			//scale: 1,
-			url: "img/svg/map-marker.svg",
+			url: "/img/svg/map-marker.svg",
+			url: "/local/templates/main/assets/img/svg/map-marker.svg",
 		}; 
 		if(map_data.placemarks.length) {
 			for(var i = 0; i < map_data.placemarks.length; i++) {

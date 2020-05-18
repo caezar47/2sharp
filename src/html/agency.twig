@@ -45,10 +45,10 @@
 					navbar_prefix:"navbar__",
 					navbar_mod:"is--second",
 					active:page.agency,
-					lang_icon: 'lang-left',
+					lang_icon: 'lang-right',
 					lang_ru: page.agency,
 					lang_en: page.agency_en,
-					lang_active: page.agency
+					lang_active: page.agency_en
 				} %}
 			</div>
 			<main class="content-block__main">
@@ -227,10 +227,10 @@
 
 		{% include "../block/common/footer/footer.twig" with {
             footer_prefix:"footer__",
-            lang_icon: 'lang-left',
+            lang_icon: 'lang-right',
             lang_ru: page.agency,
             lang_en: page.agency_en,
-            lang_active: page.agency
+            lang_active: page.agency_en
         } %}
 
 		{# {% include "../block/common/modals/include.twig"%} #}

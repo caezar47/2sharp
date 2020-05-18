@@ -15,7 +15,9 @@
 		</a>
 
 		<div class="{{content_prefix}}bg  {{content_mod}}" {% if bg %}style="background-image: url({{bg}})"{% endif %}>
-			{# <video autoplay loop playsinline muted><source src="http://www.2sharp.ru/data/upload/videos/5e5003bc7def5.mp4"></video> #}
+			<video autoplay loop playsinline muted poster="{{bg}}">
+				<source src="{{video}}" type="video/mp4">
+			</video>
 		</div>	
 		{% include "../common/card/card.twig" with {
 		 	view: "slogan", 

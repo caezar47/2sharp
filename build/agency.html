@@ -123,14 +123,14 @@
 					<div class="navbar__collapse-cols  is--lang  is--second">
 						<ul class="lang__panel  is--second  is--navbar">
 	<li class="lang__item  is--second  is--navbar">
-		<a href="./agency.html" class="lang__link  is--second  is--navbar  is--active">ru</a>
+		<a href="./agency.html" class="lang__link  is--second  is--navbar  ">ru</a>
 	</li>
 	<li class="lang__item  is--second  is--navbar  is--icon">
-		<svg class="icon-svg icon-lang-left" role="img">
-	<use xlink:href="./img/svg/sprite.svg#lang-left"></use>
+		<svg class="icon-svg icon-lang-right" role="img">
+	<use xlink:href="./img/svg/sprite.svg#lang-right"></use>
 </svg>	</li>
 	<li class="lang__item  is--second  is--navbar">
-		<a href="#" class="lang__link  is--second  is--navbar  ">en</a>
+		<a href="#" class="lang__link  is--second  is--navbar  is--active">en</a>
 	</li>
 </ul>		   
 					</div>	
@@ -566,14 +566,14 @@
 			<div class="footer__cols  is--lang">
 				<ul class="lang__panel  is--footer">
 	<li class="lang__item  is--footer">
-		<a href="./agency.html" class="lang__link  is--footer  is--active">ru</a>
+		<a href="./agency.html" class="lang__link  is--footer  ">ru</a>
 	</li>
 	<li class="lang__item  is--footer  is--icon">
-		<svg class="icon-svg icon-lang-left" role="img">
-	<use xlink:href="./img/svg/sprite.svg#lang-left"></use>
+		<svg class="icon-svg icon-lang-right" role="img">
+	<use xlink:href="./img/svg/sprite.svg#lang-right"></use>
 </svg>	</li>
 	<li class="lang__item  is--footer">
-		<a href="#" class="lang__link  is--footer  ">en</a>
+		<a href="#" class="lang__link  is--footer  is--active">en</a>
 	</li>
 </ul>			</div>
 			<div class="footer__copyright  footer__cols  is--copyright">
@@ -633,5 +633,8 @@
 <script>
 svg4everybody();
 document.createElement("picture");
+var lazyLoadInstance = new LazyLoad({
+    elements_selector: ".lazy"
+});
 </script> 	</body>
 </html> 

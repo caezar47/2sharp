@@ -22,7 +22,7 @@ if(navbar.length){
 		var wrapper_position = wrapper.offset().top;
 		$(document).on('scroll', function (){
 			var scroll = $(window).scrollTop();
-			console.log('sc '+scroll);
+			//console.log('sc '+scroll);
 			if(scroll > wrapper_position){
 				navbar.addClass('is--scroll');
 			} else {

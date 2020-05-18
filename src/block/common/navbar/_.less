@@ -1,7 +1,7 @@
 .navbar__{ 
 	&block{ 
 		.media-breakpoint-down(@xl; {
-			position: fixed;
+			position: absolute;
 			top: @navbar_xs;
 			width: 100%;
 			left: 0;
@@ -114,6 +114,11 @@
 			width: 80px;
 			height: 48px;
 			padding-left: 15px;
+			.media-breakpoint-down(@xl; {
+				position: fixed;
+				top: 60px;
+				right: 0;
+			});
 			&::after{
 				content: '';
 				top: 50%;

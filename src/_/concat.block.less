@@ -14,15 +14,18 @@
 			display: grid;
 			//grid-template-columns: minmax(150px, 215px) 1fr;
 			//grid-template-columns: minmax(150px, 11.2vw) 1fr;
-			grid-template-columns: minmax(150px, 11.2vw) minmax(auto, 81.5vw) 1fr;
+			grid-template-columns: minmax(150px, 11.2vw) minmax(auto, 81.5vw);
 			grid-gap: 30px 24px;
 		});
 		.media-breakpoint-up(@xxl; {
 			padding-left: @container_gap_xl;
 			padding-right: @container_gap_xl;
+			grid-template-columns: minmax(150px, 11.2vw) minmax(auto, 76.5vw);
 		});
 		&-cols{
-			position: relative;
+			.media-breakpoint-up(@lg; {
+				position: relative;
+			});
 		}
 	}	
 	&panel{	
@@ -249,6 +252,8 @@
 	&slider{
 		&.is--block-works{
 			margin: 0 -@container_gap;
+		}
+		/*&.is--block-works{
 			.media-breakpoint-up(@md; {
 				display: grid;
 				margin: 0;
@@ -258,7 +263,7 @@
 					display: block;
 				}
 			});
-		}
+		}*/
 	}	  
 	&link{
 		&.is--page{
@@ -473,15 +478,15 @@
 		&.is--team-card{
 			transition: @trs-site;
 			.media-breakpoint-up(@lg; {
-				max-width: 300px;
+				//max-width: 300px;
 				&:hover{
-					max-width: 410px;
+					//max-width: 410px;
 				}
 			});
 			.media-breakpoint-up(@xxl; {
-				max-width: 320px;
+				//max-width: 320px;
 				&:hover{
-					max-width: 410px;
+					//max-width: 410px;
 				}				
 			});
 			&:hover{
@@ -813,7 +818,7 @@
 				}
 			});
 			.media-breakpoint-up(@md; {
-				max-width: 410px;
+				//max-width: 410px;
 				height: 300px;
 				//квадрат
 				.card__item.is--team-card:nth-child(18n+1) &{
@@ -971,8 +976,13 @@
 				}
 				//end,s квадрат
 			});
+			.media-breakpoint-up(@xl; {
+				max-width: 26.3vw;
+				height: 26.3vw;
+			});
 			.media-breakpoint-up(@xxl; {
-				height: 320px;
+				max-width: 21.7vw;
+				height: 21.7vw;
 			});
 			img{
 				width: 100%;
@@ -2172,7 +2182,7 @@
 .navbar__{ 
 	&block{ 
 		.media-breakpoint-down(@xl; {
-			position: fixed;
+			position: absolute;
 			top: @navbar_xs;
 			width: 100%;
 			left: 0;
@@ -2285,6 +2295,11 @@
 			width: 80px;
 			height: 48px;
 			padding-left: 15px;
+			.media-breakpoint-down(@xl; {
+				position: fixed;
+				top: 60px;
+				right: 0;
+			});
 			&::after{
 				content: '';
 				top: 50%;
@@ -2712,7 +2727,7 @@
 			*{visibility: hidden;}
 			&.slick-initialized *{ visibility: visible; }
 			.media-breakpoint-down(@xl; {
-				position: fixed;
+				position: absolute;
 				top: 0;
 				left: 0;
 				z-index: 100;
@@ -3011,7 +3026,7 @@ body[data-aos-easing="ease"] [data-aos] {
 		}
 		[data-slick-works] &{
 			.media-breakpoint-up(@sm; {
-				padding: 0 8px;
+				padding: 0 @container_gap;
 			});
 		}
 	}
@@ -3027,6 +3042,9 @@ body[data-aos-easing="ease"] [data-aos] {
 		&.is--prev{
 			left: 5px;
 			.icon-prev();
+			.media-breakpoint-up(@md; {
+				left: 15px;
+			});
 			&:hover{
 				.icon-prev(@c: '95D212');
 			}
@@ -3034,6 +3052,9 @@ body[data-aos-easing="ease"] [data-aos] {
 		&.is--next{
 			right: 5px;
 			.icon-next();
+			.media-breakpoint-up(@md; {
+				right: 15px;
+			});
 			&:hover{
 				.icon-next(@c: '95D212');
 			}
