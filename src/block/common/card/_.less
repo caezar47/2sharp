@@ -627,7 +627,7 @@
 		transition: @trs-site;
 		&.is--works{
 			&-card{
-				display: inline-flex;
+				display: block;
 				font-family: @site_ff_custom;
 				.heading4();
 				color: @default;
@@ -766,7 +766,7 @@
 		}
 		&.is--works{
 			&-card{
-				display: block;
+				display: inline-block;
 				color: @primary;
 				transition: @trs-site;
 				min-width: 32px;
@@ -774,6 +774,7 @@
 				height: 18px;
 				margin-left: 12px;
 				margin-top: 6px;
+				margin-bottom: -3px;
 				svg{display: block;}
 				.card__item:hover &{
 					transform: translateX(5px);
@@ -783,6 +784,7 @@
 					width: 40px;
 					height: 25px;
 				    margin-left: 20px;
+				    margin-bottom: 0
 				});
 			}
 		}
