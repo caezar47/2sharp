@@ -1,5 +1,5 @@
 {% if view == "google" %}	
 <div class="{{prefix}}block  {{mod}}  {{group}}">
-	<div class="{{prefix}}map  {{mod}}  {{group}}" id="map-google" data-map='{"center" : {{center_coord}},"zoom" : {{zoom}}, "placemarks" : [{"coord" : {{point_coord}}, "title": "{{point_heading}}"}]}'></div>
+	<div class="{{prefix}}map  {{mod}}  {{group}}" id="map-google" data-map='{"center" : {{center_coord}},"zoom" : {{zoom}},"zoom_xs" : {{zoom_xs}}, "placemarks" : [{"coord" : {{point_coord}}, "title": "{{point_heading}}"}]}'></div>
 </div>
 {% endif %}

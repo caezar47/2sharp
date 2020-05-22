@@ -15,9 +15,6 @@ body {
 			visibility: visible;
 		}			
 	}
-	.media-breakpoint-down(@xl; {
-		padding-top: ~"calc(@{navbar_xs_height} + @{navbar_xs})";
-	});
 	.media-breakpoint-down(@md; {
 		overflow-x: hidden; 
 	});
@@ -36,6 +33,15 @@ p{
 	margin: 0;
 }
 *:focus{outline: 0!important;}
+.main__{
+	&wrap{
+		position: relative;
+		overflow: hidden;
+		.media-breakpoint-down(@xl; {
+			padding-top: ~"calc(@{navbar_xs_height} + @{navbar_xs})";
+		});
+	}
+}
 .text-align--{
 	&left{
 		text-align: left;

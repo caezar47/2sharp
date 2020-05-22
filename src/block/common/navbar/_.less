@@ -109,7 +109,7 @@
 		&{
 			.btn-clearfix();
 			position: relative;
-			z-index: 5;
+			z-index: 1001;
 			background-color: @navbar_xs_humb_bg;
 			width: 80px;
 			height: 48px;
@@ -194,13 +194,14 @@
 	&collapse{
 		&{
 			position: fixed;
-			z-index: 4;
 		    transition: @trs-site;
 			.media-breakpoint-down(@xl; {
+				z-index: 1000;
 				//top: @navbar_xs;
 				//height: ~"calc(100vh - @{navbar_xs})";	
 				top: 0;
 				height: 100vh;	
+				height: 100%;	
 		   	 	background: @navbar_collapse_bg;
 				right: -300px;
 				width: 300px;
@@ -247,7 +248,11 @@
 		&-cols{
 			.media-breakpoint-down(@xl; {
 				&.is--logotip{
-					display: none;
+					position: absolute;
+					top: 50px;
+					left: 15px;
+
+					//display: none;
 				}
 				&.is--filter{
 					display: none;
@@ -265,7 +270,7 @@
 			});
 			.media-breakpoint-down(@sm; {				
 				&.is--navbar{
-					margin-bottom: 80px;
+					//margin-bottom: 80px;
 				}
 			});
 			.media-breakpoint-up(@xl; {				

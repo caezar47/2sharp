@@ -5,10 +5,10 @@ function initMap() {
 		var map_data = JSON.parse(cont.attr('data-map') || '{}');
 		var coordMapOfficeOne = map_data.center;
 		var zoomMapOfficeOne = map_data.zoom;    
-		/*if($(document).width() < 768) {
-			var coordMapOfficeOne = map_data.center_xs;
+		if($(document).width() < 768) {
+			//var coordMapOfficeOne = map_data.center_xs;
 			var zoomMapOfficeOne = map_data.zoom_xs;    
-		} */ 
+		} 
 		var styleMapOfficeOne = 
 		[
 			{
@@ -65,8 +65,9 @@ function initMap() {
 		],
 		optionsMapOfficeOne = {
 			zoom: zoomMapOfficeOne, 
-			center: new google.maps.LatLng(coordMapOfficeOne[0], coordMapOfficeOne[1]), 
-			styles: styleMapOfficeOne
+			center: new google.maps.LatLng(coordMapOfficeOne[0], coordMapOfficeOne[1]),
+			styles: styleMapOfficeOne,
+			disableDefaultUI: true
 		},
 		idOfficeOne = document.getElementById(map_container_div_id),
 		mapOfficeOne = new google.maps.Map(idOfficeOne, optionsMapOfficeOne),
@@ -80,7 +81,7 @@ function initMap() {
 			strokeWeight: 0,
 			//scale: 1,
 			url: "/img/svg/map-marker.svg",
-			url: "/local/templates/main/assets/img/svg/map-marker.svg",
+			//url: "/local/templates/main/assets/img/svg/map-marker.svg",
 		}; 
 		if(map_data.placemarks.length) {
 			for(var i = 0; i < map_data.placemarks.length; i++) {

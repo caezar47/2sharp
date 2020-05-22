@@ -4,234 +4,252 @@
 		{% include "../block/common/head/head.twig" with {title:"projects"}  %}
 	</head>
 	<body>
-		{% include "../block/common/slider/tpl.twig" with {
-			view: "top",
-			prefix:"slider__",
-			mod:"is--top",  
-			list:[
-				{
-					name:"!!! NEW PROJECT !!!",
-					color:"#AFDE0E",
-				},   
-				{
-					name:"Altaria oil packaging",
-				},   
-				{
-					name:"!!! MAIN NEWS !!!",
-					color:"#DB5610",
-				},   
-				{
-					name:"Winning at Cannes Lions",
-				},  
-				{
-					name:"!!! NEW PROJECT !!!",
-					color:"#AFDE0E",
-				},   
-				{
-					name:"Altaria oil packaging",
-				},   
-				{
-					name:"!!! MAIN NEWS !!!",
-					color:"#DB5610",
-				},   
-				{
-					name:"Winning at Cannes Lions",
-				}                    
-			],
-		} %} 
-		<div class="content-block__wrapper">  
-			<div class="content-block__wrapper-cols">  
-				{% include "../block/common/navbar/navbar.twig" with {
-					navbar_prefix:"navbar__",
-					navbar_mod:"is--second",
-					active:page.agency,
-					lang_icon: 'lang-right',
-					lang_ru: page.agency,
-					lang_en: page.agency_en,
-					lang_active: page.agency_en
-				} %}
+        <div class="main__wrap">  
+            {% include "../block/common/slider/tpl.twig" with {
+                view: "top",
+                prefix:"slider__",
+                mod:"is--top",  
+                list:[
+                    {
+                        name:"!!! NEW PROJECT !!!",
+                        color:"#AFDE0E",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },   
+                    {
+                        name:"Altaria oil packaging",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/59942a75c4dfc.jpg"
+                    },   
+                    {
+                        name:"!!! MAIN NEWS !!!",
+                        color:"#DB5610",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg"
+                    },   
+                    {
+                        name:"Winning at Cannes Lions",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },  
+                    {
+                        name:"!!! NEW PROJECT !!!",
+                        color:"#AFDE0E",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },   
+                    {
+                        name:"Altaria oil packaging",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },   
+                    {
+                        name:"!!! MAIN NEWS !!!",
+                        color:"#DB5610",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },   
+                    {
+                        name:"Winning at Cannes Lions",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    }                    
+                ],
+            } %}
+			<div class="content-block__wrapper">  
+				<div class="content-block__wrapper-cols">  
+					{% include "../block/common/navbar/navbar.twig" with {
+						navbar_prefix:"navbar__",
+						navbar_mod:"is--second",
+						active:page.agency,
+						lang_icon: 'lang-right',
+						lang_ru: page.agency,
+						lang_en: page.agency_en,
+						lang_active: page.agency_en
+					} %}
+				</div>
+				<main class="content-block__main">
+					{% include "../block/page/agency.twig" with {
+						view: "agency_page",
+						content_prefix:"content-block__", 
+						content_mod:"is--page-agency",
+						heading_mod:"is--h1  fw--500  color--primary  font-family--custom  is--page-agency", 
+						heading_level:"h1", 
+						heading:"помогаем брендам расти",
+						works_id: "agency_works", 
+						works:[
+							{
+								id: "strategy",
+								name:"исследования и стратегия",
+								work_list: [
+									{
+										work_list_col: [
+											{name: "маркетинговая стратегия"},
+											{name: "концепт продукта"},
+											{name: "бренд-стратегия"},
+											{name: "коммуникационная стратегия"},
+											{name: "канальная стратегия: smm, digital, shopper marketing"},
+										]
+									},
+									{
+										work_list_col: [
+											{name: "разработка employer бренда"},
+											{name: "проведение стратегических воркшопов и мастер-классов"},
+											{name: "коммуникационный аудит и консалтинг "},
+											{name: "стратегическое лидирование брендов"},
+										]
+									},
+								]
+							},
+							{
+								id: "design",
+								name:"дизайн и брендинг ",
+							},
+							{
+								id: "communication",
+								name:"коммуникация",
+							},
+						],
+						team:[
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/82476813_2898340356877133_2170871806511022080_n.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=Vc3dvaTotekAX8IiinD&_nc_ht=scontent-arn2-1.xx&oh=0b212c5d837346f5b59fcb902d51b446&oe=5ECD9C5A",
+							},
+							{
+								link:page.works_card,
+								name:"Антон Бусыгин",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/60359110_10156852613952771_4312800296565735424_n.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=NdAFMRbco_oAX8D86-C&_nc_ht=scontent-arn2-1.xx&oh=4fa0d1e87768a06e86d00d6dd7ffd3e5&oe=5ECD0340",
+							},
+							{
+								link:page.works_card,
+								name:"Татьяна Исаева",
+								label:"исполнительный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/74638393_2568946779815653_1635489100679086080_o.jpg?_nc_cat=107&_nc_sid=09cbfe&_nc_ohc=5s2zKvsnRSUAX8-2Em9&_nc_ht=scontent-arn2-1.xx&oh=6ec5facbee9c3ba6999b9b6bffd381c7&oe=5ECF496D",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							},
+							{
+								link:page.works_card,
+								name:"Максим Севастьянов",
+								label:"креативный директор / co-founder",
+								note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+								img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
+							}
+						],                    
+					} %} 
+				</main>
 			</div>
-			<main class="content-block__main">
-				{% include "../block/page/agency.twig" with {
-					view: "agency_page",
-					content_prefix:"content-block__", 
-					content_mod:"is--page-agency",
-					heading_mod:"is--h1  fw--500  color--primary  font-family--custom  is--page-agency", 
-					heading_level:"h1", 
-					heading:"помогаем брендам расти",
-					works_id: "agency_works", 
-					works:[
-						{
-							id: "strategy",
-							name:"исследования и стратегия",
-							work_list: [
-								{
-									work_list_col: [
-										{name: "маркетинговая стратегия"},
-										{name: "концепт продукта"},
-										{name: "бренд-стратегия"},
-										{name: "коммуникационная стратегия"},
-										{name: "канальная стратегия: smm, digital, shopper marketing"},
-									]
-								},
-								{
-									work_list_col: [
-										{name: "разработка employer бренда"},
-										{name: "проведение стратегических воркшопов и мастер-классов"},
-										{name: "коммуникационный аудит и консалтинг "},
-										{name: "стратегическое лидирование брендов"},
-									]
-								},
-							]
-						},
-						{
-							id: "design",
-							name:"дизайн и брендинг ",
-						},
-						{
-							id: "communication",
-							name:"коммуникация",
-						},
-					],
-					team:[
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/82476813_2898340356877133_2170871806511022080_n.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=Vc3dvaTotekAX8IiinD&_nc_ht=scontent-arn2-1.xx&oh=0b212c5d837346f5b59fcb902d51b446&oe=5ECD9C5A",
-						},
-						{
-							link:page.works_card,
-							name:"Антон Бусыгин",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/60359110_10156852613952771_4312800296565735424_n.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=NdAFMRbco_oAX8D86-C&_nc_ht=scontent-arn2-1.xx&oh=4fa0d1e87768a06e86d00d6dd7ffd3e5&oe=5ECD0340",
-						},
-						{
-							link:page.works_card,
-							name:"Татьяна Исаева",
-							label:"исполнительный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/74638393_2568946779815653_1635489100679086080_o.jpg?_nc_cat=107&_nc_sid=09cbfe&_nc_ohc=5s2zKvsnRSUAX8-2Em9&_nc_ht=scontent-arn2-1.xx&oh=6ec5facbee9c3ba6999b9b6bffd381c7&oe=5ECF496D",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						},
-						{
-							link:page.works_card,
-							name:"Максим Севастьянов",
-							label:"креативный директор / co-founder",
-							note:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-							img:"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/64562250_2288246874544186_7914757383652376576_n.jpg?_nc_cat=109&_nc_sid=8bfeb9&_nc_ohc=VCiSJelHrHcAX_AL_fB&_nc_ht=scontent-arn2-1.xx&oh=498764e9a19537a966aee031a835b23b&oe=5ECED916",
-						}
-					],                    
-				} %} 
-			</main>
-		</div>
 
-		{% include "../block/common/footer/footer.twig" with {
-            footer_prefix:"footer__",
-            lang_icon: 'lang-right',
-            lang_ru: page.agency,
-            lang_en: page.agency_en,
-            lang_active: page.agency_en
-        } %}
+			{% include "../block/common/footer/footer.twig" with {
+	            footer_prefix:"footer__",
+	            lang_icon: 'lang-right',
+	            lang_ru: page.agency,
+	            lang_en: page.agency_en,
+	            lang_active: page.agency_en
+	        } %}
+	    </div>
 
 		{# {% include "../block/common/modals/include.twig"%} #}
 		

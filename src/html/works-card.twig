@@ -4,188 +4,206 @@
 		{% include "../block/common/head/head.twig" with {title:"Tork"}  %}
 	</head>
 	<body>
-		{% include "../block/common/slider/tpl.twig" with {
-			view: "top",
-			prefix:"slider__",
-			mod:"is--top",  
-			list:[
-				{
-					name:"!!! NEW PROJECT !!!",
-					color:"#AFDE0E",
-				},   
-				{
-					name:"Altaria oil packaging",
-				},   
-				{
-					name:"!!! MAIN NEWS !!!",
-					color:"#DB5610",
-				},   
-				{
-					name:"Winning at Cannes Lions",
-				},  
-				{
-					name:"!!! NEW PROJECT !!!",
-					color:"#AFDE0E",
-				},   
-				{
-					name:"Altaria oil packaging",
-				},   
-				{
-					name:"!!! MAIN NEWS !!!",
-					color:"#DB5610",
-				},   
-				{
-					name:"Winning at Cannes Lions",
-				}                    
-			],
-		} %} 
-		<div class="content-block__wrapper">  
-			<div class="content-block__wrapper-cols">  
-				{% include "../block/common/navbar/navbar.twig" with {
-					navbar_prefix:"navbar__",
-					navbar_mod:"is--second",
-					active:page.works_card,
-					lang_icon: 'lang-left',
-					lang_ru: page.works_card,
-					lang_en: page.agency_en,
-					lang_active: page.works_card
-				} %}
+        <div class="main__wrap">  
+            {% include "../block/common/slider/tpl.twig" with {
+                view: "top",
+                prefix:"slider__",
+                mod:"is--top",  
+                list:[
+                    {
+                        name:"!!! NEW PROJECT !!!",
+                        color:"#AFDE0E",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },   
+                    {
+                        name:"Altaria oil packaging",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/59942a75c4dfc.jpg"
+                    },   
+                    {
+                        name:"!!! MAIN NEWS !!!",
+                        color:"#DB5610",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg"
+                    },   
+                    {
+                        name:"Winning at Cannes Lions",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },  
+                    {
+                        name:"!!! NEW PROJECT !!!",
+                        color:"#AFDE0E",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },   
+                    {
+                        name:"Altaria oil packaging",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },   
+                    {
+                        name:"!!! MAIN NEWS !!!",
+                        color:"#DB5610",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },   
+                    {
+                        name:"Winning at Cannes Lions",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    }                    
+                ],
+            } %}
+			<div class="content-block__wrapper">  
+				<div class="content-block__wrapper-cols">  
+					{% include "../block/common/navbar/navbar.twig" with {
+						navbar_prefix:"navbar__",
+						navbar_mod:"is--second",
+						active:page.works_card,
+						lang_icon: 'lang-left',
+						lang_ru: page.works_card,
+						lang_en: page.agency_en,
+						lang_active: page.works_card
+					} %}
+				</div>
+				<main class="content-block__main">
+					{% include "../block/page/works.twig" with {
+						view: "works_card",
+						content_prefix:"content-block__", 
+						content_mod:"is--page-works-card",
+						heading_mod:"is--h1  fw--500  color--primary  font-family--custom  is--page-base-sm", 
+						heading_level:"h1", 
+						heading:"Tork", 
+						heading_xs_mod:"is--h3  fw--500  color--success  font-family--custom  is--page-base-xs", 
+						heading_xs_level:"h3", 
+						heading_xs:"Смотреть другие проекты", 
+						task: "<p>Tork&nbsp;— консервативный и&nbsp;лаконичный бренд, воплощение качества, минимализма и&nbsp;перфекционизма, признанное во&nbsp;всем мире.</p><p>Задача проекта заключалась в&nbsp;разработке визуальной концепции рекламных материалов в&nbsp;честь <nobr>20-летнего</nobr> юбилея компании Tork в&nbsp;России.</p>", 
+						decision: "<p>Чтобы создания ощущения праздника для российского юбилея компании мы&nbsp;создали динамичную айдентику, нехарактерную для классической коммуникации бренда. Смелый подход к&nbsp;дизайну говорит о&nbsp;том, что Tork «держит руку на&nbsp;пульсе» настоящего и&nbsp;уверенно смотрит в&nbsp;будущее. Идею вечной молодости и&nbsp;широких перспектив подчеркивает слоган кампании: «Tork 20&nbsp;лет. Все только начинается».</p>", 
+						label: "<span>Branding</span>", 
+						list:[
+							{
+								group: "is--base",
+								type: "is--full",
+								note: "Внутрикорпоративное оформление к 20-летию компании на российском рынке.",
+								sublist:[
+									{
+										img:"http://www.2sharp.ru/data/upload/images/5cadf61b919ee.jpg",
+									},   
+								], 
+							},
+							{
+								type: "is--full  is--video",
+								sublist:[
+									{
+										video:[path.img,"/video-16-9.mp4"].join(''),
+									},  
+								], 
+							}, 
+							{
+								type: "is--xl-xs",
+								sublist:[
+									{
+										video:[path.img,"/video-16-9.mp4"].join(''),
+									},  
+									{
+										img:"http://www.2sharp.ru/data/upload/images/5cadcab956b2b.jpg",
+									},   
+								], 
+							},
+							{
+								type: "is--full",
+								note: "<p>В&nbsp;<nobr>90-е</nobr> ощущение того, что «все впереди» было у&nbsp;всей страны. Для этой эпохи характерна кричащая, дерзкая и&nbsp;эклектичная визуальная стилистика. «В&nbsp;чем сила, Tork?»&nbsp;— главное сообщение кампании, подчеркивающее достижения бренд-команды, создающее ощущение мощи и&nbsp;находящее эмоциональный отклик у&nbsp;каждого.</p>",
+								sublist:[
+									{
+										img:"http://www.2sharp.ru/data/upload/images/5cadcacddbacb.jpg",
+									},  
+								], 
+							}, 
+							{
+								type: "is--xs-3",
+								sublist:[
+									{
+										img:"http://www.2sharp.ru/data/upload/images/5cadcae0dceec.jpg",
+									},  
+									{
+										img:"http://www.2sharp.ru/data/upload/images/5cadcaf4a2925.jpg",
+									},
+									{
+										img:"http://www.2sharp.ru/data/upload/images/5cadcab956b2b.jpg",
+									},
+								], 
+							}, 
+							{
+								type: "is--full",
+								sublist:[
+									{
+										img:"http://www.2sharp.ru/data/upload/images/5cadcaa1878d3.jpg",
+									},  
+								], 
+							}, 
+							{
+								type: "is--xs-xl",
+								sublist:[
+									{
+										img:"http://www.2sharp.ru/data/upload/images/5cadcb04b2316.jpg",
+									},  
+									{
+										img:"http://www.2sharp.ru/data/upload/images/5cadcb0dafa16.jpg",
+									},   
+								], 
+							},  
+						],
+						works:[
+							{
+							   link:"#",
+							   name:"М.Видео",
+							   note:"Оформление магазинов М.Видео к Новому Году",
+							   img:"http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg",
+							},
+							{
+							   link:"#",
+							   name:"Хамовники",
+							   note:"Рекламная кампания безалкогольного пива",
+							   img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+							},
+							{
+							   link:"#",
+							   name:"CROCUS CITY MALL",
+							   note:"Рестайлинг логотипа и концепция коммуникации",
+							   img:"http://www.2sharp.ru/data/upload/images/5994612b71e98.jpg",
+							}, 
+							{
+							   link:"#",
+							   name:"М.Видео",
+							   note:"Оформление магазинов М.Видео к Новому Году",
+							   img:"http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg",
+							},
+							{
+							   link:"#",
+							   name:"Хамовники",
+							   note:"Рекламная кампания безалкогольного пива",
+							   img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+							},
+							{
+							   link:"#",
+							   name:"CROCUS CITY MALL",
+							   note:"Рестайлинг логотипа и концепция коммуникации",
+							   img:"http://www.2sharp.ru/data/upload/images/5994612b71e98.jpg",
+							}, 
+						],                    
+					} %} 
+				</main>
 			</div>
-			<main class="content-block__main">
-				{% include "../block/page/works.twig" with {
-					view: "works_card",
-					content_prefix:"content-block__", 
-					content_mod:"is--page-works-card",
-					heading_mod:"is--h1  fw--500  color--primary  font-family--custom  is--page-base-sm", 
-					heading_level:"h1", 
-					heading:"Tork", 
-					heading_xs_mod:"is--h3  fw--500  color--success  font-family--custom  is--page-base-xs", 
-					heading_xs_level:"h3", 
-					heading_xs:"Смотреть другие проекты", 
-					task: "<p>Tork&nbsp;— консервативный и&nbsp;лаконичный бренд, воплощение качества, минимализма и&nbsp;перфекционизма, признанное во&nbsp;всем мире.</p><p>Задача проекта заключалась в&nbsp;разработке визуальной концепции рекламных материалов в&nbsp;честь <nobr>20-летнего</nobr> юбилея компании Tork в&nbsp;России.</p>", 
-					decision: "<p>Чтобы создания ощущения праздника для российского юбилея компании мы&nbsp;создали динамичную айдентику, нехарактерную для классической коммуникации бренда. Смелый подход к&nbsp;дизайну говорит о&nbsp;том, что Tork «держит руку на&nbsp;пульсе» настоящего и&nbsp;уверенно смотрит в&nbsp;будущее. Идею вечной молодости и&nbsp;широких перспектив подчеркивает слоган кампании: «Tork 20&nbsp;лет. Все только начинается».</p>", 
-					label: "<span>Branding</span>", 
-					list:[
-						{
-							group: "is--base",
-							type: "is--full",
-							note: "Внутрикорпоративное оформление к 20-летию компании на российском рынке.",
-							sublist:[
-								{
-									img:"http://www.2sharp.ru/data/upload/images/5cadf61b919ee.jpg",
-								},   
-							], 
-						},
-						{
-							type: "is--full  is--video",
-							sublist:[
-								{
-									video:[path.img,"/video-16-9.mp4"].join(''),
-								},  
-							], 
-						}, 
-						{
-							type: "is--xl-xs",
-							sublist:[
-								{
-									video:[path.img,"/video-16-9.mp4"].join(''),
-								},  
-								{
-									img:"http://www.2sharp.ru/data/upload/images/5cadcab956b2b.jpg",
-								},   
-							], 
-						},
-						{
-							type: "is--full",
-							note: "<p>В&nbsp;<nobr>90-е</nobr> ощущение того, что «все впереди» было у&nbsp;всей страны. Для этой эпохи характерна кричащая, дерзкая и&nbsp;эклектичная визуальная стилистика. «В&nbsp;чем сила, Tork?»&nbsp;— главное сообщение кампании, подчеркивающее достижения бренд-команды, создающее ощущение мощи и&nbsp;находящее эмоциональный отклик у&nbsp;каждого.</p>",
-							sublist:[
-								{
-									img:"http://www.2sharp.ru/data/upload/images/5cadcacddbacb.jpg",
-								},  
-							], 
-						}, 
-						{
-							type: "is--xs-3",
-							sublist:[
-								{
-									img:"http://www.2sharp.ru/data/upload/images/5cadcae0dceec.jpg",
-								},  
-								{
-									img:"http://www.2sharp.ru/data/upload/images/5cadcaf4a2925.jpg",
-								},
-								{
-									img:"http://www.2sharp.ru/data/upload/images/5cadcab956b2b.jpg",
-								},
-							], 
-						}, 
-						{
-							type: "is--full",
-							sublist:[
-								{
-									img:"http://www.2sharp.ru/data/upload/images/5cadcaa1878d3.jpg",
-								},  
-							], 
-						}, 
-						{
-							type: "is--xs-xl",
-							sublist:[
-								{
-									img:"http://www.2sharp.ru/data/upload/images/5cadcb04b2316.jpg",
-								},  
-								{
-									img:"http://www.2sharp.ru/data/upload/images/5cadcb0dafa16.jpg",
-								},   
-							], 
-						},  
-					],
-					works:[
-						{
-						   link:"#",
-						   name:"М.Видео",
-						   note:"Оформление магазинов М.Видео к Новому Году",
-						   img:"http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg",
-						},
-						{
-						   link:"#",
-						   name:"Хамовники",
-						   note:"Рекламная кампания безалкогольного пива",
-						   img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
-						},
-						{
-						   link:"#",
-						   name:"CROCUS CITY MALL",
-						   note:"Рестайлинг логотипа и концепция коммуникации",
-						   img:"http://www.2sharp.ru/data/upload/images/5994612b71e98.jpg",
-						}, 
-						{
-						   link:"#",
-						   name:"М.Видео",
-						   note:"Оформление магазинов М.Видео к Новому Году",
-						   img:"http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg",
-						},
-						{
-						   link:"#",
-						   name:"Хамовники",
-						   note:"Рекламная кампания безалкогольного пива",
-						   img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
-						},
-						{
-						   link:"#",
-						   name:"CROCUS CITY MALL",
-						   note:"Рестайлинг логотипа и концепция коммуникации",
-						   img:"http://www.2sharp.ru/data/upload/images/5994612b71e98.jpg",
-						}, 
-					],                    
-				} %} 
-			</main>
-		</div>
-		{% include "../block/common/footer/footer.twig" with {
-            footer_prefix:"footer__",
-            lang_icon: 'lang-left',
-            lang_ru: page.works_card,
-            lang_en: page.agency_en,
-            lang_active: page.works_card
-        } %}
+			{% include "../block/common/footer/footer.twig" with {
+	            footer_prefix:"footer__",
+	            lang_icon: 'lang-left',
+	            lang_ru: page.works_card,
+	            lang_en: page.agency_en,
+	            lang_active: page.works_card
+	        } %}
+	    </div>
 
 		{# {% include "../block/common/modals/include.twig"%} #}
 		

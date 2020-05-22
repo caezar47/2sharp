@@ -2,17 +2,15 @@
 	<section class="{{content_prefix}}wrap  {{content_mod}}">
 		<{{heading_level}} class="page-header__heading  {{heading_mod}}" {% if heading_color %} style="-webkit-text-stroke: 2px {{heading_color}};"{% endif %}>{{heading}}</{{heading_level}}>	
 
-		<a href="{{work_link}}" class="{{prefix.card}}item  {{content_mod}}  is--work">
-			<div class="{{prefix.card}}preview  {{content_mod}}  is--work">
-				<img src="{{work_img}}" class="img-responsive" alt="">
-			</div>
-			<p class="{{prefix.card}}heading  {{content_mod}}  is--work">
-				<span>{{work_name}}</span>
-				<span class="{{prefix.card}}icon  {{content_mod}} is--work">
-					{% include "../common/svg-sprite/svg.twig" with {icon:"arrow-next"} %}
-				</span>
-			</p>
-		</a>
+		
+		<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-header>
+			{% include "../common/card/card.twig" with {
+			 	view: "works_card", 
+			 	prefix:prefix.card, 
+			 	mod:[content_mod,"  is--work"].join(""), 
+			 	list:list
+			} %}
+		</div>
 
 		<div class="{{content_prefix}}bg  {{content_mod}}" {% if bg %}style="background-image: url({{bg}})"{% endif %}>
 			<video autoplay loop playsinline muted poster="{{bg}}">

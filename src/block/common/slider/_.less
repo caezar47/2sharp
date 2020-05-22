@@ -1,28 +1,77 @@
 .slider__{ 
 	&panel{
 		&.is--top{
+			z-index: 10;
 			background-color: @default;
-			padding: 10px 0;
 			font-size: @site_fs_xs - 1;
 			line-height: @site_lh_xs - 4;
-			*{visibility: hidden;}
-			&.slick-initialized *{ visibility: visible; }
+			//*{visibility: hidden;}
+			//&.slick-initialized *{ visibility: visible; }
+			height: 0;
+			opacity: 0;
+			visibility: hidden;
+			overflow: hidden;
+			&.slick-initialized{
+				height: auto;
+				opacity: 1;
+				visibility: visible;
+				overflow: visible;
+			}
+			.slick-list{
+				padding: 10px 0;
+				overflow: visible;
+			}
 			.media-breakpoint-down(@xl; {
 				position: absolute;
 				top: 0;
 				left: 0;
-				z-index: 100;
+				z-index: 101;
 				width: 100%;
-
 			});
 			.media-breakpoint-up(@xl; {
 				font-size: 1.778em;
 				line-height: 1.25em;
-				padding: 20px 0;
+				.slick-list{
+					padding: 20px 0;
+				}
 			});
 		}
 	}
-	&item{}
+	&item{
+		display: block;
+		position: relative;
+	}
+	&preview{
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translate(-50%, 10px);
+		opacity: 0;
+		visibility: hidden;
+		overflow: hidden;
+		border: 2px solid @primary;
+		width: 5.556em;
+		height: 5.556em;
+		transition: opacity 0.35s;
+		img{
+			width: 100%;
+			height: 100%;
+			object-position: center;
+			object-fit: cover;
+			transition: all 0.5s ease-in-out;
+		}
+		.slider__item:hover &{
+			opacity: 1;
+			visibility: visible;
+		}
+		&:hover{
+			img{
+				transition: all 1s ease-in-out;
+				transform: scale(1.08);
+			}
+		}
+
+	}
 	&heading{
 		&.is--top{ 
 			color: @default;

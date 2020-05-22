@@ -6,7 +6,7 @@ form_input.on('focus', function(e) {
 	$(this).addClass('is--focus');
 });
 form_submit.on('click', function(e) {
-	e.preventDefault();
+	//e.preventDefault();
 	var wrap = $(this).closest(".form__wrap"),
 		controls = wrap.find("input,select"),
 		isValid = true;
@@ -22,7 +22,7 @@ form_submit.on('click', function(e) {
 		$(this).closest('.form__panel').find('.form__result').addClass('is--visible');
 		$(this).closest('.form__panel').find('.form__wrap').addClass('is--hidden');
 	}
-	return false;
+	//return false;
 });
 // маска для поля ввода телефона
 var phone = $(".form__control[type='tel']");

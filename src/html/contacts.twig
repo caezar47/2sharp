@@ -4,71 +4,89 @@
     	{% include "../block/common/head/head.twig" with {title:"Контакты"}  %}
 	</head>
     <body>
-    	{% include "../block/common/slider/tpl.twig" with {
-            view: "top",
-            prefix:"slider__",
-            mod:"is--top",  
-            list:[
-                {
-                    name:"!!! NEW PROJECT !!!",
-                    color:"#AFDE0E",
-                },   
-                {
-                    name:"Altaria oil packaging",
-                },   
-                {
-                    name:"!!! MAIN NEWS !!!",
-                    color:"#DB5610",
-                },   
-                {
-                    name:"Winning at Cannes Lions",
-                },  
-                {
-                    name:"!!! NEW PROJECT !!!",
-                    color:"#AFDE0E",
-                },   
-                {
-                    name:"Altaria oil packaging",
-                },   
-                {
-                    name:"!!! MAIN NEWS !!!",
-                    color:"#DB5610",
-                },   
-                {
-                    name:"Winning at Cannes Lions",
-                }                    
-            ],
-        } %} 
-        <div class="content-block__wrapper  is--page-contacts">  
-            <div class="content-block__wrapper-cols">  
-                {% include "../block/common/navbar/navbar.twig" with {
-                    navbar_prefix:"navbar__",
-                    navbar_mod:"is--second",
-                    active:page.contacts,
-                    lang_icon: 'lang-left',
-                    lang_ru: page.contacts,
-                    lang_en: page.agency_en,
-                    lang_active: page.contacts
-                } %}
+        <div class="main__wrap">  
+            {% include "../block/common/slider/tpl.twig" with {
+                view: "top",
+                prefix:"slider__",
+                mod:"is--top",  
+                list:[
+                    {
+                        name:"!!! NEW PROJECT !!!",
+                        color:"#AFDE0E",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },   
+                    {
+                        name:"Altaria oil packaging",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/59942a75c4dfc.jpg"
+                    },   
+                    {
+                        name:"!!! MAIN NEWS !!!",
+                        color:"#DB5610",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/59945dc582f64.jpg"
+                    },   
+                    {
+                        name:"Winning at Cannes Lions",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },  
+                    {
+                        name:"!!! NEW PROJECT !!!",
+                        color:"#AFDE0E",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },   
+                    {
+                        name:"Altaria oil packaging",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },   
+                    {
+                        name:"!!! MAIN NEWS !!!",
+                        color:"#DB5610",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    },   
+                    {
+                        name:"Winning at Cannes Lions",
+                        link:page.works_card,
+                        img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                    }                    
+                ],
+            } %}
+            <div class="content-block__wrapper  is--page-contacts">  
+                <div class="content-block__wrapper-cols">  
+                    {% include "../block/common/navbar/navbar.twig" with {
+                        navbar_prefix:"navbar__",
+                        navbar_mod:"is--second",
+                        active:page.contacts,
+                        lang_icon: 'lang-left',
+                        lang_ru: page.contacts,
+                        lang_en: page.agency_en,
+                        lang_active: page.contacts
+                    } %}
+                </div>
+                <main class="content-block__main">
+                    {% include "../block/page/contacts.twig" with {
+                        content_prefix:"content-block__", 
+                        content_mod:"is--page-contacts",
+                        heading_mod:"is--h1  fw--500  color--primary  font-family--custom  is--page-base", 
+                        heading_level:"h1", 
+                        heading:"контакты",  
+                    } %} 
+                </main>
             </div>
-            <main class="content-block__main">
-                {% include "../block/page/contacts.twig" with {
-                    content_prefix:"content-block__", 
-                    content_mod:"is--page-contacts",
-                    heading_mod:"is--h1  fw--500  color--primary  font-family--custom  is--page-base", 
-                    heading_level:"h1", 
-                    heading:"контакты",  
-                } %} 
-            </main>
-        </div>
 
-    	{% include "../block/common/footer/footer.twig" with {
-            footer_prefix:"footer__",
-            lang_icon: 'lang-left',
-            lang_ru: page.contacts,
-            lang_en: page.agency_en,
-            lang_active: page.contacts
-        } %}
+        	{% include "../block/common/footer/footer.twig" with {
+                footer_prefix:"footer__",
+                lang_icon: 'lang-left',
+                lang_ru: page.contacts,
+                lang_en: page.agency_en,
+                lang_active: page.contacts
+            } %}
+        </div>
 
         {% include "../block/common/modals/include.twig"%}
     	

@@ -1,9 +1,10 @@
 {% if view == "top" %}
 <section class="{{prefix}}panel  {{mod}}" data-slick-top>
 	{% for value in list %}		
-	<div class="{{prefix}}item  {{mod}}">
+	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}">
 		<p class="{{prefix}}heading  {{mod}}" {% if value.color %} style="-webkit-text-stroke: 1px {{value.color}};"{% endif %}>{{value.name}}</p>
-	</div> 
+		<p class="{{prefix}}preview  {{mod}}"><img src="{{value.img}}" class="img-responsive" alt=""></p>
+	</a> 
 	{% endfor %}
 </section>
 {% endif %}

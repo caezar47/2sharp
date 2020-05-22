@@ -1,4 +1,4 @@
-<section class="{{content_prefix}}panel  is--page-base">		
+<section class="{{content_prefix}}panel  is--page-base  {{content_mod}}">		
 	{% include "../common/page-header/tpl.twig" with {
 		prefix:"page-header__", 
 		mod:heading_mod,
@@ -66,6 +66,7 @@
 			mod:content_mod,
 			center_coord:contacts.map_center_coord,
 			zoom:contacts.map_zoom,
+			zoom_xs:contacts.map_zoom_xs,
 			point_coord:contacts.map_point_coord,
 			point_heading:contacts.map_point_heading,
 		} %}	

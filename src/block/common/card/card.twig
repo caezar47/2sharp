@@ -25,7 +25,7 @@
 			</span>
 		</p>
 		{% if value.note %}<p class="{{prefix}}note  {{mod}}">{{value.note}}</p>{% endif %}		
-		<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
+		{% if value.label %}<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>{% endif %}
 	</a> 
 	{% endfor %}
 {% endif %}
