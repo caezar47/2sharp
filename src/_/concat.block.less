@@ -2789,18 +2789,7 @@
 			background-color: @default;
 			font-size: @site_fs_xs - 1;
 			line-height: @site_lh_xs - 4;
-			//*{visibility: hidden;}
-			//&.slick-initialized *{ visibility: visible; }
-			height: 0;
-			opacity: 0;
-			visibility: hidden;
-			overflow: hidden;
-			&.slick-initialized{
-				height: auto;
-				opacity: 1;
-				visibility: visible;
-				overflow: visible;
-			}
+			min-height: @navbar_xs;
 			.slick-list{
 				padding: 10px 0;
 				overflow: visible;
@@ -2815,6 +2804,7 @@
 			.media-breakpoint-up(@xl; {
 				font-size: 1.778em;
 				line-height: 1.25em;
+				min-height: @navbar_screen;
 				.slick-list{
 					padding: 20px 0;
 				}
@@ -2824,6 +2814,12 @@
 	&item{
 		display: block;
 		position: relative;
+		opacity: 0;
+		display: none;
+		.slick-initialized &{
+			opacity: 1;
+			display: block;
+		}
 	}
 	&preview{
 		position: absolute;
