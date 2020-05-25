@@ -722,7 +722,11 @@
 					margin-bottom: 20px;
 					.media-breakpoint-up(@md; {
 						margin-bottom: 55px;
-					});
+					});					
+					.media-breakpoint-up(@sm; {
+							span{display: none;}
+							br{display: none;}
+					});	
 				}
 				&.is--team{
 					font-family: @site_ff_custom;

@@ -1141,7 +1141,11 @@
 					margin-bottom: 20px;
 					.media-breakpoint-up(@md; {
 						margin-bottom: 55px;
-					});
+					});					
+					.media-breakpoint-up(@sm; {
+							span{display: none;}
+							br{display: none;}
+					});	
 				}
 				&.is--team{
 					font-family: @site_ff_custom;
@@ -2769,7 +2773,8 @@
 					margin-bottom: 0px;
 					padding-left: @block_pl;
 					max-width: 910px;
-				});			
+				});		
+					
 			}
 		}
 		&.is--modal{
