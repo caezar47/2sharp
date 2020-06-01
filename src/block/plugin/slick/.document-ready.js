@@ -49,7 +49,7 @@ $(function() {
 		slidesToScroll: 3,
 		arrows: true,
 		dots: false,
-		infinite: false,
+		infinite: true,
 		prevArrow: prevArrow,
 		nextArrow: nextArrow,
 		responsive: [
