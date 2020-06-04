@@ -6,7 +6,7 @@ $(function() {
 	var prevArrow = '<button type="button" class="slick-btn  is--prev"><span class="sr-only">Предыдущий слайд</span></button>';
 	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';
 	 //setTimeout(function () {
-        top.slick({
+    top.slick({
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		arrows: false,

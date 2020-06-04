@@ -16,7 +16,11 @@
 	{% for value in list %}		
 	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}" {% if aos %}data-aos="{{aos}}"{% endif %}>
 		<div class="{{prefix}}preview  {{mod}}">
+			{% if scroll == "true" %}
+			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive  js-image">
+			{% else %}
 			<img data-src="{{value.img}}" alt="{{value.heading}}" class="img-responsive  lazy">
+			{% endif %}
 		</div>
 		<p class="{{prefix}}heading  {{mod}}">
 			<span>{{value.name}}</span>

@@ -10,6 +10,7 @@
 // 	html.classList.toggle('is--open-navbar');
 // 	this.classList.toggle('is--active');
 // });
+/*
 window.onload = function () {
     hideAddressBar();
     window.addEventListener("orientationchange", function () {
@@ -25,4 +26,4 @@ function hideAddressBar() {
         }, 1100);
     }, 1000);
     return false;
-}
+}*/
