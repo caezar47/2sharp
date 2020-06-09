@@ -2,6 +2,7 @@
 <html dir="ltr" lang="ru-RU"> 
     <head>  
         {% include "../block/common/head/head.twig" with {title:"Главная"}  %}
+        <script>document.documentElement.className="hoverEffect";</script> 
     </head>
     <body>
         <div class="main__wrap">  
@@ -136,7 +137,7 @@
                                name:"Хамовники",
                                note:"Рекламная кампания безалкогольного пива",
                                label:"<span>Communication</span>",
-                               img:"http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg"
+                               img:"http://2sharp.mws.agency/upload/resize_cache/iblock/edb/1000_1000_0/edbb58bc8450f4267d421b26118c2c4d.jpg"
                             },
                             {
                                link:"#",
@@ -166,6 +167,6 @@
         </div>
         {# {% include "../block/common/modals/include.twig"%} #}
         
-        {% include "../block/common/script/script.twig" with {aos: "view"}%}
+        {% include "../block/common/script/script.twig" with {aos: "view", hoverEffect: "view"}%}
     </body>
 </html> 

@@ -2,6 +2,7 @@
 <html dir="ltr" lang="ru-RU"> 
 	<head>	
 		{% include "../block/common/head/head.twig" with {title:"projects"}  %}
+		<script>document.documentElement.className="hoverEffect";</script> 
 	</head>
 	<body>
         <div class="main__wrap">  
@@ -283,6 +284,6 @@
 
 		{# {% include "../block/common/modals/include.twig"%} #}
 		
-        {% include "../block/common/script/script.twig" with {aos: "view"}%}
+        {% include "../block/common/script/script.twig" with {aos: "view", hoverEffect: "view"}%}
 	</body>
 </html> 

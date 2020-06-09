@@ -33,11 +33,41 @@
 	{% for value in list %}		
 	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}" {% if aos %}data-aos="{{aos}}"{% endif %}>
 		<div class="{{prefix}}preview  {{mod}}">
-			{% if scroll == "true" %}
-			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive  js-image">
-			{% else %}
-			<img data-src="{{value.img}}" alt="{{value.heading}}" class="img-responsive  lazy">
-			{% endif %}
+			<div class="{{prefix}}effect" data-displacement="{{path.img}}/default/effect.png" data-intensity="0.3">
+				<img src="{{path.img}}/default/work-item.jpg" alt="{{value.heading}}"/>
+				<img src="{{path.img}}/default/work-item.jpg" alt="{{value.heading}}"/>
+			</div>
+		</div>
+
+		<p class="{{prefix}}heading  {{mod}}">
+			<span>{{value.name}}</span>
+			<span class="{{prefix}}icon  {{mod}}">
+				{% include "../svg-sprite/svg.twig" with {icon:"arrow-next"} %}
+			</span>
+		</p>
+		{% if value.note %}<p class="{{prefix}}note  {{mod}}">{{value.note}}</p>{% endif %}		
+		{% if value.label %}<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>{% endif %}
+	</a>
+	{# <a href="{{value.link}}" class="{{prefix}}item  {{mod}}" {% if aos %}data-aos="{{aos}}"{% endif %}>
+		<div class="{{prefix}}preview  {{mod}}">
+			<img data-src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
+		</div>
+		<p class="{{prefix}}heading  {{mod}}">
+			<span>{{value.name}}</span>
+			<span class="{{prefix}}icon  {{mod}}">
+				{% include "../svg-sprite/svg.twig" with {icon:"arrow-next"} %}
+			</span>
+		</p>
+		{% if value.note %}<p class="{{prefix}}note  {{mod}}">{{value.note}}</p>{% endif %}		
+		{% if value.label %}<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>{% endif %}
+	</a>  #}
+	{% endfor %}
+{% endif %}
+{% if view == "works_slider" %}
+	{% for value in list %}
+	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}" {% if aos %}data-aos="{{aos}}"{% endif %}>
+		<div class="{{prefix}}preview  {{mod}}">
+			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
 		</div>
 		<p class="{{prefix}}heading  {{mod}}">
 			<span>{{value.name}}</span>
