@@ -15,6 +15,7 @@
 		</div>
 	{% endfor %}
 {% endif %}
+
 {% if view == "team_card" %}
 	{% for value in list %}		
 	<div class="{{prefix}}item  {{mod}}  {{value.group}}">
@@ -33,7 +34,7 @@
 	{% for value in list %}		
 	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}" {% if aos %}data-aos="{{aos}}"{% endif %}>
 		<div class="{{prefix}}preview  {{mod}}">
-			<div class="{{prefix}}effect" data-displacement="{{path.img}}/default/effect.png" data-intensity="0.3">
+			<div class="{{prefix}}effect" data-displacement="{{value.displacement}}" data-intensity="0.3">
 				<img src="{{path.img}}/default/work-item.jpg" alt="{{value.heading}}"/>
 				<img src="{{path.img}}/default/work-item.jpg" alt="{{value.heading}}"/>
 			</div>
