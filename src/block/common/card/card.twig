@@ -1,6 +1,23 @@
+{% if view == "contacts" %}
+	{% for value in list %}
+		<div class="{{prefix}}item  {{mod}}  {{value.mod}}"> 		
+			{% if value.label %}
+			<h3>{{value.label}}</h3>
+			{% endif %}
+			{% if value.name %}
+			<p>{{value.name}}</p>
+			{% endif %}
+			{% if value.sublist %}
+				{% for v in value.sublist %}
+					<p><{{v.tag}} href="{{v.target}}{{v.href}}">{{v.name}}</{{v.tag}}></p>
+				{% endfor %} 
+			{% endif %}
+		</div>
+	{% endfor %}
+{% endif %}
 {% if view == "team_card" %}
 	{% for value in list %}		
-	<div class="{{prefix}}item  {{mod}}">
+	<div class="{{prefix}}item  {{mod}}  {{value.group}}">
 		<div class="{{prefix}}preview  {{mod}}">
 			<img src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
 		</div>

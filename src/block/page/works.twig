@@ -39,31 +39,7 @@
 			{% include "../common/filter/tpl.twig" with {
 				prefix:"filter__",
 				id:"filter_base",
-                list:[
-                    {
-                    	id:"cat",
-                    	name:"категории",
-						sublist:[
-	                        {name:"все"},
-	                        {name:"авто"},
-	                        {name:"девелопмент"},
-	                        {name:"еда/напитки"},
-	                        {name:"медицина"},
-	                        {name:"образование"},
-	                        {name:"рестораны/кафе"},
-	                        {name:"ритейл"},
-	                        {name:"СМИ/ТВ/медиа"},
-	                    ],
-                	},
-                    {
-                    	id:"serv",
-                    	name:"услуги",
-                	},
-                    {
-                    	id:"clients",
-                    	name:"клиенты",
-                	}
-                ] 
+                list:filter
 			} %}  
 		</div>
 		<div class="{{content_prefix}}row  grid__row  {{content_mod}}">

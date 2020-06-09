@@ -6,15 +6,14 @@
 		heading:heading
 	} %}
 	<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
-		{% include "../common/continfo/tpl.twig" with {
-			view: "", 
-			prefix:"continfo__", 
-			mod:"is--page-contacts", 
+		{% include "../common/card/card.twig" with {
+			view: "contacts", 
+			prefix:"card__", 
+			mod:content_mod, 
 			list:[
 				{
 					"label":"адрес",
 					"name":contacts.address, 
-					"tag":"p", 
 				},
 				{
 					"label":"телефон", 

@@ -19,6 +19,8 @@
 			margin-left: -10px;
 			padding-left: 10px;
 			padding-top: 10px;
+		});
+		.media-breakpoint-up(@xxl; {
 			margin-right: 10px;
 		});
 		&.is--open{
@@ -72,7 +74,10 @@
 	&item-group{
 		padding: 5px 16px 10px 50px;
 		.media-breakpoint-up(@xl; {
-			padding: 10px 15px 15px 35px;
+			padding: 10px 15px 15px 15px;
+		});
+		.media-breakpoint-up(@xxl; {
+			padding-left: 35px;
 		});
 	}
 	&item{
