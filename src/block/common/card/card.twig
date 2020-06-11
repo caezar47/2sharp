@@ -34,10 +34,14 @@
 	{% for value in list %}		
 	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}" {% if aos %}data-aos="{{aos}}"{% endif %}>
 		<div class="{{prefix}}preview  {{mod}}">
-			<div class="{{prefix}}effect" data-displacement="{{value.displacement}}" data-intensity="0.3">
+			{% if value.hoverEffect %}
+			<div class="{{prefix}}effect" data-displacement="{{value.displacement}}" data-intensity="0.3" data-ratio="725/1290">
 				<img src="{{path.img}}/default/work-item.jpg" alt="{{value.heading}}"/>
 				<img src="{{path.img}}/default/work-item.jpg" alt="{{value.heading}}"/>
 			</div>
+			{% else %}
+			<img data-src="{{value.img}}" src="{{value.img}}" alt="{{value.heading}}" class="img-responsive  lazy">
+			{% endif %}			
 		</div>
 
 		<p class="{{prefix}}heading  {{mod}}">

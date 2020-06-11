@@ -288,10 +288,11 @@
 			
 	<a href="./works-card.html" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
-			<div class="card__effect" data-displacement="./img/default/effect4.png" data-intensity="0.3">
+						<div class="card__effect" data-displacement="./img/default/effect4.png" data-intensity="0.3" data-ratio="725/1290">
 				<img src="./img/default/work-item.jpg" alt=""/>
 				<img src="./img/default/work-item.jpg" alt=""/>
 			</div>
+						
 		</div>
 
 		<p class="card__heading  is--works-card">
@@ -307,10 +308,11 @@
 			
 	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
-			<div class="card__effect" data-displacement="./img/default/effect1.jpg" data-intensity="0.3">
+						<div class="card__effect" data-displacement="./img/default/effect1.jpg" data-intensity="0.3" data-ratio="725/1290">
 				<img src="./img/default/work-item.jpg" alt=""/>
 				<img src="./img/default/work-item.jpg" alt=""/>
 			</div>
+						
 		</div>
 
 		<p class="card__heading  is--works-card">
@@ -326,10 +328,8 @@
 			
 	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
-			<div class="card__effect" data-displacement="./img/default/effect2.jpg" data-intensity="0.3">
-				<img src="./img/default/work-item.jpg" alt=""/>
-				<img src="./img/default/work-item.jpg" alt=""/>
-			</div>
+						<img data-src="http://2sharp.mws.agency/upload/resize_cache/iblock/edb/1000_1000_0/edbb58bc8450f4267d421b26118c2c4d.jpg" src="http://2sharp.mws.agency/upload/resize_cache/iblock/edb/1000_1000_0/edbb58bc8450f4267d421b26118c2c4d.jpg" alt="" class="img-responsive  lazy">
+						
 		</div>
 
 		<p class="card__heading  is--works-card">
@@ -345,10 +345,8 @@
 			
 	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
-			<div class="card__effect" data-displacement="./img/default/effect3.jpg" data-intensity="0.3">
-				<img src="./img/default/work-item.jpg" alt=""/>
-				<img src="./img/default/work-item.jpg" alt=""/>
-			</div>
+						<img data-src="http://www.2sharp.ru/data/upload/images/5994612b71e98.jpg" src="http://www.2sharp.ru/data/upload/images/5994612b71e98.jpg" alt="" class="img-responsive  lazy">
+						
 		</div>
 
 		<p class="card__heading  is--works-card">
@@ -364,10 +362,8 @@
 			
 	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
-			<div class="card__effect" data-displacement="./img/default/effect1.jpg" data-intensity="0.3">
-				<img src="./img/default/work-item.jpg" alt=""/>
-				<img src="./img/default/work-item.jpg" alt=""/>
-			</div>
+						<img data-src="http://www.2sharp.ru/data/upload/images/59945558bd8eb.jpg" src="http://www.2sharp.ru/data/upload/images/59945558bd8eb.jpg" alt="" class="img-responsive  lazy">
+						
 		</div>
 
 		<p class="card__heading  is--works-card">
@@ -522,6 +518,7 @@ var lazyLoadInstance = new LazyLoad({
 	// });
 	Array.from(document.querySelectorAll('.card__effect')).forEach((el) => {
 		const imgs = Array.from(el.querySelectorAll('img'));
+		//console.log(el.dataset.ratio);
 		new hoverEffect({
 			parent: el,
 			intensity: el.dataset.intensity || undefined,
@@ -532,6 +529,7 @@ var lazyLoadInstance = new LazyLoad({
 			image1: imgs[0].getAttribute('src'),
 			image2: imgs[1].getAttribute('src'),
 			displacementImage: el.dataset.displacement,
+			imagesRatio:  el.dataset.ratio,
 			imagesRatio: 725/1290,
 		});
 	});

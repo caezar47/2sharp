@@ -44,6 +44,7 @@ var lazyLoadInstance = new LazyLoad({
 	// });
 	Array.from(document.querySelectorAll('.card__effect')).forEach((el) => {
 		const imgs = Array.from(el.querySelectorAll('img'));
+		//console.log(el.dataset.ratio);
 		new hoverEffect({
 			parent: el,
 			intensity: el.dataset.intensity || undefined,
@@ -54,6 +55,7 @@ var lazyLoadInstance = new LazyLoad({
 			image1: imgs[0].getAttribute('src'),
 			image2: imgs[1].getAttribute('src'),
 			displacementImage: el.dataset.displacement,
+			imagesRatio:  el.dataset.ratio,
 			imagesRatio: 725/1290,
 		});
 	});
