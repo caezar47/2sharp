@@ -68,6 +68,7 @@
                     lang_en: page.agency_en,
                     lang_active: page.index
                 } %} 
+                    {# bg:[path.img,"/default/index-header.jpg"].join(""), #}
                 {% include "../block/page/index.twig" with {
                     view: "index_header",
                     content_prefix:"content-block__", 
@@ -78,7 +79,6 @@
                     heading_color:"#AFDE0E", 
                     heading:"we help brands grow ",
 
-                    bg:[path.img,"/default/index-header.jpg"].join(""),
                     video:[path.img,"/index-header.mp4"].join(""),
 
                     work_link:page.works_card,
