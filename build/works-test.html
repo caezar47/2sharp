@@ -11,9 +11,10 @@
 
 <link href="./css/style.css" rel="stylesheet">		<script>document.documentElement.className="hoverEffect";</script> 
 	</head>
-	<body class="loading">
-        <div class="main__wrap">  
-            <section class="slider__panel  is--top" data-slick-top>
+	<body>
+        <div class="main__wrap  app__wrap"> 
+			<div data-scroll>
+	            <section class="slider__panel  is--top" data-slick-top>
 			
 	<a href="./works-card.html" class="slider__item  is--top">
 		<p class="slider__heading  is--top"  style="-webkit-text-stroke: 1px #AFDE0E;">!!! NEW PROJECT !!!</p>
@@ -55,9 +56,9 @@
 		<p class="slider__preview  is--top"><img src="http://www.2sharp.ru/data/upload/images/5981e7673c2b8.jpg" class="img-responsive" alt=""></p>
 	</a> 
 	</section>
-			<div class="content-block__wrapper">  
-				<div class="content-block__wrapper-cols">  
-					<nav class="navbar__block  is--second">
+				<div class="content-block__wrapper">  
+					<div class="content-block__wrapper-cols">  
+						<nav class="navbar__block  is--second">
 	<div class="navbar__header  is--second">
 		<div class="navbar__header-row row">
 			<div class="navbar__header-cols cols  is--logotip">
@@ -192,9 +193,9 @@
 			</div>
 		</div>
 	</div>
-</nav>				</div>
-				<main class="content-block__main">
-					
+</nav>					</div>
+					<main class="content-block__main"> 
+						
 	<section class="content-block__panel  is--page-base">
 			
 	<h1 class="page-header__heading  is--h1  fw--500  color--primary  font-family--custom  is--page-base  " >Проекты</h1>
@@ -208,9 +209,9 @@
 			
 
 			
-	<a href="./works-card.html" class="card__item  is--works-card" data-aos="fade-up">
+	<a href="./works-card.html" class="card__item  is--works-card" >
 		<div class="card__preview  is--works-card">
-						<img data-src="./img/default/work-item.jpg" src="./img/default/work-item.jpg" alt="" class="img-responsive  lazy">
+						<img src="./img/default/work-item.jpg" alt="" class="img-responsive  js-image">
 						
 		</div>
 
@@ -227,7 +228,10 @@
 			
 	<a href="#" class="card__item  is--works-card" data-aos="fade-up">
 		<div class="card__preview  is--works-card">
-						<img data-src="./img/default/work-item.jpg" src="./img/default/work-item.jpg" alt="" class="img-responsive  lazy">
+						<div class="card__effect" data-displacement="./img/default/effect1.jpg" data-intensity="0.3" data-ratio="725/1290">
+				<img src="./img/default/work-item.jpg" alt=""/>
+				<img src="./img/default/work-item.jpg" alt=""/>
+			</div>
 						
 		</div>
 
@@ -384,9 +388,9 @@
 	</section>
 
  
-				</main>
-			</div>
-			<footer class="footer__block">	
+					</main>
+				</div>
+				<footer class="footer__block">	
 	<div class="footer__container container">
 		<div class="footer__row">
 			<div class="footer__cols  is--logotip">
@@ -469,7 +473,9 @@
 	</ul>			</div>
 		</div>	
 	</div>
-</footer>	    </div>
+</footer>	  	  	</div>
+	    </div>
+	    <div id="container"></div>
 
 		
 		
@@ -525,6 +531,7 @@ var lazyLoadInstance = new LazyLoad({
 		});
 	});
 </script>
+<script src="./js/app_build.js" ></script>
 
 		
 	</body>

@@ -31,3 +31,8 @@ if(navbar.length){
 		})
 	});
 }
+
+if($(document).width() < 1200) {
+	$(".main__wrap").removeClass('app__wrap');
+	$("img.js-image").removeClass('js-image');
+} 
