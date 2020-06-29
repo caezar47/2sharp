@@ -42491,7 +42491,7 @@ var SmoothScroll = /*#__PURE__*/function () {
         // current value
         current: 0,
         // amount to interpolate
-        ease: 0.1,
+        ease: 0.5,
         // current value setter
         // in this case the value of the translation will be the same like the document scroll
         setValue: function setValue() {
