@@ -1,4 +1,4 @@
-;(function() {
+/*;(function() {
     var throttle = function(type, name, obj) {
         var obj = obj || window;
         var running = false;
@@ -23,4 +23,8 @@ if(slogan){
         slogan.style.transform = "rotate("+window.pageYOffset+"deg)";
         //rightgear.style.transform = "rotate(-"+window.pageYOffset+"deg)";
     });
-}
+}*/
+$(window).scroll(function() {
+    var theta = $(window).scrollTop() / 150 % Math.PI;
+    $('#slogan').css({ transform: 'rotate(' + theta + 'rad)' });;
+});

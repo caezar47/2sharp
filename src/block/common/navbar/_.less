@@ -100,6 +100,10 @@
   			transform-origin: center;
   			fill: @primary;
   			transition: fill 0.35s;
+  			animation-play-state: paused;
+  			.navbar__logotip:hover &{
+  				animation-play-state: running;
+  			}
   			.is--open-navbar &{
   				fill: @white;
   			}
