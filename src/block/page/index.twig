@@ -1,6 +1,6 @@
 {% if view == "index_header" %}
 	<section class="{{content_prefix}}wrap  {{content_mod}}">
-		<{{heading_level}} class="page-header__heading  {{heading_mod}}" {% if heading_color %} style="-webkit-text-stroke: 2px {{heading_color}};"{% endif %}>{{heading}}</{{heading_level}}>	
+		<{{heading_level}} class="page-header__heading  {{heading_mod}}" {% if heading_color %} style="-webkit-text-stroke: 2px {{heading_color}};"{% endif %}><span>{{heading}}</span></{{heading_level}}>	
 		
 		<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-header>
 			{% include "../common/card/card.twig" with {

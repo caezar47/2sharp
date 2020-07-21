@@ -51,8 +51,25 @@
 				line-height: 0.892em;
 				.media-breakpoint-up(@lg; {
 					padding-left: 0;
-    				transform: translate(-50%,72%);
+    				//transform: translate(-50%,72%);
+    				left: 0;
+    				right: 0;
+    				display: grid;
+    				grid-template-columns: repeat(16, 1fr);
+    				max-width: 100%;
+    				transform: translate(0%,72%);
+					font-size: 5.22em;
+					span{
+						grid-column-start: 6;
+   						grid-column-end: 12;
+					}
+				});
+				.media-breakpoint-up(@xxl; {
 					font-size: 7.22em;
+					/*span{
+						grid-column-start: 6;
+   						grid-column-end: 12;
+					}*/
 				});
 			}
 			&-index-works{

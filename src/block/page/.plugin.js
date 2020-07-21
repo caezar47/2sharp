@@ -25,6 +25,6 @@ if(slogan){
     });
 }*/
 $(window).scroll(function() {
-    var theta = $(window).scrollTop() / 150 % Math.PI;
+    var theta = $(window).scrollTop() / 250 % Math.PI;
     $('#slogan').css({ transform: 'rotate(' + theta + 'rad)' });;
 });
