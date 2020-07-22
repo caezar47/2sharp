@@ -28,3 +28,25 @@ $(window).scroll(function() {
     var theta = $(window).scrollTop() / 250 % Math.PI;
     $('#slogan').css({ transform: 'rotate(' + theta + 'rad)' });;
 });
+
+var elem = $(".content-block__wrap.is--page-index-header");
+var ratio = 1.77;
+var resizeHeader = function (e) {
+    var width = $(window).width();
+    var height = $(window).height();
+    var ratioWindow = width/height;
+    var ratioWindowFix = ratioWindow.toFixed(2);
+    if($(window).width() > 991){
+        if(ratioWindowFix > 1.75 && ratioWindowFix < 1.79 ){    
+            elem.css({"height":"calc(100vh - 80px)","padding-top":"0"});
+        } else {
+            elem.css({"height":"auto","padding-top":"calc(100%/(16/9) - 80px)"});
+        }
+    } else {
+        elem.removeAttr('style');
+    }
+};
+resizeHeader();
+$(window).on('resize',function(event){
+    resizeHeader();
+}).trigger('resize');
