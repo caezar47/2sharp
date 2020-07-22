@@ -7,7 +7,7 @@
 			line-height: @site_lh_xs - 4;
 			min-height: @navbar_xs;
 			.slick-list{
-				padding: 10px 0;
+				padding: 0px 0;
 				overflow: visible;
 			}
 			.media-breakpoint-down(@xl; {
@@ -22,7 +22,7 @@
 				line-height: 1.25em;
 				min-height: @navbar_screen;
 				.slick-list{
-					padding: 20px 0;
+					padding: 10px 0;
 				}
 			});
 		}
@@ -41,7 +41,8 @@
 		position: absolute;
 		top: 100%;
 		left: 50%;
-		transform: translate(-50%, 10px);
+		//transform: translate(-50%, 10px);
+		transform: translate(-50%, 0px);
 		opacity: 0;
 		visibility: hidden;
 		overflow: hidden;
