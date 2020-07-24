@@ -85,7 +85,7 @@
 	<div class="navbar__collapse" >
 		<div class="navbar__collapse-inner">
 			<div class="navbar__container container  is--collapse">	
-				<div class="navbar__collapse-row">
+				<div class="navbar__collapse-row  is--second">
 					<div class="navbar__collapse-cols  is--logotip">
 						<a class="navbar__logotip  is--second" href="./">
 												
@@ -97,6 +97,7 @@
 	</svg>
 									
 						</a>
+							
 					</div>
 					<div class="navbar__collapse-cols  is--navbar">
 						<ul class="navbar__nav">
@@ -621,5 +622,19 @@ var lazyLoadInstance = new LazyLoad({
     elements_selector: ".lazy"
 });
 </script> 
-	</body>
+<script src="./js/jquery.sticky.min.js" ></script>
+<script type="text/javascript">
+    $(".navbar__collapse-row.is--index").sticky({
+        topspacing: 40,
+        stopper: '.footer__block',
+        marginbottom: 20,
+        styler: 'is-sticky',
+        //sticktype: 'directly',
+    });
+    $('.navbar__block.is--second').stickySidebar({
+        topSpacing: 40,
+        container: '.content-block__wrapper-cols',
+        sidebarInner: '.navbar__block.is--second',
+    });
+</script>	</body>
 </html> 

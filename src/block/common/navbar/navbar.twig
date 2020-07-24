@@ -32,7 +32,7 @@
 	<div class="{{navbar_prefix}}collapse" >
 		<div class="{{navbar_prefix}}collapse-inner">
 			<div class="{{navbar_prefix}}container container  is--collapse">	
-				<div class="{{navbar_prefix}}collapse-row">
+				<div class="{{navbar_prefix}}collapse-row  {{navbar_mod}}">
 					<div class="{{navbar_prefix}}collapse-cols  is--logotip">
 						<a class="{{navbar_prefix}}logotip  {{navbar_mod}}" href="{{page.index}}">
 							{% if view == "index" %}
@@ -40,7 +40,7 @@
 							 	view: "full", 
 							 	prefix:navbar_prefix, 
 							 	mod:navbar_mod, 
-							} %}
+							} %}	
 							{% else %}					
 							{% include "logo.twig" with {
 							 	view: "xs", 
@@ -49,6 +49,15 @@
 							} %}
 							{% endif %}		
 						</a>
+						{% if view == "index" %}
+						<a class="{{navbar_prefix}}logotip  {{navbar_mod}}-xs" href="{{page.index}}">			
+							{% include "logo.twig" with {
+							 	view: "xs", 
+							 	prefix:navbar_prefix, 
+							 	mod:"is--index-xs", 
+							} %}
+						</a>
+						{% endif %}	
 					</div>
 					<div class="{{navbar_prefix}}collapse-cols  is--navbar">
 						<ul class="{{navbar_prefix}}nav">

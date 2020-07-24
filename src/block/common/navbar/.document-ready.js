@@ -16,7 +16,7 @@ $(document.body).on('click', function(event) {
 		$(collapse).removeClass("is--open");
 	}		
 });
-
+/*
 if(navbar.length){
 	$('[data-slick-top]').on('init', function(){
 		var wrapper_position = wrapper.offset().top;
@@ -30,7 +30,7 @@ if(navbar.length){
 			}
 		})
 	});
-}
+}*/
 
 if($(document).width() < 1200) {
 	$(".main__wrap").removeClass('app__wrap');

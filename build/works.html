@@ -87,7 +87,7 @@
 	<div class="navbar__collapse" >
 		<div class="navbar__collapse-inner">
 			<div class="navbar__container container  is--collapse">	
-				<div class="navbar__collapse-row">
+				<div class="navbar__collapse-row  is--second">
 					<div class="navbar__collapse-cols  is--logotip">
 						<a class="navbar__logotip  is--second" href="./">
 												
@@ -99,6 +99,7 @@
 	</svg>
 									
 						</a>
+							
 					</div>
 					<div class="navbar__collapse-cols  is--navbar">
 						<ul class="navbar__nav">
@@ -1338,47 +1339,24 @@
 <script>
 svg4everybody();
 document.createElement("picture");
-AOS.init({
-	offset: 0,
-	duration: 500,
-	easing: 'ease',
-	delay: 300,
-	once: true,
-	disable: function () {
-    	var maxWidth = 768;
-    	return window.innerWidth < maxWidth;
-	}
-});
 var lazyLoadInstance = new LazyLoad({
     elements_selector: ".lazy"
 });
 </script> 
-
-<script src="./js/three.min.js"></script>
-<script src="./js/TweenMax.min.js"></script>
-<script src="./js/hover-effect.umd.js"></script>
-<script>
-	// imagesLoaded( document.querySelectorAll('.card__effect img'), () => {
-	// 	document.body.classList.remove('loading');
-	// });
-	Array.from(document.querySelectorAll('.card__effect')).forEach((el) => {
-		const imgs = Array.from(el.querySelectorAll('img'));
-		//console.log(el.dataset.ratio);
-		new hoverEffect({
-			parent: el,
-			intensity: el.dataset.intensity || undefined,
-			speedIn: el.dataset.speedin || undefined,
-			speedOut: el.dataset.speedout || undefined,
-			easing: el.dataset.easing || undefined,
-			hover: el.dataset.hover || undefined,
-			image1: imgs[0].getAttribute('src'),
-			image2: imgs[1].getAttribute('src'),
-			displacementImage: el.dataset.displacement,
-			imagesRatio:  el.dataset.ratio,
-			imagesRatio: 725/1290,
-		});
-	});
-</script>
-<script src="./js/app_build.js" ></script>
+<script src="./js/jquery.sticky.min.js" ></script>
+<script type="text/javascript">
+    $(".navbar__collapse-row.is--index").sticky({
+        topspacing: 40,
+        stopper: '.footer__block',
+        marginbottom: 20,
+        styler: 'is-sticky',
+        //sticktype: 'directly',
+    });
+    $('.navbar__block.is--second').stickySidebar({
+        topSpacing: 40,
+        container: '.content-block__wrapper-cols',
+        sidebarInner: '.navbar__block.is--second',
+    });
+</script>        
 	</body>
 </html> 

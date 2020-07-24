@@ -1,288 +1,173 @@
-// Sticky Plugin v1.0.4 for jQuery
-// =============
-// Author: Anthony Garand
-// Improvements by German M. Bravo (Kronuz) and Ruud Kamphuis (ruudk)
-// Improvements by Leonardo C. Daronco (daronco)
-// Created: 02/14/2011
-// Date: 07/20/2015
-// Website: http://stickyjs.com/
-// Description: Makes an element on the page stick on the screen as you scroll
-//              It will only set the 'top' and 'position' of your element, you
-//              might need to adjust the width in some cases.
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+'use strict';
 
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
-        define(['jquery'], factory);
-    } else if (typeof module === 'object' && module.exports) {
-        // Node/CommonJS
-        module.exports = factory(require('jquery'));
-    } else {
-        // Browser globals
-        factory(jQuery);
-    }
-}(function ($) {
-    var slice = Array.prototype.slice; // save ref to original slice()
-    var splice = Array.prototype.splice; // save ref to original slice()
+(function ($) {
+    $.fn.stickySidebar = function stickySidebar(settings) {
+        // Cache the element
+        var $elem = this;
 
-  var defaults = {
-      topSpacing: 0,
-      bottomSpacing: 0,
-      className: 'is-sticky',
-      wrapperClassName: 'sticky-wrapper',
-      center: false,
-      getWidthFrom: '',
-      widthFromWrapper: true, // works only when .getWidthFrom is empty
-      responsiveWidth: false,
-      zIndex: 'inherit'
-    },
-    $window = $(window),
-    $document = $(document),
-    sticked = [],
-    windowHeight = $window.height(),
-    scroller = function() {
-      var scrollTop = $window.scrollTop(),
-        documentHeight = $document.height(),
-        dwh = documentHeight - windowHeight,
-        extra = (scrollTop > dwh) ? dwh - scrollTop : 0;
+        // Cache the container height
+        var $containerHeight = $(settings.container).height();
 
-      for (var i = 0, l = sticked.length; i < l; i++) {
-        var s = sticked[i],
-          elementTop = s.stickyWrapper.offset().top,
-          etse = elementTop - s.topSpacing - extra;
+        // If the element exists on page
+        if ($elem.length) {
+            var defaults = {
+                side: 'left',
+                topSpacing: 30,
+                disableAt: 785,
+                callback: function callback() {}
+            };
+            var options = Object.assign({}, defaults, settings);
 
-        //update height in case of dynamic content
-        s.stickyWrapper.css('height', s.stickyElement.outerHeight());
+            var applyFixed = function applyFixed(containerLeftPos, sidebarWidth, sidebarHeight) {
+                // Apply fixed to sidebar
+                console.log('APPLY');
+                $elem.addClass('is-fixed');
+                $elem.removeClass('stick-footer');
 
-        if (scrollTop <= etse) {
-          if (s.currentTop !== null) {
-            s.stickyElement
-              .css({
-                'width': '',
-                'position': '',
-                'top': '',
-                'z-index': ''
-              });
-            s.stickyElement.parent().removeClass(s.className);
-            s.stickyElement.trigger('sticky-end', [s]);
-            s.currentTop = null;
-          }
-        }
-        else {
-          var newTop = documentHeight - s.stickyElement.outerHeight()
-            - s.topSpacing - s.bottomSpacing - scrollTop - extra;
-          if (newTop < 0) {
-            newTop = newTop + s.topSpacing;
-          } else {
-            newTop = s.topSpacing;
-          }
-          if (s.currentTop !== newTop) {
-            var newWidth;
-            if (s.getWidthFrom) {
-                padding =  s.stickyElement.innerWidth() - s.stickyElement.width();
-                newWidth = $(s.getWidthFrom).width() - padding || null;
-            } else if (s.widthFromWrapper) {
-                newWidth = s.stickyWrapper.width();
-            }
-            if (newWidth == null) {
-                newWidth = s.stickyElement.width();
-            }
-            s.stickyElement
-              .css('width', newWidth)
-              .css('position', 'fixed')
-              .css('top', newTop)
-              .css('z-index', s.zIndex);
+                $elem.css({
+                    position: 'relative'
+                });
 
-            s.stickyElement.parent().addClass(s.className);
+                // On window resize get sidebar (parent) width
+                if (sidebarWidth !== $elem.width()) sidebarWidth = $elem.width();
 
-            if (s.currentTop === null) {
-              s.stickyElement.trigger('sticky-start', [s]);
-            } else {
-              // sticky is started but it have to be repositioned
-              s.stickyElement.trigger('sticky-update', [s]);
-            }
+                // Apply styles to this div
+                $(options.sidebarInner).css({
+                    position: 'fixed',
+                    top: options.topSpacing + 'px',
+                    width: sidebarWidth,
+                    height: sidebarHeight,
+                    display: 'inline-table'
+                });
 
-            if (s.currentTop === s.topSpacing && s.currentTop > newTop || s.currentTop === null && newTop < s.topSpacing) {
-              // just reached bottom || just started to stick but bottom is already reached
-              s.stickyElement.trigger('sticky-bottom-reached', [s]);
-            } else if(s.currentTop !== null && newTop === s.topSpacing && s.currentTop < newTop) {
-              // sticky is started && sticked at topSpacing && overflowing from top just finished
-              s.stickyElement.trigger('sticky-bottom-unreached', [s]);
-            }
+                // If the sidebar is on the right
+                if (options.side === 'right') {
+                    $(options.sidebarInner).css({ right: containerLeftPos, left: 'initial' });
+                } else {
+                    $(options.sidebarInner).css({ left: containerLeftPos });
+                }
 
-            s.currentTop = newTop;
-          }
+                // Fire callback
+                options.callback();
+            };
 
-          // Check if sticky has reached end of container and stop sticking
-          var stickyWrapperContainer = s.stickyWrapper.parent();
-          var unstick = (s.stickyElement.offset().top + s.stickyElement.outerHeight() >= stickyWrapperContainer.offset().top + stickyWrapperContainer.outerHeight()) && (s.stickyElement.offset().top <= s.topSpacing);
+            var distanceCheck = function distanceCheck(resize) {
+                // Distance scrolled from top of screen
+                var distanceFromTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-          if( unstick ) {
-            s.stickyElement
-              .css('position', 'absolute')
-              .css('top', '')
-              .css('bottom', 0)
-              .css('z-index', '');
-          } else {
-            s.stickyElement
-              .css('position', 'fixed')
-              .css('top', newTop)
-              .css('bottom', '')
-              .css('z-index', s.zIndex);
-          }
-        }
-      }
-    },
-    resizer = function() {
-      windowHeight = $window.height();
+                // Container height
+                var containerHeight = $(options.container).height();
 
-      for (var i = 0, l = sticked.length; i < l; i++) {
-        var s = sticked[i];
-        var newWidth = null;
-        if (s.getWidthFrom) {
-            if (s.responsiveWidth) {
-                newWidth = $(s.getWidthFrom).width();
-            }
-        } else if(s.widthFromWrapper) {
-            newWidth = s.stickyWrapper.width();
-        }
-        if (newWidth != null) {
-            s.stickyElement.css('width', newWidth);
-        }
-      }
-    },
-    methods = {
-      init: function(options) {
-        return this.each(function() {
-          var o = $.extend({}, defaults, options);
-          var stickyElement = $(this);
+                // Container distance from left
+                var containerLeftPos = document.querySelector(options.container).offsetLeft;
 
-          var stickyId = stickyElement.attr('id');
-          var wrapperId = stickyId ? stickyId + '-' + defaults.wrapperClassName : defaults.wrapperClassName;
-          var wrapper = $('<div></div>')
-            .attr('id', wrapperId)
-            .addClass(o.wrapperClassName);
+                // Container distance from top
+                var containerTopPos = document.querySelector(options.container).offsetTop;
 
-          stickyElement.wrapAll(function() {
-            if ($(this).parent("#" + wrapperId).length == 0) {
-                    return wrapper;
-            }
-});
+                // Container bottom
+                var containerBottomPos = containerHeight + containerTopPos;
 
-          var stickyWrapper = stickyElement.parent();
+                // Sidebar height & width
+                var sidebarHeight = $(options.sidebarInner).outerHeight();
+                var sidebarWidth = $(options.sidebarInner).outerWidth();
 
-          if (o.center) {
-            stickyWrapper.css({width:stickyElement.outerWidth(),marginLeft:"auto",marginRight:"auto"});
-          }
+                // Stop position
+                var stopPos = containerBottomPos - sidebarHeight;
 
-          if (stickyElement.css("float") === "right") {
-            stickyElement.css({"float":"none"}).parent().css({"float":"right"});
-          }
+                /**
+                 * On window resize run applyFixed
+                 */
+                if (resize) {
+                    applyFixed(containerLeftPos, sidebarWidth, sidebarHeight);
+                }
 
-          o.stickyElement = stickyElement;
-          o.stickyWrapper = stickyWrapper;
-          o.currentTop    = null;
+                /**
+                 * Scroll past
+                 */
+                if (distanceFromTop + options.topSpacing > containerTopPos && distanceFromTop + options.topSpacing < stopPos) {
+                    if (!$elem.hasClass('is-fixed')) {
+                        console.log('ADD STICK');
+                        applyFixed(containerLeftPos, sidebarWidth, sidebarHeight);
+                    }
+                }
 
-          sticked.push(o);
+                /**
+                 * Scrolled back to header
+                 */
+                if (distanceFromTop + options.topSpacing < containerTopPos) {
+                    if ($elem.hasClass('is-fixed')) {
+                        console.log('REMOVE STICK');
+                        $elem.removeClass('is-fixed');
+                        // Remove inline styles
+                        $elem.attr('style', '');
+                        $(options.sidebarInner).attr('style', '');
+                    }
+                }
 
-          methods.setWrapperHeight(this);
-          methods.setupChangeListeners(this);
-        });
-      },
+                /**
+                 * On container height resize
+                 */
+                if ($containerHeight === $(options.container).height()) {
+                    /**
+                     * Scrolled passed container
+                     */
+                    if (distanceFromTop + options.topSpacing > stopPos) {
+                        if (!$elem.hasClass('stick-footer')) {
+                            // Make sidebar fixed to bottom of container
+                            console.log('STICK FOOTER');
+                            $elem.removeClass('is-fixed');
+                            $elem.addClass('stick-footer');
+                            $(options.sidebarInner).css({
+                                position: 'relative',
+                                top: containerHeight - sidebarHeight,
+                                left: 0,
+                                width: '100%',
+                                height: sidebarHeight
+                            });
+                        }
+                    }
+                } else {
+                    /**
+                     * Container height has changed, reset cached height
+                     */
+                    $containerHeight = $(options.container).height();
 
-      setWrapperHeight: function(stickyElement) {
-        var element = $(stickyElement);
-        var stickyWrapper = element.parent();
-        if (stickyWrapper) {
-          stickyWrapper.css('height', element.outerHeight());
-        }
-      },
+                    // Remove stick
+                    $elem.removeClass('is-fixed');
+                    $elem.attr('style', '');
+                    $(options.sidebarInner).attr('style', '');
+                }
+            };
 
-      setupChangeListeners: function(stickyElement) {
-        if (window.MutationObserver) {
-          var mutationObserver = new window.MutationObserver(function(mutations) {
-            if (mutations[0].addedNodes.length || mutations[0].removedNodes.length) {
-              methods.setWrapperHeight(stickyElement);
-            }
-          });
-          mutationObserver.observe(stickyElement, {subtree: true, childList: true});
-        } else {
-          if (window.addEventListener) {
-            stickyElement.addEventListener('DOMNodeInserted', function() {
-              methods.setWrapperHeight(stickyElement);
-            }, false);
-            stickyElement.addEventListener('DOMNodeRemoved', function() {
-              methods.setWrapperHeight(stickyElement);
-            }, false);
-          } else if (window.attachEvent) {
-            stickyElement.attachEvent('onDOMNodeInserted', function() {
-              methods.setWrapperHeight(stickyElement);
+            // Trigger on scroll
+            $(window).on('scroll', function () {
+                if (window.innerWidth > options.disableAt) {
+                    distanceCheck();
+                }
             });
-            stickyElement.attachEvent('onDOMNodeRemoved', function() {
-              methods.setWrapperHeight(stickyElement);
-            });
-          }
-        }
-      },
-      update: scroller,
-      unstick: function(options) {
-        return this.each(function() {
-          var that = this;
-          var unstickyElement = $(that);
 
-          var removeIdx = -1;
-          var i = sticked.length;
-          while (i-- > 0) {
-            if (sticked[i].stickyElement.get(0) === that) {
-                splice.call(sticked,i,1);
-                removeIdx = i;
+            // Trigger on resize
+            $(window).on('resize', function () {
+                if (window.innerWidth > options.disableAt) {
+                    distanceCheck(true);
+                } else {
+                    // Remove stick
+                    $elem.removeClass('is-fixed');
+                    $elem.attr('style', '');
+                    $(options.sidebarInner).attr('style', '');
+                }
+            });
+
+            // Trigger on load
+            if (window.innerWidth > options.disableAt) {
+                setTimeout(function () {
+                    distanceCheck();
+                }, 0);
             }
-          }
-          if(removeIdx !== -1) {
-            unstickyElement.unwrap();
-            unstickyElement
-              .css({
-                'width': '',
-                'position': '',
-                'top': '',
-                'float': '',
-                'z-index': ''
-              })
-            ;
-          }
-        });
-      }
+        }
+        return this;
     };
+})(jQuery);
 
-  // should be more efficient than using $window.scroll(scroller) and $window.resize(resizer):
-  if (window.addEventListener) {
-    window.addEventListener('scroll', scroller, false);
-    window.addEventListener('resize', resizer, false);
-  } else if (window.attachEvent) {
-    window.attachEvent('onscroll', scroller);
-    window.attachEvent('onresize', resizer);
-  }
-
-  $.fn.sticky = function(method) {
-    if (methods[method]) {
-      return methods[method].apply(this, slice.call(arguments, 1));
-    } else if (typeof method === 'object' || !method ) {
-      return methods.init.apply( this, arguments );
-    } else {
-      $.error('Method ' + method + ' does not exist on jQuery.sticky');
-    }
-  };
-
-  $.fn.unstick = function(method) {
-    if (methods[method]) {
-      return methods[method].apply(this, slice.call(arguments, 1));
-    } else if (typeof method === 'object' || !method ) {
-      return methods.unstick.apply( this, arguments );
-    } else {
-      $.error('Method ' + method + ' does not exist on jQuery.sticky');
-    }
-  };
-  $(function() {
-    setTimeout(scroller, 0);
-  });
-}));
+},{}]},{},[1]);

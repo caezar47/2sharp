@@ -65,6 +65,11 @@
 		&.is--index{
 			max-width: 155px;
 		}
+		.media-breakpoint-down(@xl; {			
+			&.is--index-xs{
+				display: none;
+			}
+		});
 		.media-breakpoint-up(@xl; {
 			margin-left: -4px;
 			max-width: @navbar_logo_widht;
@@ -72,7 +77,21 @@
 			margin-bottom: 35px;
 			&.is--index{
 				max-width: 265px;
-			}			
+				&-xs{
+					max-width: @navbar_logo_widht;	
+					position: absolute;
+					top: 0;
+					opacity: 0;
+					z-index: -1;			
+				}
+				.is-sticky &{
+					opacity: 0;
+					&-xs{
+						opacity: 1;
+
+					}
+				}	
+			}		
 		});	
 		svg{
 			display: block;
@@ -84,6 +103,11 @@
 			&.is--index{
 				fill: @white;
 				transition: @trs-site;
+				.media-breakpoint-up(@xl; {
+					&-xs{
+						fill: @default;
+					}
+				});
 				.media-breakpoint-down(@xl; {					
 					.navbar__block.is--scroll &{
 						fill: @default;
@@ -278,6 +302,9 @@
 				}
 			});
 			.media-breakpoint-up(@xl; {				
+				&.is--logotip{
+					position: relative;
+				}
 				&.is--filter{
 					margin-top: 55px;
 				}
@@ -380,6 +407,16 @@
 						color: @success;
 						&:after{
 							background-color: @success;
+						}
+					}
+					.is-sticky &{
+						color: @navbar_nav_color;
+						&:hover,
+						&.is--active{
+							color: @navbar_nav_color_active;
+							&::after{
+								background-color: @navbar_nav_color_active;
+							}
 						}
 					}
 				}
