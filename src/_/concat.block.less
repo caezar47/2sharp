@@ -2313,7 +2313,12 @@
 				position: absolute;
 				z-index: 5;
 				bottom: 25px;
-    			left: @container_gap_xl;
+    			left: @container_gap*2.5;
+			}
+		});
+		.media-breakpoint-up(@xxl; {
+			&.is--index{
+				left: @container_gap_xl;
 			}
 		});
 	}
