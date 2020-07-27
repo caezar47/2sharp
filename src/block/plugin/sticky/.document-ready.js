@@ -1,8 +1,8 @@
-if($(document).width() > 1199) {
+/*if($(document).width() > 1199) {
 	
 }  
 
-/*var header = $(".content-block__wrapper").offset();
+var header = $(".content-block__wrapper").offset();
 var scroll = $(window).scrollTop();
 console.log(header);
 console.log(scroll);*/

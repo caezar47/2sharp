@@ -6,4 +6,5 @@ $('[data-tablist]').on('hide.bs.collapse', function (e) {
 $('[data-tablist]').on('show.bs.collapse', function (e) {
     $(this).find('.panel').removeClass('is--open');
     $(e.target).closest('.panel').addClass('is--open');
-})
+});
+$(".scroller").mCustomScrollbar();

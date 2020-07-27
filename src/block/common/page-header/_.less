@@ -58,11 +58,13 @@
     				grid-template-columns: repeat(16, 1fr);
     				max-width: 100%;
     				transform: translate(0%,72%);
-					font-size: 5.22em;
 					span{
 						grid-column-start: 6;
    						grid-column-end: 12;
 					}
+				});
+				.media-breakpoint-up(@xl; {
+					font-size: 5.22em;
 				});
 				.media-breakpoint-up(@xxl; {
 					font-size: 7.22em;

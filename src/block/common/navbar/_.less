@@ -264,6 +264,12 @@
 				height: 100%;
 				//overflow: auto;				
 			});
+			.media-breakpoint-up(@xl; {
+				max-width: 215px;
+				&.is--index{
+					max-width: 100%;
+				}
+			});
 		}
 		&-row{	
 			.media-breakpoint-down(@xl; {
