@@ -109,11 +109,16 @@
 		.btn-clearfix();
 		position: absolute;
 		z-index: 5;
-		bottom: 60%;
+		//bottom: 60%;
+		top: ~"calc(59vw / 2)";
+		transform: translateY(-50%);
 		width: @slider_btn_width;
 		height: @slider_btn_width;
 		color: @slider_btn_color;
 		background-position: center;
+		.media-breakpoint-up(@md; {
+			top: ~"calc(23.4vw / 2)";
+		});
 		&.is--prev{
 			left: 5px;
 			.icon-prev();

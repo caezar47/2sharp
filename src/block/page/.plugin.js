@@ -26,10 +26,15 @@ if(slogan){
 }*/
 $(window).scroll(function() {
     var theta = $(window).scrollTop() / 250 % Math.PI;
-    $('#slogan').css({ transform: 'rotate(' + theta + 'rad)' });;
+    $('#slogan').css({ transform: 'rotate(' + theta + 'rad)' });
 });
 
 var elem = $(".content-block__wrap.is--page-index-header");
+var slider = $("[data-slick-works]");
+var slider_img = $(".card__preview.is--works-card img");
+var img_height = slider_img.height();
+console.log(img_height);
+//
 //var ratio = 1.77;
 var ratio = 1.79;
 var resizeHeader = function (e) {
@@ -37,7 +42,7 @@ var resizeHeader = function (e) {
     var height = $(window).height();
     var ratioWindow = width/height;
     var ratioWindowFix = ratioWindow.toFixed(2);
-    console.log(ratioWindowFix);
+    //console.log(ratioWindowFix);
     if($(window).width() > 991){
         if(ratioWindowFix < ratio ){    
             elem.css({"height":"auto","padding-top":"calc(100%/(16/9) - 80px)"});

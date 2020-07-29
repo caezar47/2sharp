@@ -32,8 +32,8 @@
 
 {% if view == "works_card" %}
 	{% for value in list %}		
-	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}" {% if value.hoverEffectT !="true"%}{% if aos %}data-aos="{{aos}}"{% endif %}{% endif %}>
-		<div class="{{prefix}}preview  {{mod}}">
+	<div class="{{prefix}}item  {{mod}}" {% if value.hoverEffectT !="true"%}{% if aos %}data-aos="{{aos}}"{% endif %}{% endif %}>
+		<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">
 			{% if value.hoverEffect %}
 			<div class="{{prefix}}effect" data-displacement="{{value.displacement}}" data-intensity="0.3" data-ratio="725/1290">
 				<img src="{{path.img}}/default/work-item.jpg" alt="{{value.heading}}"/>
@@ -44,17 +44,17 @@
 			{% else %}
 			<img data-src="{{value.img}}" src="{{value.img}}" alt="{{value.heading}}" class="img-responsive  lazy">
 			{% endif %}			
-		</div>
+		</a>
 
-		<p class="{{prefix}}heading  {{mod}}">
+		<a href="{{value.link}}" class="{{prefix}}heading  {{mod}}">
 			<span>{{value.name}}</span>
 			<span class="{{prefix}}icon  {{mod}}">
 				{% include "../svg-sprite/svg.twig" with {icon:"arrow-next"} %}
 			</span>
-		</p>
+		</a>
 		{% if value.note %}<p class="{{prefix}}note  {{mod}}">{{value.note}}</p>{% endif %}		
 		{% if value.label %}<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>{% endif %}
-	</a>
+	</div>
 	{# <a href="{{value.link}}" class="{{prefix}}item  {{mod}}" {% if aos %}data-aos="{{aos}}"{% endif %}>
 		<div class="{{prefix}}preview  {{mod}}">
 			<img data-src="{{value.img}}" alt="{{value.heading}}" class="img-responsive">
@@ -70,6 +70,7 @@
 	</a>  #}
 	{% endfor %}
 {% endif %}
+
 {% if view == "works_slider" %}
 	{% for value in list %}
 	<a href="{{value.link}}" class="{{prefix}}item  {{mod}}" {% if aos %}data-aos="{{aos}}"{% endif %}>

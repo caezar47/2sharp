@@ -92,6 +92,9 @@
 		&:last-child{
 			margin-bottom: 0;
 		}
+		&:hover{
+			cursor: pointer;
+		}
 	}
 	&input{
 		.visually-hidden();
@@ -102,6 +105,7 @@
 		align-items: center;
 		position: relative;
 		color: @white;
+		transition: @trs-site;
 		span{
 			width: 5px;
 			height: 22px;
@@ -110,9 +114,13 @@
 			color: fadeout(@success, 100%);
 			svg{display: block;}
 		}
+		.filter__item:hover &{
+			color: @primary;
+		}
 		.media-breakpoint-up(@xl; {
 		});
 		.filter__input:checked + &{
+			color: @primary;
 			span{
 				color: @success;
 			}
