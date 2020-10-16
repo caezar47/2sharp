@@ -7,7 +7,7 @@ $(function() {
 	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';
 	 //setTimeout(function () {
     top.slick({
-		slidesToShow: 4,
+		slidesToShow: 3,
 		slidesToScroll: 1,
 		arrows: false,
 		dots: false,
